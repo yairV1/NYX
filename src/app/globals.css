@@ -411,7 +411,7 @@ body {
 
 /* Ambient background asset shared across the complete landing page. */
 body {
-  background-image: url("/assets/nyx/backgrounds/lab-atmosphere.svg");
+  background-image: radial-gradient(ellipse 70% 25% at 75% 4%, rgb(124 58 237 / .16), transparent), radial-gradient(ellipse 55% 20% at 10% 18%, rgb(34 211 238 / .08), transparent);
   background-position: center top;
   background-size: 100% auto;
   background-repeat: no-repeat;
