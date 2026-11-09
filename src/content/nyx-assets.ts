@@ -1,8 +1,7 @@
-/** Registro único de recursos visuales públicos de NYX.
- * Sustituye las rutas cuando se aprueben los recursos oficiales.
- * Los archivos SVG actuales son provisionales, no la identidad final.
- */
+/** Rutas de recursos compartidos, compatibles con GitHub Pages y localhost. */
+const basePath = process.env.NEXT_PUBLIC_GITHUB_PAGES === "true" ? "/NYX" : "";
+
 export const nyxAssets = {
-  logoSymbol: "/assets/nyx/logos/nyx-symbol.svg",
-  labBackdrop: "/assets/nyx/backgrounds/lab-atmosphere.svg",
+  logoSymbol: `${basePath}/assets/nyx/logos/nyx-symbol.svg`,
+  labBackdrop: `${basePath}/assets/nyx/backgrounds/lab-atmosphere.svg`,
 } as const;
