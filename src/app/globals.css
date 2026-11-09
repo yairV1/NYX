@@ -407,3 +407,12 @@ body {
     letter-spacing: 0.1em;
   }
 }
+
+
+/* Ambient background asset shared across the complete landing page. */
+body {
+  background-image: url("/assets/nyx/backgrounds/lab-atmosphere.svg");
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
