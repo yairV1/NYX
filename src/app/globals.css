@@ -416,3 +416,93 @@ body {
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
+
+
+/* NYX premium visual system — cinematic sections and studio */
+.nyx-hero {
+  background: radial-gradient(ellipse 75% 70% at 72% 40%, rgb(90 35 185 / .18), transparent 75%);
+}
+.nyx-hero::before {
+  content: "NYX";
+  position: absolute;
+  top: 10%;
+  right: -2%;
+  font-family: var(--font-display);
+  font-size: clamp(12rem, 30vw, 36rem);
+  font-weight: 800;
+  letter-spacing: -.12em;
+  line-height: 1;
+  color: rgb(245 247 255 / .018);
+  pointer-events: none;
+}
+.nyx-feature-card { position: relative; overflow: hidden; min-height: 15rem; }
+.nyx-feature-card::before {
+  content: ""; position: absolute; inset: 0 0 auto; height: 2px;
+  background: linear-gradient(90deg, var(--color-signal), var(--color-violet-soft), transparent);
+  opacity: .65;
+}
+.nyx-feature-card:nth-child(2) { background: linear-gradient(145deg, rgb(124 58 237 / .18), rgb(21 27 53 / .35)); }
+.nyx-ecosystem-card { min-height: 20rem; justify-content: flex-end; }
+.nyx-ecosystem-card::after {
+  content: "✦"; position: absolute; top: 1.5rem; right: 1.5rem;
+  font-size: 4.5rem; line-height: 1; color: rgb(185 162 255 / .12);
+  transition: transform .3s ease, color .3s ease;
+}
+.nyx-ecosystem-card:hover::after { transform: rotate(22deg) scale(1.15); color: rgb(34 211 238 / .2); }
+.nyx-studio-section {
+  background: radial-gradient(ellipse 60% 50% at 55% 45%, rgb(124 58 237 / .17), transparent 85%), #0b1021;
+}
+.nyx-studio-shell {
+  overflow: hidden; border: 1px solid rgb(185 162 255 / .28);
+  border-radius: 1.5rem;
+  background: #101629;
+  box-shadow: 0 60px 120px -55px rgb(124 58 237 / .5), 0 12px 40px rgb(0 0 0 / .35), inset 0 1px rgb(255 255 255 / .09);
+}
+.nyx-studio-topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 1rem; padding: .95rem 1.3rem; background: #171d33;
+  border-bottom: 1px solid rgb(255 255 255 / .09);
+}
+.nyx-studio-workspace { display: grid; grid-template-columns: 4.5rem minmax(0,1fr) 13rem; min-height: 30rem; }
+.nyx-studio-tools { display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 1.5rem .5rem; border-right: 1px solid rgb(255 255 255 / .09); }
+.nyx-studio-tools span { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: .7rem; font-size: 1.2rem; color: #9ba5c9; }
+.nyx-studio-tools .nyx-tool-active { background: rgb(124 58 237 / .3); color: #22d3ee; border: 1px solid rgb(185 162 255 / .35); }
+.nyx-studio-canvas { min-width: 0; padding: clamp(.75rem, 3vw, 2.5rem); background-color: #0a0e1c; background-image: radial-gradient(rgb(255 255 255 / .1) 1px, transparent 1px); background-size: 22px 22px; }
+.nyx-studio-canvas-inner {
+  position: relative; display: flex; align-items: center; min-height: 25rem; height: 100%;
+  padding: clamp(1.5rem, 5vw, 4rem); overflow: hidden; isolation: isolate;
+  border-radius: 1rem; border: 1px solid rgb(185 162 255 / .2);
+  background: linear-gradient(140deg, #10152b 15%, #1a1740 70%, #0a1c2d);
+}
+.nyx-preview-glow {
+  position: absolute; z-index: -1; inset: -15%;
+  background: radial-gradient(circle at 75% 45%, rgb(124 58 237 / .45), transparent 40%), radial-gradient(circle at 85% 75%, rgb(34 211 238 / .18), transparent 45%);
+}
+.nyx-preview-orbit {
+  position: absolute; right: -5%; top: 5%; display: grid; place-items: center;
+  width: 52%; aspect-ratio: 1; border-radius: 50%;
+  border: 1px solid rgb(34 211 238 / .45);
+  box-shadow: 0 0 0 30px rgb(124 58 237 / .06), 0 0 0 70px rgb(124 58 237 / .04), 0 0 80px rgb(124 58 237 / .18);
+}
+.nyx-preview-orbit span { font-size: clamp(5rem, 13vw, 11rem); color: rgb(185 162 255 / .18); }
+.nyx-canvas-tag { position: absolute; bottom: 1.2rem; right: 1.5rem; font-size: .55rem; letter-spacing: .2em; color: #a9b2d3; }
+.nyx-studio-inspector { padding: 1.5rem 1rem; border-left: 1px solid rgb(255 255 255 / .09); background: #141a2e; }
+.nyx-studio-prompt { display: flex; align-items: center; gap: .8rem; padding: 1rem 1.5rem; color: #b4bbd6; font-size: .85rem; border-top: 1px solid rgb(255 255 255 / .09); }
+@media (max-width: 900px) {
+  .nyx-studio-workspace { grid-template-columns: 3.5rem minmax(0,1fr); min-height: 23rem; }
+  .nyx-studio-inspector { display: none; }
+  .nyx-studio-canvas-inner { min-height: 21rem; }
+}
+@media (max-width: 520px) {
+  .nyx-studio-workspace { grid-template-columns: 2.75rem minmax(0,1fr); min-height: 18rem; }
+  .nyx-studio-tools { gap: .6rem; padding: 1rem .25rem; }
+  .nyx-studio-tools span { width: 2rem; height: 2rem; }
+  .nyx-studio-canvas { padding: .5rem; }
+  .nyx-studio-canvas-inner { min-height: 17rem; padding: 1.2rem; }
+  .nyx-studio-topbar { padding: .75rem; }
+  .nyx-preview-orbit { right: -30%; opacity: .7; }
+  .nyx-canvas-tag { font-size: .45rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nyx-ecosystem-card::after, .nyx-feature-card, .nyx-ecosystem-card { transition: none; }
+}
