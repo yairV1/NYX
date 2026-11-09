@@ -24,9 +24,9 @@ export function Section({
     <section
       id={id}
       aria-labelledby={headingId}
-      className={`container-nyx py-20 sm:py-28 ${className}`}
+      className={`container-nyx py-24 sm:py-32 ${className}`}
     >
-      <header className="reveal mb-10 max-w-3xl sm:mb-14">
+      <header className="reveal mb-12 max-w-3xl sm:mb-16">
         <p className="mb-3 font-display text-sm font-medium tracking-[0.2em] text-signal uppercase">
           {eyebrow}
         </p>
