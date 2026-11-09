@@ -1,26 +1,318 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ------------------------------------------------------------------ */
+/* Tokens NYX (docs/NYX-CREATIVE-LAB-BRIEF.md)                          */
+/* ------------------------------------------------------------------ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-void: #080b16;
+  --color-nebula: #151b35;
+  --color-violet: #7c3aed;
+  --color-signal: #22d3ee;
+  --color-starlight: #f5f7ff;
+
+  /* Derivados para texto y superficies con contraste AA sobre void */
+  --color-violet-soft: #b9a2ff;
+  --color-mist: #b4bbd6;
+  --color-line: rgb(245 247 255 / 0.1);
+  --color-surface: rgb(21 27 53 / 0.6);
+
+  --font-sans:
+    var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+  --font-display:
+    var(--font-space-grotesk), var(--font-inter), ui-sans-serif, system-ui,
+    sans-serif;
+
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  color-scheme: dark;
+  --header-h: 4.5rem;
+}
+
+html {
+  background: var(--color-void);
+  scroll-padding-top: calc(var(--header-h) + 1rem);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-void);
+  color: var(--color-starlight);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+::selection {
+  background: rgb(124 58 237 / 0.55);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Utilidades de marca                                                  */
+/* ------------------------------------------------------------------ */
+@utility container-nyx {
+  width: 100%;
+  max-width: 82rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 4rem);
+}
+
+@utility text-gradient-nyx {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-starlight) 10%,
+    var(--color-violet-soft) 55%,
+    var(--color-signal) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility glass {
+  background: linear-gradient(
+    160deg,
+    rgb(245 247 255 / 0.07),
+    rgb(245 247 255 / 0.02)
+  );
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(14px);
+}
+
+/* ------------------------------------------------------------------ */
+/* Escena Creative Lab                                                  */
+/* ------------------------------------------------------------------ */
+.lab-scene {
+  --px: 0;
+  --py: 0;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Cada capa se desplaza según su profundidad (--depth, en px). */
+.lab-layer {
+  position: absolute;
+  inset: 0;
+  translate: calc(var(--px) * var(--depth, 0px))
+    calc(var(--py) * var(--depth, 0px));
+  transition: translate 0.5s var(--ease-out-soft);
+  pointer-events: none;
+}
+
+.lab-glow {
+  background:
+    radial-gradient(
+      42% 40% at 52% 46%,
+      rgb(124 58 237 / 0.5),
+      transparent 70%
+    ),
+    radial-gradient(
+      34% 30% at 76% 68%,
+      rgb(34 211 238 / 0.22),
+      transparent 70%
+    ),
+    radial-gradient(60% 55% at 50% 55%, rgb(21 27 53 / 0.9), transparent 75%);
+  filter: blur(6px);
+}
+
+.lab-stars {
+  background-image:
+    radial-gradient(1.2px 1.2px at 12% 18%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 28% 62%, #fff 50%, transparent 51%),
+    radial-gradient(1.4px 1.4px at 44% 9%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 63% 24%, #fff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 81% 12%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 91% 44%, #fff 50%, transparent 51%),
+    radial-gradient(1.3px 1.3px at 7% 78%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 86%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 36% 34%, #fff 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 55% 71%, #fff 50%, transparent 51%);
+  opacity: 0.55;
+}
+
+.lab-floor {
+  inset: auto -20% -6% -20%;
+  height: 46%;
+  background-image:
+    linear-gradient(rgb(34 211 238 / 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(150 110 255 / 0.5) 1px, transparent 1px);
+  background-size: 44px 44px;
+  transform: perspective(520px) rotateX(58deg);
+  transform-origin: 50% 100%;
+  mask-image: radial-gradient(70% 100% at 50% 100%, #000 15%, transparent 80%);
+}
+
+.lab-ring {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 74%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+}
+
+.lab-ring--outer {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0 12%,
+    rgb(34 211 238 / 0.9) 22%,
+    transparent 34% 58%,
+    rgb(124 58 237 / 0.95) 72%,
+    transparent 86%
+  );
+  mask-image: radial-gradient(
+    closest-side,
+    transparent calc(100% - 2px),
+    #000 calc(100% - 1.5px)
+  );
+}
+
+.lab-ring--inner {
+  width: 58%;
+  border: 1px dashed rgb(245 247 255 / 0.22);
+}
+
+.lab-ring--core {
+  width: 50%;
+  background: radial-gradient(
+    closest-side,
+    rgb(124 58 237 / 0.35),
+    rgb(21 27 53 / 0.55) 60%,
+    transparent
+  );
+}
+
+.lab-panel {
+  position: absolute;
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow:
+    0 20px 40px -18px rgb(0 0 0 / 0.7),
+    inset 0 1px 0 rgb(245 247 255 / 0.08);
+}
+
+/* ------------------------------------------------------------------ */
+/* Movimiento: todo dentro de no-preference, nunca bloquea interacción  */
+/* ------------------------------------------------------------------ */
+@keyframes enter-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@keyframes enter-scene {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+@keyframes float-y {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes breathe {
+  50% {
+    transform: translateY(-4px) scale(1.008);
+  }
+}
+
+@keyframes blink {
+  0%,
+  93%,
+  100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.08);
+  }
+}
+
+@keyframes twinkle {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Entrada progresiva del hero: --i define el orden. */
+  .enter {
+    animation: enter-up 0.8s var(--ease-out-soft) both;
+    animation-delay: calc(var(--i, 0) * 90ms + 80ms);
+  }
+
+  .enter-scene {
+    animation: enter-scene 1.1s var(--ease-out-soft) both;
+    animation-delay: 0.15s;
+  }
+
+  .float {
+    animation: float-y var(--float-d, 7s) ease-in-out infinite;
+    animation-delay: var(--float-delay, 0s);
+  }
+
+  .lab-ring--outer {
+    animation: spin 28s linear infinite;
+  }
+
+  .lab-ring--inner {
+    animation: spin 60s linear infinite reverse;
+  }
+
+  .lab-stars {
+    animation: twinkle 6s ease-in-out infinite;
+  }
+
+  .nyx-breathe {
+    animation: breathe 5.5s ease-in-out infinite;
+    transform-origin: 50% 100%;
+    transform-box: fill-box;
+  }
+
+  .nyx-blink {
+    animation: blink 6.5s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+
+  /*
+   * Revelado al hacer scroll sin JavaScript (scroll-driven animations).
+   * Mejora progresiva: donde no hay soporte, el contenido simplemente
+   * se muestra, por lo que nunca queda oculto ni bloquea la lectura.
+   */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 24%;
+    }
+  }
 }
