@@ -13,7 +13,7 @@ export function About() {
 
         <ol className="grid gap-4 sm:grid-cols-3 lg:gap-5">
           {about.pillars.map((pillar, i) => (
-            <li key={pillar.title} className="reveal glass rounded-2xl p-6">
+            <li key={pillar.title} className="reveal glass nyx-feature-card rounded-2xl p-6">
               <span
                 aria-hidden
                 className="font-display text-sm font-medium text-signal"
