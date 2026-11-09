@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NYX — Web oficial
 
-## Getting Started
+Primera versión de la web oficial de **NYX**, un ecosistema creativo y tecnológico impulsado por IA. Lema provisional: «Imagina. Crea. Transforma.»
 
-First, run the development server:
+> Prototipo en desarrollo. No hay despliegue a producción.
+
+## Stack
+
+Next.js 16 (App Router) · React 19 · Tailwind CSS 4 · TypeScript.
+
+## Desarrollo
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Verificación
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run typecheck
+npm run lint
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Documentación
 
-## Learn More
+- [Brief y criterios de aceptación](docs/NYX-CREATIVE-LAB-BRIEF.md)
+- [Arquitectura, decisiones y pendientes](docs/ARCHITECTURE.md)
+- Agentes de IA: leer [`AGENTS.md`](AGENTS.md) antes de escribir código (Next 16 tiene cambios incompatibles).
 
-To learn more about Next.js, take a look at the following resources:
+## Contenido
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Todo el texto vive en [`src/content/site.ts`](src/content/site.ts). Regla del proyecto: no se inventan funcionalidades, estadísticas ni historia; lo que no existe lleva su estado explícito.
