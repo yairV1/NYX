@@ -14,7 +14,7 @@ export function Ecosystem() {
         {ecosystem.items.map((item) => (
           <li
             key={item.id}
-            className="reveal glass group relative flex flex-col overflow-hidden rounded-2xl p-6 sm:p-8"
+            className="reveal glass nyx-ecosystem-card group relative flex min-h-64 flex-col overflow-hidden rounded-2xl p-6 sm:p-8"
           >
             <span
               aria-hidden
