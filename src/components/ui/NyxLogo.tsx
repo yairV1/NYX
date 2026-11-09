@@ -1,22 +1,12 @@
-/** Marca tipográfica provisional. Sustituir por el logotipo oficial cuando exista. */
+import { nyxAssets } from "@/content/nyx-assets";
+
+/** Marca provisional compartida por navegación y pie de página. */
 export function NyxLogo({ className = "" }: { className?: string }) {
   return (
-    <span
-      className={`inline-flex items-center gap-2.5 font-display text-xl font-bold tracking-[0.28em] ${className}`}
-    >
-      <svg
-        aria-hidden
-        viewBox="0 0 24 24"
-        className="size-6"
-        fill="none"
-        strokeWidth="1.6"
-      >
-        <circle cx="12" cy="12" r="9.2" stroke="var(--color-violet-soft)" />
-        <path
-          d="M12 5.2c.7 3.6 2.2 5.1 5.8 5.8-3.6.7-5.1 2.2-5.8 5.8-.7-3.6-2.2-5.1-5.8-5.8 3.6-.7 5.1-2.2 5.8-5.8Z"
-          fill="var(--color-signal)"
-        />
-      </svg>
+    <span className={`inline-flex items-center gap-2.5 font-display text-xl font-bold tracking-[0.28em] ${className}`}>
+      {/* SVG propio servido desde la biblioteca visual compartida. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={nyxAssets.logoSymbol} alt="" aria-hidden="true" width="28" height="28" className="size-7 shrink-0" />
       NYX
     </span>
   );
