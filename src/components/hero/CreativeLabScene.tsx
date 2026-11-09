@@ -16,7 +16,7 @@ const depth = (px: number) => ({ "--depth": `${px}px` }) as CSSProperties;
  */
 export function CreativeLabScene({ children }: { children: ReactNode }) {
   return (
-    <PointerParallax className="lab-scene enter-scene mx-auto aspect-[10/9] w-full max-w-[44rem] lg:aspect-square lg:max-h-[min(78svh,46rem)]">
+    <PointerParallax className="lab-scene enter-scene mx-auto aspect-[10/9] w-full max-w-[48rem] lg:aspect-square lg:max-h-[min(84svh,49rem)]">
       <div aria-hidden className="contents">
         <div className="lab-layer lab-glow" style={depth(-6)} />
         <div className="lab-layer lab-stars" style={depth(-10)} />
@@ -107,6 +107,9 @@ export function CreativeLabScene({ children }: { children: ReactNode }) {
           </svg>
         </div>
       </div>
+
+      <div aria-hidden="true" className="lab-scene-label absolute top-[4%] left-[5%] z-10">NYX / CREATIVE SYSTEM <span>001</span></div>
+      <div aria-hidden="true" className="lab-scene-label absolute right-[5%] bottom-[5%] z-10">EXPERIMENTAL LAB · 2026</div>
 
       {/* Punto de montaje del personaje (SVG hoy, 3D en el futuro) */}
       <div
