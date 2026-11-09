@@ -16,7 +16,7 @@ export function Hero() {
     <section
       id="inicio"
       aria-labelledby="inicio-titulo"
-      className="relative overflow-clip pt-(--header-h)"
+      className="nyx-hero relative overflow-clip pt-(--header-h)"
     >
       {/* Atmósfera de fondo */}
       <div
@@ -24,8 +24,8 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_60%_at_78%_38%,rgb(124_58_237/0.2),transparent_70%),radial-gradient(50%_50%_at_8%_90%,rgb(34_211_238/0.1),transparent_70%),linear-gradient(to_bottom,var(--color-void),var(--color-nebula)_140%)]"
       />
 
-      <div className="container-nyx relative grid items-center gap-10 py-12 sm:py-16 lg:min-h-[calc(100svh-var(--header-h))] lg:grid-cols-[minmax(0,42fr)_minmax(0,58fr)] lg:gap-6 lg:py-10">
-        <div className="max-w-xl">
+      <div className="container-nyx relative grid items-center gap-12 py-16 sm:py-20 lg:min-h-[calc(100svh-var(--header-h))] lg:grid-cols-[minmax(0,43fr)_minmax(0,57fr)] lg:gap-4 lg:py-12">
+        <div className="relative z-10 max-w-xl">
           <p
             className="enter mb-5 inline-flex items-center gap-2.5 rounded-full border border-line bg-starlight/5 px-4 py-1.5 font-display text-xs font-medium tracking-[0.22em] text-signal uppercase"
             style={order(0)}
@@ -36,7 +36,7 @@ export function Hero() {
 
           <h1
             id="inicio-titulo"
-            className="font-display text-[clamp(2.75rem,11vw,5.5rem)] leading-[0.98] font-bold tracking-tight lg:text-[clamp(3.25rem,5.6vw,5.75rem)]"
+            className="font-display text-[clamp(3.2rem,11vw,6.5rem)] leading-[0.96] font-bold tracking-[-0.055em] lg:text-[clamp(3.7rem,6vw,7rem)]"
           >
             {hero.titleWords.map((word, i) => (
               <span
@@ -91,6 +91,7 @@ export function Hero() {
             className="h-[84%] w-auto drop-shadow-[0_24px_40px_rgb(0_0_0/0.55)]"
           />
         </CreativeLabScene>
+        <a href="#que-es-nyx" className="nyx-scroll-cue hidden lg:inline-flex" aria-label="Desplazarse para descubrir NYX"><span className="nyx-scroll-line" aria-hidden="true" /> DESCUBRE EL UNIVERSO</a>
       </div>
     </section>
   );
