@@ -316,3 +316,103 @@ body {
     }
   }
 }
+
+
+/* Visual refinement: deliberate contrast, atmosphere and responsive polish */
+.nyx-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 9rem;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--color-void));
+}
+
+.nyx-hero .lab-scene {
+  filter: drop-shadow(0 18px 65px rgb(124 58 237 / 0.12));
+}
+
+.nyx-hero .lab-scene::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 10% 2%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgb(124 58 237 / 0.24), transparent 68%);
+  filter: blur(38px);
+  pointer-events: none;
+}
+
+.lab-scene-label {
+  font-family: var(--font-display);
+  font-size: clamp(0.48rem, 0.7vw, 0.65rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--color-mist);
+  opacity: 0.75;
+}
+
+.lab-scene-label span {
+  margin-left: 0.65rem;
+  color: var(--color-signal);
+}
+
+.nyx-scroll-cue {
+  position: absolute;
+  bottom: 1.75rem;
+  left: clamp(1.25rem, 5vw, 4rem);
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--color-mist);
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  transition: color 180ms ease;
+}
+
+.nyx-scroll-cue:hover {
+  color: var(--color-signal);
+}
+
+.nyx-scroll-line {
+  display: block;
+  height: 1px;
+  width: 2.5rem;
+  background: linear-gradient(90deg, var(--color-signal), transparent);
+}
+
+.nyx-feature-card,
+.nyx-ecosystem-card {
+  transition: border-color 220ms ease, background-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .nyx-feature-card:hover,
+  .nyx-ecosystem-card:hover {
+    transform: translateY(-5px);
+    border-color: rgb(185 162 255 / 0.42);
+    box-shadow: 0 20px 48px -32px rgb(124 58 237 / 0.55);
+  }
+}
+
+.nyx-ecosystem-card:nth-child(2) {
+  background: linear-gradient(155deg, rgb(124 58 237 / 0.13), rgb(21 27 53 / 0.6) 62%);
+  border-color: rgb(185 162 255 / 0.22);
+}
+
+@media (max-width: 639px) {
+  .lab-scene-label {
+    font-size: 0.46rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+
+/* Ambient background asset shared across the complete landing page. */
+body {
+  background-image: url("/assets/nyx/backgrounds/lab-atmosphere.svg");
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
