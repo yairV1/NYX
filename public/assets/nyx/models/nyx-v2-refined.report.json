@@ -1,6 +1,6 @@
 {
-  "bytes": 2486736,
-  "meshes": 40,
+  "bytes": 3037988,
+  "meshes": 41,
   "joints": 89,
   "animations": [
     "Idle_Secondary",
@@ -22,6 +22,6 @@
     "Blink"
   ],
   "morph_primitives": 6,
-  "draco_primitives": 40,
-  "textures_max": 1024
+  "draco_primitives": 41,
+  "textures_max": 2048
 }

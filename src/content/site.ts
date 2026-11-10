@@ -58,10 +58,10 @@ export const hero = {
   stageHint: "Mueve el cursor o toca a NYX",
   /** Datos reales del modelo publicado (public/assets/nyx/models/*.report.json). */
   specs: [
-    { value: "51 032", label: "triángulos" },
+    { value: "99 448", label: "triángulos" },
     { value: "89", label: "huesos" },
     { value: "17", label: "animaciones" },
-    { value: "2,5 MB", label: "modelo web" },
+    { value: "3,0 MB", label: "modelo web" },
   ],
   /** Reacciones que se pueden lanzar desde el hero (ids de src/lib/nyx/clips.ts). */
   reactions: ["Wave", "Celebrate", "Think", "Surprise"],

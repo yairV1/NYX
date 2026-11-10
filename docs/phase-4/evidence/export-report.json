@@ -1,0 +1,27 @@
+{
+  "bytes": 3037988,
+  "meshes": 41,
+  "joints": 89,
+  "animations": [
+    "Idle_Secondary",
+    "Wave",
+    "Point",
+    "Happy",
+    "Curious",
+    "LookAround",
+    "Thinking",
+    "Surprised",
+    "Confused",
+    "Sad",
+    "Angry",
+    "Tired",
+    "Laughing",
+    "Wink",
+    "Celebrating",
+    "Talking",
+    "Blink"
+  ],
+  "morph_primitives": 6,
+  "draco_primitives": 41,
+  "textures_max": 2048
+}

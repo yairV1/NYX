@@ -7,6 +7,7 @@ from pathlib import Path
 import bpy
 import bmesh
 from mathutils import Vector
+from mathutils.bvhtree import BVHTree
 
 def clean(obj):
     bm = bmesh.new()
@@ -20,6 +21,56 @@ def clean(obj):
     bm.to_mesh(obj.data)
     bm.free()
     obj.data.update()
+
+GARMENT_PREFIXES=("GEO_hoodie","GEO_pocket_trim")
+TUCK_DEPTH=.035
+TUCK_REACH=.12
+
+def tuck_body_under_clothes(body):
+    """Pull the body in wherever the hoodie covers it.
+    Body and garment are skinned separately and reduced separately, so the fur
+    used to poke through the fabric as pale specks, more so in bent poses. A
+    body vertex counts as covered when the fabric lies just outside it along
+    its normal. Head, hands and legs are never covered and stay untouched."""
+    verts=[]
+    faces=[]
+    for obj in bpy.data.collections["GEO"].all_objects:
+        if obj.type!="MESH" or not obj.name.startswith(GARMENT_PREFIXES):
+            continue
+        offset=len(verts)
+        verts.extend(obj.matrix_world@v.co for v in obj.data.vertices)
+        faces.extend(tuple(offset+i for i in p.vertices) for p in obj.data.polygons)
+    if not faces:
+        return 0
+    tree=BVHTree.FromPolygons(verts,faces)
+    world=body.matrix_world
+    normal_matrix=world.to_3x3().inverted().transposed()
+    back=world.inverted()
+    moved=0
+    for vertex in body.data.vertices:
+        position=world@vertex.co
+        normal=(normal_matrix@vertex.normal).normalized()
+        hit=tree.ray_cast(position-normal*.01,normal,TUCK_REACH+.01)
+        if hit[0] is None:
+            continue
+        vertex.co=back@(position-normal*TUCK_DEPTH)
+        moved+=1
+    body.data.update()
+    return moved
+
+def face_outwards(obj):
+    """Make an open ring face away from its vertical axis.
+    The web materials cull back faces, and recalculating normals on an open
+    tube can turn it inside out: invisible in the browser, fine in Cycles."""
+    radial=sum(p.normal.dot(Vector((p.center.x,p.center.y,0)).normalized()) for p in obj.data.polygons)
+    if radial<0:
+        bm=bmesh.new()
+        bm.from_mesh(obj.data)
+        bmesh.ops.reverse_faces(bm,faces=list(bm.faces))
+        bm.to_mesh(obj.data)
+        bm.free()
+        obj.data.update()
+    return radial<0
 
 def set_head_weights(obj, rig):
     for group in list(obj.vertex_groups):
@@ -197,6 +248,10 @@ def mouth(rig):
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--out",required=True)
+    # Share of triangles kept. 0.18 / 0.30 (the first LOD) left faceted
+    # silhouettes on the hood, ears and limbs; these defaults keep them round.
+    p.add_argument("--body-ratio",type=float,default=.42)
+    p.add_argument("--detail-ratio",type=float,default=.55)
     a=p.parse_args(sys.argv[sys.argv.index("--")+1:])
     output=Path(a.out).resolve()
     if output.exists() or output==Path(bpy.data.filepath).resolve():
@@ -209,11 +264,13 @@ def main():
     report={"meshes":{}}
     objects={o for n in ("GEO","FACIAL","ACCESSORIES")
              for o in bpy.data.collections[n].all_objects if o.type=="MESH"}
+    # Replace the preliminary linear blink morph with spherical bone motion.
     for obj in objects:
-        before=sum(len(p.vertices)-2 for p in obj.data.polygons)
-        # Replace the preliminary linear blink morph with spherical bone motion.
         if obj.data.shape_keys:
             obj.shape_key_clear()
+    report["tucked_body_vertices"]=tuck_body_under_clothes(bpy.data.objects["GEO_Nyx_body"])
+    for obj in objects:
+        before=sum(len(p.vertices)-2 for p in obj.data.polygons)
         clean(obj)
         if obj.name.startswith("GEO_lid"):
             # Keep enough spherical tessellation to remain outside the eyeball.
@@ -226,12 +283,15 @@ def main():
         elif before>500:
             bpy.context.view_layer.objects.active=obj
             mod=obj.modifiers.new("NYX_LOD","DECIMATE")
-            mod.ratio=.18 if obj.name in ("GEO_Nyx_body","GEO_hoodie") else .3
+            mod.ratio=a.body_ratio if obj.name in ("GEO_Nyx_body","GEO_hoodie") else a.detail_ratio
             mod.use_collapse_triangulate=True
             bpy.ops.object.modifier_move_to_index(modifier=mod.name, index=0)
             bpy.ops.object.modifier_apply(modifier=mod.name)
             clean(obj)
         report["meshes"][obj.name]={"before":before,"after":sum(len(p.vertices)-2 for p in obj.data.polygons)}
+    collar=bpy.data.objects.get("GEO_hoodie_collar")
+    if collar:
+        report["collar_flipped"]=face_outwards(collar)
     for side in ("L","R"):
         for part in ("up","low"):
             bone=rig.pose.bones[f"DEF_lid_{part}.{side}"]

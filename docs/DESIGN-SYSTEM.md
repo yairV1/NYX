@@ -80,7 +80,7 @@ móvil real, Safari y Firefox, lectores de pantalla, Lighthouse, red lenta.
 - Orbitron es ancha: los títulos largos ocupan más líneas. Revisar si alguno
   conviene acortarlo.
 - El logotipo sigue siendo provisional; la hoja de identidad define uno propio.
-- El modelo y `three` suman peso a la portada (GLB de 2,5 MB). Se cargan después
+- El modelo y `three` suman peso a la portada (GLB de 3,0 MB). Se cargan después
   del primer pintado, pero conviene medirlo con red limitada.
 - Las imágenes 2D anteriores (`nyx-welcome*.webp`, `creative-lab.webp`) ya no se
   usan y no se han añadido al repositorio.
