@@ -167,7 +167,25 @@ def mouth(rig):
             key=obj.shape_key_add(name=name)
             for point,co in zip(key.data,coords(op,sm,interior)):
                 point.co=co
-        obj["nyx_note"]="Quad lip loops and shallow cavity. Morph values 0..1."
+        obj["nyx_note"]="Quad lip loops and shallow cavity. Morph values 0..1, driven by the mouth controls."
+        # The existing actions animate the mouth controls, so the keys follow them.
+        # Ranges come from the action library: scale.z peaks at 15, corners rise 0.022.
+        keys=obj.data.shape_keys.key_blocks
+        driver=keys["MouthOpen"].driver_add("value").driver
+        variable=driver.variables.new()
+        variable.name="opening"
+        variable.type="SINGLE_PROP"
+        variable.targets[0].id=rig
+        variable.targets[0].data_path='pose.bones["CTRL_mouth_open"].scale[2]'
+        driver.expression="min(1,max(0,(opening-1)/14))"
+        driver=keys["Smile"].driver_add("value").driver
+        for side in ("L","R"):
+            variable=driver.variables.new()
+            variable.name="corner_"+side
+            variable.type="SINGLE_PROP"
+            variable.targets[0].id=rig
+            variable.targets[0].data_path=f'pose.bones["CTRL_mouth.{side}"].location[2]'
+        driver.expression="min(1,max(0,(corner_L+corner_R)/2/0.022))"
     # Philtrum follows the face; its thin surface is retained as a separate detail.
 
 def main():

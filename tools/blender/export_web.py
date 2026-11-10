@@ -1,5 +1,9 @@
 """Export selected NYX collections, optional Draco, bounded PNG textures.
-Blender -b candidate.blend -P export_web.py -- --out nyx.glb [--draco] [--action Idle_Secondary]
+Blender -b candidate.blend -P export_web.py -- --out nyx.glb [--draco]
+    [--action Idle_Secondary --action Wave ...] [--image-format WEBP] [--only-lids]
+--action may be repeated; each action becomes one glTF animation with its own name.
+--only-lids exports the armature plus the four eyelid meshes: an animation pack whose
+clips (bone tracks and blink morph weights) bind by node name to the main character.
 Run in a fresh process. Does not save texture resizing back to the blend.
 """
 import argparse
@@ -15,7 +19,9 @@ def main():
     p.add_argument("--out", required=True)
     p.add_argument("--draco", action="store_true")
     p.add_argument("--texture-size", type=int, default=1024)
-    p.add_argument("--action")
+    p.add_argument("--action", action="append", default=[])
+    p.add_argument("--image-format", choices=("AUTO","WEBP"), default="AUTO")
+    p.add_argument("--only-lids", action="store_true")
     a = p.parse_args(sys.argv[sys.argv.index("--")+1:])
     output = Path(a.out).resolve()
     if output.exists():
@@ -30,7 +36,8 @@ def main():
     for name in ("GEO", "FACIAL", "ACCESSORIES"):
         collection = bpy.data.collections.get(name)
         if collection:
-            objects.update(o for o in collection.all_objects if o.type == "MESH")
+            objects.update(o for o in collection.all_objects if o.type == "MESH"
+                           and (not a.only_lids or o.name.startswith("GEO_lid")))
     for obj in objects:
         obj.hide_set(False)
         obj.select_set(True)
@@ -41,15 +48,17 @@ def main():
         ad.nla_tracks.remove(track)
     for bone in rig.pose.bones:
         bone.matrix_basis.identity()
-    if a.action:
-        action = bpy.data.actions.get(a.action)
+    for name in a.action:
+        action = bpy.data.actions.get(name)
         if action is None:
-            raise RuntimeError("Action missing: " + a.action)
+            raise RuntimeError("Action missing: " + name)
         track = ad.nla_tracks.new()
-        track.name = a.action
-        strip = track.strips.new(a.action, int(action.frame_range[0]), action)
+        track.name = name
+        strip = track.strips.new(name, int(action.frame_range[0]), action)
         if action.slots:
             strip.action_slot = action.slots[0]
+        # One track per clip; muted tracks are still exported as separate animations.
+        track.mute = True
     texture_temp = tempfile.TemporaryDirectory(prefix="nyx-textures-")
     for image in list(bpy.data.images):
         if image.type not in {"IMAGE", "UV_TEST"}:
@@ -78,9 +87,10 @@ def main():
     options = dict(filepath=str(output), export_format="GLB", use_selection=True,
         export_animations=bool(a.action), export_animation_mode="NLA_TRACKS",
         export_force_sampling=True, export_frame_range=False,
+        export_optimize_animation_size=True,
         export_def_bones=True, export_skins=True, export_morph=True,
         export_apply=False, export_all_influences=False, export_influence_nb=4,
-        export_image_format="AUTO", export_yup=True, export_materials="EXPORT",
+        export_image_format=a.image_format, export_yup=True, export_materials="EXPORT",
         export_draco_mesh_compression_enable=a.draco,
         export_draco_mesh_compression_level=6,
         export_draco_position_quantization=14, export_draco_normal_quantization=10)

@@ -1,5 +1,9 @@
 # Fase 2 — Casa Nodo y evolución de Nyx_rig v2
 
+> La Fase 3 continúa este trabajo: más clips, texturas WebP y un GLB de
+> 2,49 MB. Ver [`../phase-3/README.md`](../phase-3/README.md). Las cifras de este
+> documento describen el estado al cerrar la Fase 2.
+
 ## Decisión del autor
 
 Casa Nodo es el hogar principal. Se evoluciona el gato antropomórfico del rig v2.

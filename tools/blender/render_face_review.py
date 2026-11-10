@@ -35,7 +35,12 @@ for name,blink,opening,smile in [("neutral",0,0,0),("blink-half",.5,0,0),("blink
         for part,degrees in (("up",-61),("low",40)):
             pb=rig.pose.bones["CTRL_lid_"+part+"."+side];pb.rotation_mode="XYZ";pb.rotation_euler.x=math.radians(degrees)*blink
     new=bpy.data.objects.get("GEO_lip_loops")
-    if new:
+    if new and new.data.shape_keys.animation_data and new.data.shape_keys.animation_data.drivers:
+        # Mouth keys follow the controls through drivers (see refine_phase2.py).
+        rig.pose.bones["CTRL_mouth_open"].scale.z=1+opening*14
+        for side in ("L","R"):
+            rig.pose.bones["CTRL_mouth."+side].location.z=.022*smile
+    elif new:
         for obj_name in ("GEO_lip_loops","GEO_mouth_cavity"):
             keys=bpy.data.objects[obj_name].data.shape_keys.key_blocks
             keys["Smile"].value=smile;keys["MouthOpen"].value=opening
