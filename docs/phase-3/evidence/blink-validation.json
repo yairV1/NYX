@@ -1,0 +1,106 @@
+{
+  "blink_samples": [
+    {
+      "fraction": 0.0,
+      "side": "L",
+      "minimum_clearance": 0.007783558420761255
+    },
+    {
+      "fraction": 0.0,
+      "side": "R",
+      "minimum_clearance": 0.007783558420761255
+    },
+    {
+      "fraction": 0.125,
+      "side": "L",
+      "minimum_clearance": 0.00773822915574196
+    },
+    {
+      "fraction": 0.125,
+      "side": "R",
+      "minimum_clearance": 0.007738253555223729
+    },
+    {
+      "fraction": 0.25,
+      "side": "L",
+      "minimum_clearance": 0.007692627327679474
+    },
+    {
+      "fraction": 0.25,
+      "side": "R",
+      "minimum_clearance": 0.007692627327679474
+    },
+    {
+      "fraction": 0.375,
+      "side": "L",
+      "minimum_clearance": 0.007647934614870289
+    },
+    {
+      "fraction": 0.375,
+      "side": "R",
+      "minimum_clearance": 0.00764795883219252
+    },
+    {
+      "fraction": 0.5,
+      "side": "L",
+      "minimum_clearance": 0.007605519224831464
+    },
+    {
+      "fraction": 0.5,
+      "side": "R",
+      "minimum_clearance": 0.007605519224831464
+    },
+    {
+      "fraction": 0.625,
+      "side": "L",
+      "minimum_clearance": 0.007566193544586819
+    },
+    {
+      "fraction": 0.625,
+      "side": "R",
+      "minimum_clearance": 0.007566193544586819
+    },
+    {
+      "fraction": 0.75,
+      "side": "L",
+      "minimum_clearance": 0.00753081405302744
+    },
+    {
+      "fraction": 0.75,
+      "side": "R",
+      "minimum_clearance": 0.00753081405302744
+    },
+    {
+      "fraction": 0.875,
+      "side": "L",
+      "minimum_clearance": 0.007500121012189026
+    },
+    {
+      "fraction": 0.875,
+      "side": "R",
+      "minimum_clearance": 0.007500121012189026
+    },
+    {
+      "fraction": 1.0,
+      "side": "L",
+      "minimum_clearance": 0.007474454698448707
+    },
+    {
+      "fraction": 1.0,
+      "side": "R",
+      "minimum_clearance": 0.007474454698448707
+    }
+  ],
+  "closed_coverage": [
+    {
+      "side": "L",
+      "covered": 25,
+      "samples": 25
+    },
+    {
+      "side": "R",
+      "covered": 25,
+      "samples": 25
+    }
+  ]
+}

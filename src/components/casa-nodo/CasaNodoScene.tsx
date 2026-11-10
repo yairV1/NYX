@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense, useLayoutEffect, useSyncExternalStore } from "react";
-import { NyxModel } from "./NyxModel";
+import { NyxModel, type ClipRequest } from "./NyxModel";
 import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, RoundedBox } from "@react-three/drei";
 
@@ -96,19 +96,27 @@ function subscribeMotion(callback: () => void) {
   return () => query.removeEventListener("change", callback);
 }
 
-export default function CasaNodoScene({ warm }: { warm: boolean }) {
+type SceneProps = {
+  warm: boolean;
+  request: ClipRequest | null;
+  onReady: () => void;
+  onClipEnd: () => void;
+  onSelect: () => void;
+};
+
+export default function CasaNodoScene({ warm, request, onReady, onClipEnd, onSelect }: SceneProps) {
   const reducedMotion = useSyncExternalStore(subscribeMotion,
     () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
     () => true);
   return (
-    <Canvas shadows dpr={[1, 1.5]} frameloop={reducedMotion ? "demand" : "always"} camera={{ position: CAMERA_HOME, fov: 42 }} gl={{ antialias: true }} fallback={<p className="p-8">La escena necesita un navegador con WebGL.</p>}>
+    <Canvas shadows dpr={[1, 1.5]} frameloop={reducedMotion && !request ? "demand" : "always"} camera={{ position: CAMERA_HOME, fov: 42 }} gl={{ antialias: true }} fallback={<p className="p-8">La escena necesita un navegador con WebGL.</p>}>
       <color attach="background" args={["#0F172A"]} />
       <ambientLight intensity={.5} color="#b8b4ef" />
       <directionalLight position={[3,5,3]} intensity={2} color="#bdceff" castShadow shadow-mapSize={[1024,1024]} shadow-camera-left={-5} shadow-camera-right={5} shadow-camera-top={5} shadow-camera-bottom={-5} shadow-normalBias={.03} />
       <pointLight position={[-2,2,-1]} intensity={14} color="#7C3AED" distance={6} />
       <pointLight position={[2,2,-1.5]} intensity={9} color="#06B6D4" distance={5} />
       <Room warm={warm} />
-      <Suspense fallback={null}><NyxModel reducedMotion={reducedMotion} /></Suspense>
+      <Suspense fallback={null}><NyxModel reducedMotion={reducedMotion} request={request} onReady={onReady} onClipEnd={onClipEnd} onSelect={onSelect} /></Suspense>
       <ResponsiveFraming />
       <OrbitControls target={CAMERA_TARGET} minDistance={3} maxDistance={12} maxPolarAngle={Math.PI/2.05} enablePan={false} />
     </Canvas>
