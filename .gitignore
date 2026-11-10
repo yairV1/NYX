@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local Blender deliverables, reproducible with tools/blender.
+/artifacts/phase-2/
+
+# Raw review renders, reproducible with tools/blender/render_*_review.py.
+/docs/phase-2/evidence/renders/before/*.png
+/docs/phase-2/evidence/renders/after/*.png
+
+__pycache__/

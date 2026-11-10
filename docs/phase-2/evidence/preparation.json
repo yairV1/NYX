@@ -1,0 +1,29 @@
+{
+  "morphs": {
+    "GEO_lid_up.L/Blink.L": 0.16809680958523718,
+    "GEO_lid_low.L/Blink.L": 0.11327727337549612,
+    "GEO_mouth.L/Smile.L": 0.022129374644697983,
+    "GEO_lid_up.R/Blink.R": 0.168096895461324,
+    "GEO_lid_low.R/Blink.R": 0.11327734171768282,
+    "GEO_mouth.R/Smile.R": 0.022070213314747112,
+    "GEO_mouth_inside/MouthOpen": 0.0327233211899289
+  },
+  "secondary_targets": [
+    "DEF_tail_01",
+    "DEF_tail_02",
+    "DEF_tail_03",
+    "DEF_tail_04",
+    "DEF_tail_05",
+    "DEF_tail_06",
+    "DEF_tail_07",
+    "DEF_tail_08",
+    "DEF_ear_02.L",
+    "DEF_ear_02.R",
+    "DEF_cord_01.L",
+    "DEF_cord_02.L",
+    "DEF_cord_03.L",
+    "DEF_cord_01.R",
+    "DEF_cord_02.R",
+    "DEF_cord_03.R"
+  ]
+}
