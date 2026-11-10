@@ -103,11 +103,12 @@ def spherical_blink(obj, rig):
             ink=max(0,1-distance/1.2)
             item.color_srgb=tuple(c*(1-ink)+k*ink for c,k in zip(fur[vertex],LASH_SRGB))+(1,)
     obj.shape_key_add(name="Basis")
-    previous=obj.data.shape_keys.key_blocks[0]
     set_head_weights(obj,rig)
     for step in range(1,9):
+        # Every step is an absolute lid position relative to Basis. glTF has no
+        # chained relative keys: a chain plays correctly in Blender but adds up
+        # several times over in the browser and throws the lid through the face.
         key=obj.shape_key_add(name=f"BlinkStep{step}")
-        key.relative_key=previous
         for point,co in zip(key.data,base):
             v=co-center
             theta=math.acos(max(-1,min(1,v.z/v.length)))
@@ -125,8 +126,13 @@ def spherical_blink(obj, rig):
         part="up" if upper else "low"
         variable.targets[0].data_path=f'pose.bones["CTRL_lid_{part}.{side}"].rotation_euler[0]'
         divisor=-math.radians(61) if upper else math.radians(40)
-        driver.expression=f"min(1,max(0,rotation/({divisor})*8-{step-1}))"
-        previous=key
+        # Weights cross-fade between neighbouring steps and always add up to at
+        # most 1, so the lid is interpolated along the sphere, never extrapolated.
+        closure=f"min(1,max(0,rotation/({divisor})))*8"
+        if step<8:
+            driver.expression=f"max(0,1-abs({closure}-{step}))"
+        else:
+            driver.expression=f"max(0,{closure}-7)"
 
 def mouth(rig):
     for name in ("GEO_mouth.L","GEO_mouth.R","GEO_mouth_inside","GEO_mouth_line"):

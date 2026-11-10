@@ -132,6 +132,29 @@ entre 10 y 20 s en aparecer. Era un artefacto de la prueba (la página se medía
 una pestaña oculta, donde el navegador pausa el render). Con la pestaña visible,
 en desarrollo y en local, el modelo aparece en menos de 1 s.
 
+## Corrección del parpadeo en el navegador
+
+El parpadeo se veía bien en Blender pero rompía la cara de NYX en la web: los
+párpados atravesaban la cabeza. Los ocho pasos eran claves relativas encadenadas
+(cada una respecto de la anterior). glTF no tiene claves encadenadas: exporta
+cada paso respecto de la malla base y el navegador las suma. Con el ojo cerrado
+los ocho pesos valían 1 y el párpado recorría 36 pasos en vez de 8.
+
+- `refine_phase2.py`: cada paso es ahora una posición absoluta respecto de
+  `Basis` y los drivers funden entre pasos vecinos, de modo que los pesos nunca
+  suman más de 1.
+- `check_glb_blink.py` (nuevo): reconstruye cada fotograma con la fórmula del
+  navegador (`base + Σ peso·delta`) leyendo los pesos del propio GLB y mide
+  cuánto se aleja el párpado de la esfera del ojo.
+
+| | Antes | Después |
+|---|---|---|
+| Desviación máxima del párpado (radio del ojo 0,168) | 0,5004 | 0,0003 |
+| Suma máxima de pesos | 8,00 | 1,00 |
+
+Resultado en `evidence/glb-blink-check.json`. La validación anterior
+(`validate_refinement.py`) solo comprobaba el `.blend`, por eso no lo detectó.
+
 ## Pendientes
 
 - Decidir qué clips se quedan: 16 botones es un catálogo de prueba, no un diseño.
