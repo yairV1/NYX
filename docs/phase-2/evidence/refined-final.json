@@ -1,0 +1,3514 @@
+{
+  "actions": [
+    {
+      "frame_end": 96.8,
+      "frame_start": 0.8,
+      "name": "Idle_Secondary",
+      "users": 10
+    }
+  ],
+  "blender": {
+    "background": true,
+    "build_hash": "d13f752e3b9c",
+    "version": "5.2.2 LTS",
+    "version_tuple": [
+      5,
+      2,
+      2
+    ]
+  },
+  "hard_gate_pass": true,
+  "input": "/home/yair/Proyectos/NYX/public/assets/nyx/models/nyx-v2-refined.glb",
+  "issues": [],
+  "material_details": [
+    {
+      "image_texture_nodes": 0,
+      "images": [],
+      "name": "M_bag",
+      "node_count": 4,
+      "use_nodes": true
+    },
+    {
+      "image_texture_nodes": 0,
+      "images": [],
+      "name": "M_bag_dark",
+      "node_count": 4,
+      "use_nodes": true
+    },
+    {
+      "image_texture_nodes": 0,
+      "images": [],
+      "name": "M_buckle",
+      "node_count": 4,
+      "use_nodes": true
+    },
+    {
+      "image_texture_nodes": 2,
+      "images": [
+        "NYX_eye"
+      ],
+      "name": "M_eye",
+      "node_count": 4,
+      "use_nodes": true
+    },
+    {
+      "image_texture_nodes": 2,
+      "images": [
+        "T_Nyx_fur",
+        "T_Nyx_normal"
+      ],
+      "name": "M_fur",
+      "node_count": 5,
+      "use_nodes": true
+    },
+    {
+      "image_texture_nodes": 0,
+      "images": [],
+      "name": "M_fur_vcol",
+      "node_count": 3,
+      "use_nodes": true
+    },
+    {
+      "image_texture_nodes": 0,
+      "images": [],
+      "name": "M_hoodie",
+      "node_count": 4,
+      "use_nodes": true
+    },
+    {
+      "image_texture_nodes": 0,
+      "images": [],
+      "name": "M_hoodie_dark",
+      "node_count": 4,
+      "use_nodes": true
+    },
+    {
+      "image_texture_nodes": 0,
+      "images": [],
+      "name": "M_mouth_inside",
+      "node_count": 2,
+      "use_nodes": true
+    },
+    {
+      "image_texture_nodes": 0,
+      "images": [],
+      "name": "M_mouth_line",
+      "node_count": 2,
+      "use_nodes": true
+    },
+    {
+      "image_texture_nodes": 0,
+      "images": [],
+      "name": "M_nose",
+      "node_count": 2,
+      "use_nodes": true
+    },
+    {
+      "image_texture_nodes": 0,
+      "images": [],
+      "name": "M_whisker",
+      "node_count": 2,
+      "use_nodes": true
+    },
+    {
+      "image_texture_nodes": 0,
+      "images": [],
+      "name": "M_white",
+      "node_count": 4,
+      "use_nodes": true
+    }
+  ],
+  "materials": [
+    "M_bag",
+    "M_bag_dark",
+    "M_buckle",
+    "M_eye",
+    "M_fur",
+    "M_fur_vcol",
+    "M_hoodie",
+    "M_hoodie_dark",
+    "M_mouth_inside",
+    "M_mouth_line",
+    "M_nose",
+    "M_whisker",
+    "M_white"
+  ],
+  "meshes": [
+    {
+      "boundary_edges": 5292,
+      "connected_components": 233,
+      "data_name": "GEO_Nyx_body",
+      "degenerate_faces": 0,
+      "edges": 31395,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_fur"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_Nyx_body",
+      "non_manifold_edges": 5292,
+      "polygons": 19166,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 19166,
+      "source_polygons": 19166,
+      "source_vertices": 12435,
+      "triangles": 19166,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 12435,
+      "weighted_vertices": 12435,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.840498,
+          -0.54586,
+          -0.015706
+        ],
+        [
+          0.962672,
+          0.723009,
+          3.215468
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 36,
+      "connected_components": 1,
+      "data_name": "GEO_aglet",
+      "degenerate_faces": 0,
+      "edges": 258,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_white"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_aglet",
+      "non_manifold_edges": 36,
+      "polygons": 160,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 160,
+      "source_polygons": 160,
+      "source_vertices": 99,
+      "triangles": 160,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 99,
+      "weighted_vertices": 99,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.126001,
+          -0.320496,
+          1.384175
+        ],
+        [
+          -0.094001,
+          -0.287105,
+          1.440833
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 36,
+      "connected_components": 1,
+      "data_name": "GEO_aglet.001",
+      "degenerate_faces": 0,
+      "edges": 258,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_white"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_aglet.001",
+      "non_manifold_edges": 36,
+      "polygons": 160,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 160,
+      "source_polygons": 160,
+      "source_vertices": 99,
+      "triangles": 160,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 99,
+      "weighted_vertices": 99,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          0.094001,
+          -0.32083,
+          1.384176
+        ],
+        [
+          0.126001,
+          -0.28744,
+          1.440835
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_backpack.001",
+      "degenerate_faces": 0,
+      "edges": 540,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_bag"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_backpack",
+      "non_manifold_edges": 0,
+      "polygons": 360,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 360,
+      "source_polygons": 360,
+      "source_vertices": 182,
+      "triangles": 360,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 182,
+      "weighted_vertices": 182,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.398914,
+          0.371223,
+          1.001082
+        ],
+        [
+          0.398215,
+          0.668357,
+          1.718903
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_backpack_pocket.001",
+      "degenerate_faces": 0,
+      "edges": 540,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_bag_dark"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_backpack_pocket",
+      "non_manifold_edges": 0,
+      "polygons": 360,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 360,
+      "source_polygons": 360,
+      "source_vertices": 182,
+      "triangles": 360,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 182,
+      "weighted_vertices": 182,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.249057,
+          0.6255,
+          1.050455
+        ],
+        [
+          0.249216,
+          0.7543,
+          1.389512
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_buckle.001",
+      "degenerate_faces": 0,
+      "edges": 540,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_buckle"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_buckle",
+      "non_manifold_edges": 0,
+      "polygons": 360,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 360,
+      "source_polygons": 360,
+      "source_vertices": 182,
+      "triangles": 360,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 182,
+      "weighted_vertices": 182,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.352485,
+          -0.2298,
+          1.33016
+        ],
+        [
+          -0.267634,
+          -0.208011,
+          1.389841
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_buckle.002",
+      "degenerate_faces": 0,
+      "edges": 540,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_buckle"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_buckle.001",
+      "non_manifold_edges": 0,
+      "polygons": 360,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 360,
+      "source_polygons": 360,
+      "source_vertices": 182,
+      "triangles": 360,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 182,
+      "weighted_vertices": 182,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          0.267515,
+          -0.230087,
+          1.33016
+        ],
+        [
+          0.352427,
+          -0.208299,
+          1.389842
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_eye.L",
+      "degenerate_faces": 0,
+      "edges": 1338,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_eye"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_eye.L",
+      "non_manifold_edges": 0,
+      "polygons": 892,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 892,
+      "source_polygons": 892,
+      "source_vertices": 448,
+      "triangles": 892,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 448,
+      "weighted_vertices": 448,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          0.040092,
+          -0.443915,
+          2.170022
+        ],
+        [
+          0.360057,
+          -0.124248,
+          2.489988
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_eye.R",
+      "degenerate_faces": 0,
+      "edges": 1338,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_eye"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_eye.R",
+      "non_manifold_edges": 0,
+      "polygons": 892,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 892,
+      "source_polygons": 892,
+      "source_vertices": 448,
+      "triangles": 892,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 448,
+      "weighted_vertices": 448,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.360081,
+          -0.444327,
+          2.170036
+        ],
+        [
+          -0.040002,
+          -0.124135,
+          2.489999
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_hood",
+      "degenerate_faces": 0,
+      "edges": 516,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_hoodie"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_hood",
+      "non_manifold_edges": 0,
+      "polygons": 344,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 344,
+      "source_polygons": 344,
+      "source_vertices": 172,
+      "triangles": 344,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 172,
+      "weighted_vertices": 172,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.421204,
+          -0.312398,
+          1.643661
+        ],
+        [
+          0.421175,
+          0.412398,
+          1.996321
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_hood_back",
+      "degenerate_faces": 0,
+      "edges": 972,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_hoodie"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_hood_back",
+      "non_manifold_edges": 0,
+      "polygons": 648,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 648,
+      "source_polygons": 648,
+      "source_vertices": 326,
+      "triangles": 648,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 326,
+      "weighted_vertices": 326,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.359772,
+          0.157307,
+          1.58461
+        ],
+        [
+          0.359772,
+          0.562725,
+          2.1554
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 2144,
+      "connected_components": 94,
+      "data_name": "GEO_hoodie.001",
+      "degenerate_faces": 0,
+      "edges": 16492,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_hoodie"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_hoodie",
+      "non_manifold_edges": 2144,
+      "polygons": 10280,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 10280,
+      "source_polygons": 10280,
+      "source_vertices": 6292,
+      "triangles": 10280,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 6292,
+      "weighted_vertices": 6292,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.815732,
+          -0.341209,
+          1.029575
+        ],
+        [
+          0.817592,
+          0.335689,
+          1.825133
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_hoodie_pocket.001",
+      "degenerate_faces": 0,
+      "edges": 273,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_hoodie"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_hoodie_pocket",
+      "non_manifold_edges": 0,
+      "polygons": 182,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 182,
+      "source_polygons": 182,
+      "source_vertices": 93,
+      "triangles": 182,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 93,
+      "weighted_vertices": 93,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.210056,
+          -0.348709,
+          1.09987
+        ],
+        [
+          0.209987,
+          -0.243585,
+          1.300072
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 68,
+      "connected_components": 1,
+      "data_name": "trim",
+      "degenerate_faces": 0,
+      "edges": 718,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_hoodie_dark"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_hoodie_trim_0",
+      "non_manifold_edges": 68,
+      "polygons": 456,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 456,
+      "source_polygons": 456,
+      "source_vertices": 263,
+      "triangles": 456,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 263,
+      "weighted_vertices": 263,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.824895,
+          -0.178803,
+          1.033155
+        ],
+        [
+          -0.559491,
+          0.089179,
+          1.210521
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 78,
+      "connected_components": 1,
+      "data_name": "trim.001",
+      "degenerate_faces": 0,
+      "edges": 480,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_hoodie_dark"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_hoodie_trim_1",
+      "non_manifold_edges": 78,
+      "polygons": 294,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 294,
+      "source_polygons": 294,
+      "source_vertices": 187,
+      "triangles": 294,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 187,
+      "weighted_vertices": 187,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.395129,
+          -0.320532,
+          1.009955
+        ],
+        [
+          0.398545,
+          0.34293,
+          1.138427
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 74,
+      "connected_components": 1,
+      "data_name": "trim.002",
+      "degenerate_faces": 0,
+      "edges": 532,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_hoodie_dark"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_hoodie_trim_2",
+      "non_manifold_edges": 74,
+      "polygons": 330,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 330,
+      "source_polygons": 330,
+      "source_vertices": 203,
+      "triangles": 330,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 203,
+      "weighted_vertices": 203,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.482527,
+          -0.203219,
+          1.718623
+        ],
+        [
+          0.486092,
+          0.202542,
+          1.832508
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 84,
+      "connected_components": 1,
+      "data_name": "trim.003",
+      "degenerate_faces": 0,
+      "edges": 708,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_hoodie_dark"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_hoodie_trim_3",
+      "non_manifold_edges": 84,
+      "polygons": 444,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 444,
+      "source_polygons": 444,
+      "source_vertices": 265,
+      "triangles": 444,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 265,
+      "weighted_vertices": 265,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          0.56347,
+          -0.180513,
+          1.033755
+        ],
+        [
+          0.826803,
+          0.089284,
+          1.197826
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 48,
+      "connected_components": 1,
+      "data_name": "GEO_lid_low.L",
+      "degenerate_faces": 0,
+      "edges": 2544,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_fur_vcol"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_lid_low.L.001",
+      "non_manifold_edges": 48,
+      "polygons": 1680,
+      "refinement_modifiers": [],
+      "shape_keys": 9,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 1680,
+      "source_polygons": 1680,
+      "source_vertices": 865,
+      "triangles": 1680,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 865,
+      "weighted_vertices": 865,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          0.10364,
+          -0.380439,
+          2.162008
+        ],
+        [
+          0.296363,
+          -0.187718,
+          2.192395
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 48,
+      "connected_components": 1,
+      "data_name": "GEO_lid_low.R",
+      "degenerate_faces": 0,
+      "edges": 2544,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_fur_vcol"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_lid_low.R.001",
+      "non_manifold_edges": 48,
+      "polygons": 1680,
+      "refinement_modifiers": [],
+      "shape_keys": 9,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 1680,
+      "source_polygons": 1680,
+      "source_vertices": 865,
+      "triangles": 1680,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 865,
+      "weighted_vertices": 865,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.296363,
+          -0.380545,
+          2.162008
+        ],
+        [
+          -0.10364,
+          -0.187825,
+          2.192395
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 48,
+      "connected_components": 1,
+      "data_name": "GEO_lid_up.L",
+      "degenerate_faces": 0,
+      "edges": 2544,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_fur_vcol"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_lid_up.L.001",
+      "non_manifold_edges": 48,
+      "polygons": 1680,
+      "refinement_modifiers": [],
+      "shape_keys": 9,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 1680,
+      "source_polygons": 1680,
+      "source_vertices": 865,
+      "triangles": 1680,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 865,
+      "weighted_vertices": 865,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          0.081207,
+          -0.40287,
+          2.448805
+        ],
+        [
+          0.318796,
+          -0.165284,
+          2.498012
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 48,
+      "connected_components": 1,
+      "data_name": "GEO_lid_up.R",
+      "degenerate_faces": 0,
+      "edges": 2544,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_fur_vcol"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_lid_up.R.001",
+      "non_manifold_edges": 48,
+      "polygons": 1680,
+      "refinement_modifiers": [],
+      "shape_keys": 9,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 1680,
+      "source_polygons": 1680,
+      "source_vertices": 865,
+      "triangles": 1680,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 865,
+      "weighted_vertices": 865,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.318796,
+          -0.402977,
+          2.448805
+        ],
+        [
+          -0.081207,
+          -0.165391,
+          2.498012
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 96,
+      "connected_components": 1,
+      "data_name": "GEO_lip_loops",
+      "degenerate_faces": 0,
+      "edges": 480,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_mouth_line"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_lip_loops",
+      "non_manifold_edges": 96,
+      "polygons": 288,
+      "refinement_modifiers": [],
+      "shape_keys": 3,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 288,
+      "source_polygons": 288,
+      "source_vertices": 192,
+      "triangles": 288,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 192,
+      "weighted_vertices": 192,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.114241,
+          -0.502993,
+          2.056188
+        ],
+        [
+          0.114241,
+          -0.501187,
+          2.151929
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 48,
+      "connected_components": 1,
+      "data_name": "GEO_mouth_cavity",
+      "degenerate_faces": 0,
+      "edges": 528,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_mouth_inside"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_mouth_cavity",
+      "non_manifold_edges": 48,
+      "polygons": 336,
+      "refinement_modifiers": [],
+      "shape_keys": 3,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 336,
+      "source_polygons": 336,
+      "source_vertices": 193,
+      "triangles": 336,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 193,
+      "weighted_vertices": 193,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.084001,
+          -0.502989,
+          2.069107
+        ],
+        [
+          0.084001,
+          -0.489988,
+          2.139508
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_nose",
+      "degenerate_faces": 0,
+      "edges": 324,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_nose"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_nose",
+      "non_manifold_edges": 0,
+      "polygons": 216,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 216,
+      "source_polygons": 216,
+      "source_vertices": 110,
+      "triangles": 216,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 110,
+      "weighted_vertices": 110,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.059014,
+          -0.571763,
+          2.16301
+        ],
+        [
+          0.059014,
+          -0.502135,
+          2.236998
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_paw_pad",
+      "degenerate_faces": 0,
+      "edges": 972,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_white"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_paw_pad",
+      "non_manifold_edges": 0,
+      "polygons": 648,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 648,
+      "source_polygons": 648,
+      "source_vertices": 326,
+      "triangles": 648,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 326,
+      "weighted_vertices": 326,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.074952,
+          -0.324123,
+          1.358001
+        ],
+        [
+          0.074952,
+          -0.284175,
+          1.482002
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_paw_toe",
+      "degenerate_faces": 0,
+      "edges": 972,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_white"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_paw_toe",
+      "non_manifold_edges": 0,
+      "polygons": 648,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 648,
+      "source_polygons": 648,
+      "source_vertices": 326,
+      "triangles": 648,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 326,
+      "weighted_vertices": 326,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.104981,
+          -0.322656,
+          1.458001
+        ],
+        [
+          -0.045019,
+          -0.292696,
+          1.532002
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_paw_toe.001",
+      "degenerate_faces": 0,
+      "edges": 972,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_white"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_paw_toe.001",
+      "non_manifold_edges": 0,
+      "polygons": 648,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 648,
+      "source_polygons": 648,
+      "source_vertices": 326,
+      "triangles": 648,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 326,
+      "weighted_vertices": 326,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.057981,
+          -0.325898,
+          1.493001
+        ],
+        [
+          0.001981,
+          -0.295938,
+          1.567002
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_paw_toe.002",
+      "degenerate_faces": 0,
+      "edges": 972,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_white"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_paw_toe.002",
+      "non_manifold_edges": 0,
+      "polygons": 648,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 648,
+      "source_polygons": 648,
+      "source_vertices": 326,
+      "triangles": 648,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 326,
+      "weighted_vertices": 326,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.001981,
+          -0.325915,
+          1.493001
+        ],
+        [
+          0.057981,
+          -0.295955,
+          1.567002
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 0,
+      "connected_components": 1,
+      "data_name": "GEO_paw_toe.003",
+      "degenerate_faces": 0,
+      "edges": 972,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_white"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_paw_toe.003",
+      "non_manifold_edges": 0,
+      "polygons": 648,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 648,
+      "source_polygons": 648,
+      "source_vertices": 326,
+      "triangles": 648,
+      "uv_layers": 0,
+      "vertex_groups": 89,
+      "vertices": 326,
+      "weighted_vertices": 326,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          0.045019,
+          -0.322839,
+          1.458001
+        ],
+        [
+          0.104981,
+          -0.292879,
+          1.532002
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 56,
+      "connected_components": 1,
+      "data_name": "GEO_pocket_trim",
+      "degenerate_faces": 0,
+      "edges": 532,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_hoodie_dark"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_pocket_trim",
+      "non_manifold_edges": 56,
+      "polygons": 336,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 336,
+      "source_polygons": 336,
+      "source_vertices": 197,
+      "triangles": 336,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 197,
+      "weighted_vertices": 197,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.230496,
+          -0.361067,
+          1.094944
+        ],
+        [
+          0.230494,
+          -0.252512,
+          1.348049
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 66,
+      "connected_components": 1,
+      "data_name": "GEO_strap",
+      "degenerate_faces": 0,
+      "edges": 549,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_bag_dark"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_strap",
+      "non_manifold_edges": 66,
+      "polygons": 344,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 344,
+      "source_polygons": 344,
+      "source_vertices": 206,
+      "triangles": 344,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 206,
+      "weighted_vertices": 206,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.322731,
+          -0.268562,
+          1.117284
+        ],
+        [
+          -0.287514,
+          0.405823,
+          1.853504
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 66,
+      "connected_components": 1,
+      "data_name": "GEO_strap.001",
+      "degenerate_faces": 0,
+      "edges": 549,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_bag_dark"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_strap.001",
+      "non_manifold_edges": 66,
+      "polygons": 344,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 344,
+      "source_polygons": 344,
+      "source_vertices": 206,
+      "triangles": 344,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 206,
+      "weighted_vertices": 206,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          0.287513,
+          -0.268531,
+          1.117226
+        ],
+        [
+          0.322602,
+          0.405823,
+          1.853457
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 52,
+      "connected_components": 1,
+      "data_name": "GEO_string",
+      "degenerate_faces": 0,
+      "edges": 506,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_white"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_string",
+      "non_manifold_edges": 52,
+      "polygons": 320,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 320,
+      "source_polygons": 320,
+      "source_vertices": 187,
+      "triangles": 320,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 187,
+      "weighted_vertices": 187,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.120452,
+          -0.313169,
+          1.438348
+        ],
+        [
+          -0.089551,
+          -0.260957,
+          1.641663
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 52,
+      "connected_components": 1,
+      "data_name": "GEO_string.001",
+      "degenerate_faces": 0,
+      "edges": 506,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_white"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_string.001",
+      "non_manifold_edges": 52,
+      "polygons": 320,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 320,
+      "source_polygons": 320,
+      "source_vertices": 187,
+      "triangles": 320,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 187,
+      "weighted_vertices": 187,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          0.089526,
+          -0.313506,
+          1.438315
+        ],
+        [
+          0.120475,
+          -0.260581,
+          1.641698
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 68,
+      "connected_components": 1,
+      "data_name": "GEO_whisker",
+      "degenerate_faces": 0,
+      "edges": 754,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_whisker"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_whisker",
+      "non_manifold_edges": 68,
+      "polygons": 480,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 480,
+      "source_polygons": 480,
+      "source_vertices": 275,
+      "triangles": 480,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 275,
+      "weighted_vertices": 275,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.650091,
+          -0.469693,
+          1.978867
+        ],
+        [
+          -0.129494,
+          -0.346371,
+          2.128029
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 68,
+      "connected_components": 1,
+      "data_name": "GEO_whisker.001",
+      "degenerate_faces": 0,
+      "edges": 754,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_whisker"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_whisker.001",
+      "non_manifold_edges": 68,
+      "polygons": 480,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 480,
+      "source_polygons": 480,
+      "source_vertices": 275,
+      "triangles": 480,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 275,
+      "weighted_vertices": 275,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.650072,
+          -0.483914,
+          2.13986
+        ],
+        [
+          -0.129604,
+          -0.36059,
+          2.178016
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 68,
+      "connected_components": 1,
+      "data_name": "GEO_whisker.002",
+      "degenerate_faces": 0,
+      "edges": 754,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_whisker"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_whisker.002",
+      "non_manifold_edges": 68,
+      "polygons": 480,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 480,
+      "source_polygons": 480,
+      "source_vertices": 275,
+      "triangles": 480,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 275,
+      "weighted_vertices": 275,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          -0.650067,
+          -0.484891,
+          2.192085
+        ],
+        [
+          -0.129076,
+          -0.361569,
+          2.30116
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 68,
+      "connected_components": 1,
+      "data_name": "GEO_whisker.003",
+      "degenerate_faces": 0,
+      "edges": 754,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_whisker"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_whisker.003",
+      "non_manifold_edges": 68,
+      "polygons": 480,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 480,
+      "source_polygons": 480,
+      "source_vertices": 275,
+      "triangles": 480,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 275,
+      "weighted_vertices": 275,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          0.129494,
+          -0.469969,
+          1.978868
+        ],
+        [
+          0.650091,
+          -0.346647,
+          2.128029
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 68,
+      "connected_components": 1,
+      "data_name": "GEO_whisker.004",
+      "degenerate_faces": 0,
+      "edges": 754,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_whisker"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_whisker.004",
+      "non_manifold_edges": 68,
+      "polygons": 480,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 480,
+      "source_polygons": 480,
+      "source_vertices": 275,
+      "triangles": 480,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 275,
+      "weighted_vertices": 275,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          0.129604,
+          -0.483762,
+          2.13986
+        ],
+        [
+          0.650072,
+          -0.360438,
+          2.178016
+        ]
+      ],
+      "zero_length_edges": 0
+    },
+    {
+      "boundary_edges": 68,
+      "connected_components": 1,
+      "data_name": "GEO_whisker.005",
+      "degenerate_faces": 0,
+      "edges": 754,
+      "flat_polygons": 0,
+      "invalid_vertices": 0,
+      "isolated_vertices": 0,
+      "material_slots": [
+        "M_whisker"
+      ],
+      "missing_material_faces": 0,
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE"
+        }
+      ],
+      "name": "GEO_whisker.005",
+      "non_manifold_edges": 68,
+      "polygons": 480,
+      "refinement_modifiers": [],
+      "shape_keys": 0,
+      "smooth_polygon_ratio": 1.0,
+      "smooth_polygons": 480,
+      "source_polygons": 480,
+      "source_vertices": 275,
+      "triangles": 480,
+      "uv_layers": 1,
+      "vertex_groups": 89,
+      "vertices": 275,
+      "weighted_vertices": 275,
+      "wire_edges": 0,
+      "world_bounds": [
+        [
+          0.129076,
+          -0.484386,
+          2.192085
+        ],
+        [
+          0.650067,
+          -0.361064,
+          2.30116
+        ]
+      ],
+      "zero_length_edges": 0
+    }
+  ],
+  "objects": [
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        1.80317,
+        1.26887,
+        3.231174
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_Nyx_body",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.032,
+        0.033391,
+        0.056659
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_aglet",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.032,
+        0.033391,
+        0.056659
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_aglet.001",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.797129,
+        0.297134,
+        0.717821
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_backpack",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.498274,
+        0.1288,
+        0.339057
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_backpack_pocket",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.084851,
+        0.021789,
+        0.05968
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_buckle",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.084911,
+        0.021789,
+        0.059681
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_buckle.001",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.319965,
+        0.319667,
+        0.319966
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_eye.L",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.320079,
+        0.320192,
+        0.319963
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_eye.R",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.842379,
+        0.724796,
+        0.35266
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_hood",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.719544,
+        0.405418,
+        0.57079
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_hood_back",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        1.633324,
+        0.676898,
+        0.795558
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_hoodie",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.420043,
+        0.105124,
+        0.200202
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_hoodie_pocket",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.265404,
+        0.267982,
+        0.177366
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_hoodie_trim_0",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.793674,
+        0.663462,
+        0.128472
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_hoodie_trim_1",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.968619,
+        0.405761,
+        0.113886
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_hoodie_trim_2",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.263332,
+        0.269797,
+        0.164072
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_hoodie_trim_3",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_lid_low.L",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "EMPTY"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.192723,
+        0.19272,
+        0.030386
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_lid_low.L.001",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_lid_low.R",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "EMPTY"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.192723,
+        0.19272,
+        0.030386
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_lid_low.R.001",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_lid_up.L",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "EMPTY"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.23759,
+        0.237586,
+        0.049207
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_lid_up.L.001",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_lid_up.R",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "EMPTY"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.23759,
+        0.237586,
+        0.049207
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_lid_up.R.001",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.228482,
+        0.001806,
+        0.095742
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_lip_loops",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.168001,
+        0.013001,
+        0.070401
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_mouth_cavity",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.118028,
+        0.069628,
+        0.073988
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_nose",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.149905,
+        0.039948,
+        0.124001
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_paw_pad",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.059962,
+        0.02996,
+        0.074
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_paw_toe",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.059962,
+        0.02996,
+        0.074
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_paw_toe.001",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.059962,
+        0.02996,
+        0.074
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_paw_toe.002",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.059962,
+        0.02996,
+        0.074
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_paw_toe.003",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.46099,
+        0.108554,
+        0.253105
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_pocket_trim",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.035217,
+        0.674385,
+        0.73622
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_strap",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.035089,
+        0.674354,
+        0.736231
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_strap.001",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.030901,
+        0.052212,
+        0.203315
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_string",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.030949,
+        0.052925,
+        0.203383
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_string.001",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.520597,
+        0.123322,
+        0.149162
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_whisker",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.520468,
+        0.123325,
+        0.038156
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_whisker.001",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.52099,
+        0.123322,
+        0.109075
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_whisker.002",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.520597,
+        0.123322,
+        0.149162
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_whisker.003",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.520468,
+        0.123325,
+        0.038156
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_whisker.004",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": null,
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        0.52099,
+        0.123322,
+        0.109075
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "GEO_whisker.005",
+      "parent": "RIG_Nyx",
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "MESH"
+    },
+    {
+      "action": "Idle_Secondary",
+      "collections": [
+        "Scene Collection"
+      ],
+      "dimensions": [
+        1.810092,
+        1.282987,
+        2.990103
+      ],
+      "hidden_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "RIG_Nyx",
+      "parent": null,
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform_is_finite": true,
+      "type": "ARMATURE"
+    }
+  ],
+  "scene": {
+    "bounds": {
+      "dimensions": [
+        1.80317,
+        1.326063,
+        3.231174
+      ],
+      "max": [
+        0.962672,
+        0.7543,
+        3.215468
+      ],
+      "min": [
+        -0.840498,
+        -0.571763,
+        -0.015706
+      ]
+    },
+    "fps": 24.0,
+    "frame_end": 250,
+    "frame_start": 1,
+    "name": "Scene"
+  },
+  "schema_version": 3,
+  "totals": {
+    "actions": 1,
+    "armatures": 1,
+    "bones": 89,
+    "boundary_edges": 8848,
+    "cameras": 0,
+    "constraints": 0,
+    "degenerate_faces": 0,
+    "edges": 80972,
+    "flat_polygons": 0,
+    "geometry_nodes_modifiers": 0,
+    "images": 3,
+    "invalid_vertices": 0,
+    "isolated_vertices": 0,
+    "lights": 0,
+    "materials": 13,
+    "mesh_objects": 40,
+    "missing_material_faces": 0,
+    "node_materials": 13,
+    "non_manifold_edges": 8848,
+    "objects": 45,
+    "polygons": 51032,
+    "refinement_modifiers": 0,
+    "rigid_body_objects": 0,
+    "shape_keys": 42,
+    "simulation_modifiers": 0,
+    "smooth_polygons": 51032,
+    "textured_materials": 2,
+    "triangles": 51032,
+    "uv_mapped_meshes": 21,
+    "vertices": 30276,
+    "weighted_meshes": 40,
+    "wire_edges": 0,
+    "zero_length_edges": 0
+  }
+}

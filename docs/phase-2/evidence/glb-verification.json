@@ -1,0 +1,20 @@
+{
+  "file": "public/assets/nyx/models/nyx-v2-refined.glb",
+  "bytes": 3316624,
+  "skins": [{ "name": "RIG_Nyx", "joints": 89 }],
+  "legacy_armature_NyxRig_present": false,
+  "scene_roots": ["RIG_Nyx"],
+  "meshes": 40,
+  "triangles": 51032,
+  "degenerate_faces_after_reimport": 0,
+  "zero_length_edges_after_reimport": 0,
+  "animations": ["Idle_Secondary"],
+  "animation_channels": { "translation": 89, "rotation": 89, "scale": 89, "weights": 4 },
+  "morph_targets": {
+    "GEO_lid_up.L": 8, "GEO_lid_up.R": 8, "GEO_lid_low.L": 8, "GEO_lid_low.R": 8,
+    "GEO_lip_loops": 2, "GEO_mouth_cavity": 2
+  },
+  "images": { "NYX_eye": 1024, "T_Nyx_fur": 1024, "T_Nyx_normal": 1024 },
+  "extensions": ["KHR_draco_mesh_compression", "KHR_materials_clearcoat", "KHR_materials_sheen"],
+  "method": "GLB JSON chunk parsed directly; geometry re-imported in a clean Blender 5.2.2 process."
+}
