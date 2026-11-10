@@ -1,6 +1,6 @@
 {
   "file": "public/assets/nyx/models/nyx-v2-refined.glb",
-  "bytes": 3316568,
+  "bytes": 3316624,
   "skins": [{ "name": "RIG_Nyx", "joints": 89 }],
   "legacy_armature_NyxRig_present": false,
   "scene_roots": ["RIG_Nyx"],

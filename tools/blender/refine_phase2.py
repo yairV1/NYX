@@ -43,6 +43,47 @@ def mesh_object(name, verts, faces, material, rig):
     set_head_weights(obj,rig)
     return obj
 
+LASH_SRGB=(.12,.09,.08)
+_fur_cache={}
+
+def fur_colors(obj, positions, center):
+    """One sRGB fur tone for the lid, taken from the tabby texture around the eye.
+    A ring just outside the socket is sampled (the rim itself is painted dark)
+    and only the lighter half is averaged, so forehead stripes crossing the ring
+    do not turn a whole lid dark."""
+    body=bpy.data.objects["GEO_Nyx_body"]
+    image=bpy.data.images["T_Nyx_fur"]
+    if "pixels" not in _fur_cache:
+        import numpy
+        width,height=image.size
+        pixels=numpy.empty(width*height*4,dtype=numpy.float32)
+        image.pixels.foreach_get(pixels)
+        _fur_cache["pixels"]=pixels.reshape(height,width,4)
+    pixels=_fur_cache["pixels"]
+    height,width=pixels.shape[:2]
+    uv=body.data.uv_layers["UVMap"].data
+    to_body=body.matrix_world.inverted()@obj.matrix_world
+    samples=[]
+    for step in range(48):
+        angle=2*math.pi*step/48
+        outside=center+Vector((math.cos(angle)*.24,-.17,math.sin(angle)*.24))
+        found,location,_normal,face=body.closest_point_on_mesh(to_body@outside)
+        if not found:
+            continue
+        polygon=body.data.polygons[face]
+        loop=min(polygon.loop_indices,
+                 key=lambda i:(body.data.vertices[body.data.loops[i].vertex_index].co-location).length_squared)
+        u,v=uv[loop].uv
+        x=min(width-1,max(0,int(u%1*width)))
+        y=min(height-1,max(0,int(v%1*height)))
+        samples.append(tuple(float(c) for c in pixels[y,x,:3]))
+    if len(samples)<8:
+        raise RuntimeError("Too few fur samples for "+obj.name)
+    samples.sort(key=sum)
+    light=samples[len(samples)//2:]
+    tone=tuple(sum(c[i] for c in light)/len(light) for i in range(3))
+    return [tone]*len(positions)
+
 def spherical_blink(obj, rig):
     side=obj.name[-1]
     upper="up" in obj.name
@@ -51,13 +92,16 @@ def spherical_blink(obj, rig):
     base=[v.co.copy() for v in obj.data.vertices]
     colors=obj.data.color_attributes.get("Col")
     if colors:
+        # Fur tone comes from the tabby texture around this eye, so the closed
+        # lid reads as fur instead of a flat grey disc. The lash line stays dark.
+        fur=fur_colors(obj,base,center)
         for index,item in enumerate(colors.data):
             vertex=index if colors.domain=="POINT" else obj.data.loops[index].vertex_index
             v=base[vertex]-center
             angle=math.degrees(math.acos(max(-1,min(1,v.z/v.length))))
             distance=abs(angle-(45 if upper else 145))
             ink=max(0,1-distance/1.2)
-            item.color=tuple(.32*(1-ink)+.025*ink for _ in range(3))+(1,)
+            item.color_srgb=tuple(c*(1-ink)+k*ink for c,k in zip(fur[vertex],LASH_SRGB))+(1,)
     obj.shape_key_add(name="Basis")
     previous=obj.data.shape_keys.key_blocks[0]
     set_head_weights(obj,rig)

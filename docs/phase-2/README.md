@@ -41,7 +41,7 @@ Los renders no validan todos los rangos de deformación.
 | Prioridad | Cambio | Motivo / estado |
 |---|---|---|
 | Imprescindible | Separar antiguo y actual al exportar | Implementado por selección explícita de colecciones y armadura |
-| Imprescindible | Validar cierre palpebral | Hecho: cierre esférico en 8 pasos, sin penetración en 9 etapas. Falta material de pelaje en el párpado |
+| Imprescindible | Validar cierre palpebral | Hecho: cierre esférico en 8 pasos, sin penetración en 9 etapas. Tono de pelaje aplicado al párpado |
 | Imprescindible | Boca y mejillas coordinadas | Hecho: bucles de quads, cavidad y claves Smile/MouthOpen. Mejillas sin correctivos |
 | Imprescindible | Normalizar contratos de acciones | Inventariadas; decidir y migrar nombres en Fase 3 |
 | Imprescindible | LOD y reducción manual de mallas | Hecho por decimación: 212 966 → 51 032 triángulos. Sin retopología manual |
@@ -173,7 +173,8 @@ antes de la corrección. Se conserva como línea base de las comparativas.
 
 ## Corrección de la Fase 2 — resultados (10 de noviembre de 2026)
 
-Candidato: `artifacts/phase-2/nyx-v2-refined-final.blend`.
+Candidato: `artifacts/phase-2/nyx-v2-refined-fur.blend` (generado con
+`refine_phase2.py` a partir de `nyx-v2-casa-nodo.blend`).
 GLB publicado: `public/assets/nyx/models/nyx-v2-refined.glb`.
 Verificación independiente en `evidence/glb-verification.json`.
 
@@ -182,9 +183,9 @@ Verificación independiente en `evidence/glb-verification.json`.
 | Triángulos del personaje | 212 966 | 51 032 |
 | Mallas | 42 | 40 |
 | Caras degeneradas / aristas de longitud cero | 192 / 192 | 0 / 0 |
-| Tamaño del GLB | 3 631 800 bytes | 3 316 568 bytes |
+| Tamaño del GLB | 3 631 800 bytes | 3 316 624 bytes |
 | Armaduras en el GLB | 1 (`RIG_Nyx`) | 1 (`RIG_Nyx`, 89 joints) |
-| Parpadeo | morph lineal | 8 pasos esféricos por párpado |
+| Parpadeo | morph lineal | 8 pasos esféricos por párpado, con tono de pelaje |
 | Boca | interior separado | bucles de quads + cavidad, `Smile` y `MouthOpen` |
 | Vulnerabilidades npm | 10 (1 crítica) | 0 |
 
@@ -212,7 +213,7 @@ Misma cámara por columna; fila superior antes, inferior después.
 Para regenerarlas:
 
 ```bash
-for pair in "before nyx-v2-casa-nodo" "after nyx-v2-refined-final"; do
+for pair in "before nyx-v2-casa-nodo" "after nyx-v2-refined-fur"; do
   set -- $pair
   blender --background --python-exit-code 1 artifacts/phase-2/$2.blend \
     --python tools/blender/render_geometry_review.py -- --out docs/phase-2/evidence/renders/$1
@@ -237,6 +238,10 @@ Con Next 16.4.6, three 0.187, React Three Fiber 9 y drei 10:
 - Móvil (390×844): sin desbordamiento horizontal y animación activa.
   **Defecto encontrado y corregido:** en vertical NYX quedaba fuera del encuadre
   inicial. `CasaNodoScene` aleja ahora la cámara en pantallas verticales.
+- Tras la corrección de párpados se repitió la prueba de escritorio: el
+  navegador recibe el GLB nuevo (3 316 624 bytes), la animación sigue activa y
+  no hay errores. El color del párpado se revisó en los renders de Blender y
+  en el atributo `COLOR_0` del GLB, no capturando un parpadeo en el navegador.
 - Consola: cero errores. Dos avisos de three 0.187 que no afectan al resultado:
   `THREE.Clock` obsoleto y `PCFSoftShadowMap` sustituido por `PCFShadowMap`.
 
@@ -247,9 +252,12 @@ Firefox, rendimiento en GPU de gama baja, lectores de pantalla.
 
 Visuales, visibles en las comparativas:
 
-- **Los párpados no tienen material de pelaje.** Cerrados se leen como discos
-  grises lisos con una línea. El cierre es correcto geométricamente, pero no
-  está terminado artísticamente.
+- **Párpados: corregido.** Antes se leían como discos grises porque el
+  refinado sobrescribía su color. Ahora `refine_phase2.py` toma un tono por ojo
+  de la textura atigrada, muestreando un anillo justo fuera de la cuenca y
+  promediando la mitad clara para que las rayas de la frente no oscurezcan el
+  párpado. Es un color por vértice uniforme: el párpado no continúa las rayas
+  ni usa el mapa de normales del pelaje. La línea de pestañas se mantiene oscura.
 - La sonrisa es muy sutil y no hay correctivos de mejilla ni cejas visibles.
 - La decimación automática deja triangulación irregular en cabeza y hoodie.
   Hay que revisarla en poses extremas; no sustituye a una retopología manual.
@@ -268,5 +276,5 @@ Técnicos:
 - La correspondencia del `.blend` fuente con la copia más reciente del autor
   continúa sin confirmar.
 
-Recomendación antes de la Fase 3: dar material de pelaje a los párpados y
-decidir si la decimación actual es aceptable o se hace retopología.
+Recomendación antes de la Fase 3: decidir si la decimación actual es
+aceptable o se hace retopología, y si el GLB debe bajar de 3 MB.
