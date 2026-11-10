@@ -52,7 +52,7 @@ export function SiteHeader() {
           <NyxLogo />
         </a>
 
-        <nav aria-label="Principal" className="hidden md:block">
+        <nav aria-label="Principal" className="hidden lg:block">
           <ul className="flex items-center gap-1">
             {navItems.map((item) => {
               const current = active === item.id;
@@ -61,14 +61,14 @@ export function SiteHeader() {
                   <a
                     href={`#${item.id}`}
                     aria-current={current ? "location" : undefined}
-                    className={`relative rounded-full px-4 py-2.5 text-sm font-medium transition-colors hover:text-starlight ${
+                    className={`label-tech relative rounded-md px-3.5 py-3 transition-colors hover:text-starlight ${
                       current ? "text-starlight" : "text-mist"
                     }`}
                   >
                     {item.label}
                     <span
                       aria-hidden
-                      className={`absolute inset-x-4 -bottom-0.5 h-px bg-signal transition-opacity ${
+                      className={`absolute inset-x-3.5 bottom-1 h-px bg-signal shadow-[0_0_8px_var(--color-signal)] transition-opacity ${
                         current ? "opacity-100" : "opacity-0"
                       }`}
                     />
@@ -81,7 +81,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex size-11 items-center justify-center rounded-full border border-line text-starlight md:hidden"
+          className="inline-flex size-11 items-center justify-center rounded-lg border border-line-strong text-starlight lg:hidden"
           aria-expanded={open}
           aria-controls={menuId}
           onClick={() => setOpen((value) => !value)}
@@ -109,7 +109,7 @@ export function SiteHeader() {
         id={menuId}
         aria-label="Principal, móvil"
         hidden={!open}
-        className="border-t border-line bg-void/95 md:hidden"
+        className="border-t border-line bg-void/95 lg:hidden"
       >
         <ul className="container-nyx flex flex-col py-3">
           {navItems.map((item) => (
@@ -118,7 +118,7 @@ export function SiteHeader() {
                 href={`#${item.id}`}
                 aria-current={active === item.id ? "location" : undefined}
                 onClick={() => setOpen(false)}
-                className="flex min-h-12 items-center border-b border-line/60 font-display text-lg text-starlight last:border-b-0 aria-[current]:text-signal"
+                className="flex min-h-12 items-center border-b border-line/60 font-display text-sm font-semibold tracking-[0.14em] text-starlight uppercase last:border-b-0 aria-[current]:text-signal"
               >
                 {item.label}
               </a>

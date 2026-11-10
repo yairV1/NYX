@@ -125,9 +125,12 @@ No verificado:
 - Los 16 clips uno por uno en el navegador; se probaron cuatro.
 - `prefers-reduced-motion` en un navegador real (solo revisado en código).
 - Dispositivo móvil real, Safari y Firefox.
-- Tiempo de carga en producción. En desarrollo NYX tardó entre 10 y 20 s en
-  aparecer aunque el GLB se descarga en menos de 1 s; no se midió si el coste
-  está en la decodificación Draco o en el modo desarrollo.
+- Tiempo de carga en producción ni en una red lenta.
+
+Corrección posterior: la primera versión de este documento decía que NYX tardaba
+entre 10 y 20 s en aparecer. Era un artefacto de la prueba (la página se medía en
+una pestaña oculta, donde el navegador pausa el render). Con la pestaña visible,
+en desarrollo y en local, el modelo aparece en menos de 1 s.
 
 ## Pendientes
 
@@ -141,6 +144,5 @@ No verificado:
 - Gesto de comisuras hacia abajo en la boca nueva.
 - En pantallas táctiles la escena captura el gesto de desplazamiento, así que
   cuesta pasar de la escena a los botones. Es anterior a esta fase.
-- Medir la carga en un build de producción y, si hace falta, quitar Draco de las
-  mallas pequeñas o precargar el decodificador.
+- Medir la carga en un build de producción y con red limitada.
 - Siguen abiertos los pendientes artísticos de la Fase 2 (decimación, mejillas).

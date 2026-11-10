@@ -26,3 +26,18 @@ Esta carpeta contiene los recursos gráficos compartidos por la web, NYX Studio 
 ## Pendiente
 
 Las imágenes oficiales aún no se han importado. Es necesario recopilar y confirmar los archivos originales (personaje, poses, logos, fondos) antes de sustituir los gráficos provisionales.
+
+## Renders del modelo 3D — 10 de noviembre de 2026
+
+`character/nyx-3d-idle.webp` y `character/nyx-3d-wave.webp` son renders de
+Blender del modelo 3D real de NYX (rig v2), con fondo transparente. Se generan
+con `tools/blender/render_poster.py` y se recortan a 640×1040.
+
+- `nyx-3d-idle.webp`: respaldo del hero. Se pinta con el HTML y da paso al
+  modelo en vivo cuando WebGL está listo; es lo único que ven quienes tienen
+  `prefers-reduced-motion` o un navegador sin WebGL.
+- `nyx-3d-wave.webp`: ilustra la sección de Casa Nodo.
+
+La landing ya no usa ilustraciones 2D del personaje: todo lo que se ve de NYX
+sale del mismo modelo 3D. Las rutas se registran en `src/content/nyx-assets.ts`
+y pasan por `withBase` para funcionar bajo `/NYX` en GitHub Pages.

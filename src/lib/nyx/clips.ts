@@ -1,3 +1,5 @@
+import { nyxAssets } from "@/content/nyx-assets";
+
 /**
  * Contrato de animaciones de NYX para la web.
  *
@@ -9,8 +11,9 @@
  * Solo se listan clips que existen en el GLB publicado. Ver docs/phase-3/README.md.
  */
 
-export const NYX_MODEL_URL = "/assets/nyx/models/nyx-v2-refined.glb";
-export const DRACO_DECODER_PATH = "/draco/";
+/** Rutas con el basePath de GitHub Pages ya aplicado. */
+export const NYX_MODEL_URL = nyxAssets.model;
+export const DRACO_DECODER_PATH = nyxAssets.dracoDecoder;
 
 /** Ciclo de reposo: el único clip en bucle. */
 export const IDLE_CLIP = "Idle_Secondary";

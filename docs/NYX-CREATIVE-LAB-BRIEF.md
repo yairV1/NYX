@@ -6,6 +6,8 @@
 NYX es un ecosistema creativo y tecnológico impulsado por IA. NYX Studio combinará generación asistida con IA y edición visual intuitiva (como Figma, pero accesible). El estilo visual es inmersivo, futurista y elegante. La web pública debe presentar el personaje, la historia auténtica del proyecto, las capacidades existentes y las que están en desarrollo. No simular funcionalidades que aún no existen.
 
 ## Personaje
+Referencia visual prioritaria aportada por el autor: `docs/references/nyx-identity.png`. Mantener cabeza grande, ojos redondos verde-amarillos, cuerpo compacto, patas felinas cortas y cola atigrada. El acabado 3D debe preservar estas proporciones. Evitar manos humanas y silueta humana alargada.
+
 Gato atigrado gris/marrón de rayas oscuras, ojos verdes, nariz rosada, sudadera azul marino con huella blanca y cordones, mochila morada. Mantener identidad consistente; activos oficiales sólo si cuentan con autorización/licencia y calidad suficiente. Futuro modelo 3D: preparar integración sin imponerla en el MVP.
 
 ## Dirección visual
@@ -41,3 +43,6 @@ Gato atigrado gris/marrón de rayas oscuras, ojos verdes, nariz rosada, sudadera
 - ChatGPT: especificación de UX/UI, criterios, revisión de cambios del PR en GitHub.
 - Claude Code local: inspección técnica, implementación, pruebas, reporte y commits sobre la rama de feature.
 - GitHub: fuente de verdad para tareas, código y revisiones. No existe aún conexión directa y autónoma entre ChatGPT y una sesión de Claude; usar este documento y PRs como canal compartido.
+
+## Dirección aprobada — Fase 2
+Casa Nodo es el hogar principal. Se evoluciona Nyx_rig v2 antropomórfico; audífonos solo en concentración. Esta decisión posterior del autor gobierna la evolución 3D. Ver `docs/phase-2/README.md`.
