@@ -22,6 +22,7 @@ def main():
     p.add_argument("--action", action="append", default=[])
     p.add_argument("--image-format", choices=("AUTO","WEBP"), default="AUTO")
     p.add_argument("--only-lids", action="store_true")
+    p.add_argument("--image-quality", type=int, default=90)
     a = p.parse_args(sys.argv[sys.argv.index("--")+1:])
     output = Path(a.out).resolve()
     if output.exists():
@@ -90,10 +91,11 @@ def main():
         export_optimize_animation_size=True,
         export_def_bones=True, export_skins=True, export_morph=True,
         export_apply=False, export_all_influences=False, export_influence_nb=4,
-        export_image_format=a.image_format, export_yup=True, export_materials="EXPORT",
+        export_image_format=a.image_format, export_image_quality=a.image_quality, export_yup=True, export_materials="EXPORT",
         export_draco_mesh_compression_enable=a.draco,
         export_draco_mesh_compression_level=6,
-        export_draco_position_quantization=14, export_draco_normal_quantization=10)
+        export_draco_position_quantization=14, export_draco_normal_quantization=10,
+        export_draco_texcoord_quantization=14)
     props = bpy.ops.export_scene.gltf.get_rna_type().properties.keys()
     missing = set(options)-set(props)
     if missing:

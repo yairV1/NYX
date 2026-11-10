@@ -116,7 +116,11 @@ export default function CasaNodoScene({ warm, request, onReady, onClipEnd, onSel
       <pointLight position={[-2,2,-1]} intensity={14} color="#7C3AED" distance={6} />
       <pointLight position={[2,2,-1.5]} intensity={9} color="#06B6D4" distance={5} />
       <Room warm={warm} />
-      <Suspense fallback={null}><NyxModel reducedMotion={reducedMotion} request={request} onReady={onReady} onClipEnd={onClipEnd} onSelect={onSelect} /></Suspense>
+      <Suspense fallback={null}>
+        <group position={[-1.65, .02, .4]} rotation={[0, .2, 0]} scale={.42}>
+          <NyxModel reducedMotion={reducedMotion} request={request} onReady={onReady} onClipEnd={onClipEnd} onSelect={onSelect} />
+        </group>
+      </Suspense>
       <ResponsiveFraming />
       <OrbitControls target={CAMERA_TARGET} minDistance={3} maxDistance={12} maxPolarAngle={Math.PI/2.05} enablePan={false} />
     </Canvas>

@@ -1,0 +1,75 @@
+{
+  "file": "/tmp/claude-1000/-home-yair-Escritorio-code-Nyx/da6277af-24e8-46af-8d8c-7e40ae467e6f/scratchpad/final.glb",
+  "clips": {
+    "Idle_Secondary": {
+      "worst_radius_error": 0.00030602383817149303,
+      "max_weight_sum": 1.0
+    },
+    "Wave": {
+      "worst_radius_error": 0.00030929946384264384,
+      "max_weight_sum": 1.0
+    },
+    "Point": {
+      "worst_radius_error": 1.0702042065574568e-05,
+      "max_weight_sum": 0.0
+    },
+    "Happy": {
+      "worst_radius_error": 0.00030969325109958534,
+      "max_weight_sum": 1.0000001192092896
+    },
+    "Curious": {
+      "worst_radius_error": 1.0702042065574568e-05,
+      "max_weight_sum": 0.0
+    },
+    "LookAround": {
+      "worst_radius_error": 1.0702042065574568e-05,
+      "max_weight_sum": 0.0
+    },
+    "Thinking": {
+      "worst_radius_error": 1.0702042065574568e-05,
+      "max_weight_sum": 0.0
+    },
+    "Surprised": {
+      "worst_radius_error": 1.0702042065574568e-05,
+      "max_weight_sum": 0.0
+    },
+    "Confused": {
+      "worst_radius_error": 1.0702042065574568e-05,
+      "max_weight_sum": 0.0
+    },
+    "Sad": {
+      "worst_radius_error": 0.00031000005013645526,
+      "max_weight_sum": 1.0000001192092896
+    },
+    "Angry": {
+      "worst_radius_error": 0.00030611725946808055,
+      "max_weight_sum": 1.0000001192092896
+    },
+    "Tired": {
+      "worst_radius_error": 0.00030727221769111246,
+      "max_weight_sum": 1.0000001192092896
+    },
+    "Laughing": {
+      "worst_radius_error": 0.0003068708561965172,
+      "max_weight_sum": 1.0
+    },
+    "Wink": {
+      "worst_radius_error": 0.00029920609983127844,
+      "max_weight_sum": 1.0
+    },
+    "Celebrating": {
+      "worst_radius_error": 0.00030611725946808055,
+      "max_weight_sum": 1.0000001192092896
+    },
+    "Talking": {
+      "worst_radius_error": 0.0002673415758029374,
+      "max_weight_sum": 1.0
+    },
+    "Blink": {
+      "worst_radius_error": 0.00023487129863636325,
+      "max_weight_sum": 1.0
+    }
+  },
+  "worst_radius_error": 0.00031000005013645526,
+  "max_weight_sum": 1.0000001192092896
+}

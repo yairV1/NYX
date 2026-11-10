@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Orbitron } from "next/font/google";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -10,8 +10,9 @@ const inter = Inter({
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+// Tipografía de la hoja de identidad del autor: Orbitron (títulos) e Inter (textos).
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
   subsets: ["latin"],
   display: "swap",
 });
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#080b16",
+  themeColor: "#070a14",
   colorScheme: "dark",
 };
 
@@ -34,7 +35,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
   return (
     <html
       lang="es"
-      className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}
+      className={`${inter.variable} ${orbitron.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>

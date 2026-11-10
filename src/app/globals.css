@@ -1,26 +1,33 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ */
-/* Tokens NYX (docs/NYX-CREATIVE-LAB-BRIEF.md)                          */
+/* Sistema visual NYX                                                   */
+/* Paleta y tipografía de la hoja de identidad del autor                */
+/* (docs/references/nyx-identity.png): violeta, índigo, cian, esmeralda */
+/* sobre azul noche; Orbitron para títulos e Inter para texto.          */
 /* ------------------------------------------------------------------ */
 @theme inline {
-  --color-void: #080b16;
-  --color-nebula: #151b35;
+  --color-void: #070a14;
+  --color-nebula: #0f172a;
   --color-violet: #7c3aed;
-  --color-signal: #22d3ee;
-  --color-starlight: #f5f7ff;
+  --color-indigo: #6366f1;
+  --color-cyan: #06b6d4;
+  --color-emerald: #10b981;
+  --color-starlight: #eef1fb;
 
-  /* Derivados para texto y superficies con contraste AA sobre void */
+  /* Derivados con contraste AA para texto sobre void */
+  --color-signal: #22d3ee;
   --color-violet-soft: #b9a2ff;
-  --color-mist: #b4bbd6;
-  --color-line: rgb(245 247 255 / 0.1);
-  --color-surface: rgb(21 27 53 / 0.6);
+  --color-mist: #a9b2cf;
+  --color-line: rgb(148 163 255 / 0.14);
+  --color-line-strong: rgb(148 163 255 / 0.28);
+  --color-surface: rgb(15 23 42 / 0.66);
 
   --font-sans:
     var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, sans-serif;
   --font-display:
-    var(--font-space-grotesk), var(--font-inter), ui-sans-serif, system-ui,
+    var(--font-orbitron), var(--font-inter), ui-sans-serif, system-ui,
     sans-serif;
 
   --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -37,10 +44,18 @@ html {
 }
 
 body {
-  background: var(--color-void);
   color: var(--color-starlight);
   font-family: var(--font-sans);
   overflow-x: clip;
+  background-color: var(--color-void);
+  /* Atmósfera continua: dos halos y una rejilla técnica muy tenue. */
+  background-image:
+    radial-gradient(ellipse 60% 32rem at 78% 0%, rgb(124 58 237 / 0.2), transparent),
+    radial-gradient(ellipse 50% 28rem at 6% 22rem, rgb(6 182 212 / 0.1), transparent),
+    linear-gradient(rgb(148 163 255 / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(148 163 255 / 0.035) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 72px 72px, 72px 72px;
+  background-repeat: no-repeat, no-repeat, repeat, repeat;
 }
 
 ::selection {
@@ -55,11 +70,11 @@ body {
 }
 
 /* ------------------------------------------------------------------ */
-/* Utilidades de marca                                                  */
+/* Utilidades del sistema                                               */
 /* ------------------------------------------------------------------ */
 @utility container-nyx {
   width: 100%;
-  max-width: 82rem;
+  max-width: 84rem;
   margin-inline: auto;
   padding-inline: clamp(1.25rem, 5vw, 4rem);
 }
@@ -67,8 +82,8 @@ body {
 @utility text-gradient-nyx {
   background-image: linear-gradient(
     100deg,
-    var(--color-starlight) 10%,
-    var(--color-violet-soft) 55%,
+    var(--color-violet-soft) 0%,
+    var(--color-indigo) 45%,
     var(--color-signal) 100%
   );
   -webkit-background-clip: text;
@@ -76,127 +91,182 @@ body {
   color: transparent;
 }
 
+/* Etiqueta técnica: el «microtexto» de interfaz que une toda la página. */
+@utility label-tech {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Panel de cristal: la superficie única para tarjetas y ventanas. */
+@utility panel {
+  position: relative;
+  border: 1px solid var(--color-line);
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(160deg, rgb(148 163 255 / 0.08), rgb(148 163 255 / 0.015) 55%),
+    var(--color-surface);
+  backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.05);
+}
+
+/* Compatibilidad con Casa Nodo y componentes anteriores. */
 @utility glass {
-  background: linear-gradient(
-    160deg,
-    rgb(245 247 255 / 0.07),
-    rgb(245 247 255 / 0.02)
-  );
+  background: linear-gradient(160deg, rgb(148 163 255 / 0.08), rgb(148 163 255 / 0.015));
   border: 1px solid var(--color-line);
   backdrop-filter: blur(14px);
 }
 
-/* ------------------------------------------------------------------ */
-/* Escena Creative Lab                                                  */
-/* ------------------------------------------------------------------ */
-.lab-scene {
-  --px: 0;
-  --py: 0;
-  position: relative;
-  isolation: isolate;
-}
-
-/* Cada capa se desplaza según su profundidad (--depth, en px). */
-.lab-layer {
+/* Esquinas de visor: dos escuadras luminosas en diagonal. */
+.hud-corners::before,
+.hud-corners::after {
+  content: "";
   position: absolute;
-  inset: 0;
-  translate: calc(var(--px) * var(--depth, 0px))
-    calc(var(--py) * var(--depth, 0px));
-  transition: translate 0.5s var(--ease-out-soft);
+  width: 1.1rem;
+  height: 1.1rem;
   pointer-events: none;
+  border-color: var(--color-signal);
+  opacity: 0.85;
 }
 
-.lab-glow {
-  background:
-    radial-gradient(
-      42% 40% at 52% 46%,
-      rgb(124 58 237 / 0.5),
-      transparent 70%
-    ),
-    radial-gradient(
-      34% 30% at 76% 68%,
-      rgb(34 211 238 / 0.22),
-      transparent 70%
-    ),
-    radial-gradient(60% 55% at 50% 55%, rgb(21 27 53 / 0.9), transparent 75%);
-  filter: blur(6px);
+.hud-corners::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  border-top-left-radius: 1.25rem;
 }
 
-.lab-stars {
-  background-image:
-    radial-gradient(1.2px 1.2px at 12% 18%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 28% 62%, #fff 50%, transparent 51%),
-    radial-gradient(1.4px 1.4px at 44% 9%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 63% 24%, #fff 50%, transparent 51%),
-    radial-gradient(1.2px 1.2px at 81% 12%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 91% 44%, #fff 50%, transparent 51%),
-    radial-gradient(1.3px 1.3px at 7% 78%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 72% 86%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 36% 34%, #fff 50%, transparent 51%),
-    radial-gradient(1.1px 1.1px at 55% 71%, #fff 50%, transparent 51%);
-  opacity: 0.55;
+.hud-corners::after {
+  right: -1px;
+  bottom: -1px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  border-bottom-right-radius: 1.25rem;
 }
 
-.lab-floor {
-  inset: auto -20% -6% -20%;
-  height: 46%;
-  background-image:
-    linear-gradient(rgb(34 211 238 / 0.5) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(150 110 255 / 0.5) 1px, transparent 1px);
-  background-size: 44px 44px;
-  transform: perspective(520px) rotateX(58deg);
-  transform-origin: 50% 100%;
-  mask-image: radial-gradient(70% 100% at 50% 100%, #000 15%, transparent 80%);
+.panel-interactive {
+  transition:
+    border-color 0.25s,
+    transform 0.25s var(--ease-out-soft),
+    box-shadow 0.25s;
 }
 
-.lab-ring {
-  position: absolute;
-  left: 50%;
-  top: 46%;
-  width: 74%;
-  aspect-ratio: 1;
-  translate: -50% -50%;
-  border-radius: 50%;
+.panel-interactive:hover,
+.panel-interactive:focus-visible {
+  border-color: rgb(34 211 238 / 0.55);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.06),
+    0 24px 60px -30px rgb(99 102 241 / 0.8);
 }
 
-.lab-ring--outer {
-  background: conic-gradient(
-    from 0deg,
-    transparent 0 12%,
-    rgb(34 211 238 / 0.9) 22%,
-    transparent 34% 58%,
-    rgb(124 58 237 / 0.95) 72%,
-    transparent 86%
-  );
-  mask-image: radial-gradient(
-    closest-side,
-    transparent calc(100% - 2px),
-    #000 calc(100% - 1.5px)
-  );
-}
-
-.lab-ring--inner {
-  width: 58%;
-  border: 1px dashed rgb(245 247 255 / 0.22);
-}
-
-.lab-ring--core {
-  width: 50%;
-  background: radial-gradient(
-    closest-side,
-    rgb(124 58 237 / 0.35),
-    rgb(21 27 53 / 0.55) 60%,
+/* Línea de separación con nodo luminoso. */
+.rule-glow {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-line-strong) 15%,
+    rgb(34 211 238 / 0.6) 50%,
+    var(--color-line-strong) 85%,
     transparent
   );
 }
 
-.lab-panel {
+/* ------------------------------------------------------------------ */
+/* Escenario del hero                                                   */
+/* ------------------------------------------------------------------ */
+.stage {
+  position: relative;
+  isolation: isolate;
+}
+
+.stage-beam {
   position: absolute;
-  border-radius: 14px;
-  padding: 10px;
-  box-shadow:
-    0 20px 40px -18px rgb(0 0 0 / 0.7),
-    inset 0 1px 0 rgb(245 247 255 / 0.08);
+  inset: 4% 22% 14%;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse 50% 50% at 50% 55%,
+    rgb(124 58 237 / 0.42),
+    rgb(99 102 241 / 0.16) 45%,
+    transparent 72%
+  );
+  filter: blur(18px);
+}
+
+.stage-floor {
+  position: absolute;
+  left: 50%;
+  bottom: 6%;
+  z-index: -1;
+  width: 78%;
+  aspect-ratio: 3.4;
+  translate: -50% 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(closest-side, rgb(34 211 238 / 0.32), transparent 72%),
+    repeating-radial-gradient(
+      closest-side,
+      transparent 0 18%,
+      rgb(34 211 238 / 0.35) 18.6% 19.4%,
+      transparent 20% 34%
+    );
+  box-shadow: 0 0 60px -6px rgb(34 211 238 / 0.45);
+}
+
+.stage-orbit {
+  position: absolute;
+  left: 50%;
+  top: 47%;
+  z-index: -1;
+  width: 86%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  border: 1px dashed rgb(148 163 255 / 0.2);
+}
+
+.stage-orbit--arc {
+  width: 70%;
+  border: 0;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0 14%,
+    rgb(34 211 238 / 0.9) 22%,
+    transparent 32% 60%,
+    rgb(124 58 237 / 0.95) 72%,
+    transparent 84%
+  );
+  mask-image: radial-gradient(closest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px));
+}
+
+.stage-scan {
+  position: absolute;
+  inset-inline: 12%;
+  top: 8%;
+  height: 12%;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, rgb(34 211 238 / 0.05) 80%, rgb(34 211 238 / 0.32));
+  opacity: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Cinta de lema                                                        */
+/* ------------------------------------------------------------------ */
+.ticker {
+  display: flex;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.ticker-track {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 3rem;
 }
 
 /* ------------------------------------------------------------------ */
@@ -218,7 +288,7 @@ body {
 
 @keyframes float-y {
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 }
 
@@ -228,26 +298,30 @@ body {
   }
 }
 
-@keyframes breathe {
-  50% {
-    transform: translateY(-4px) scale(1.008);
+@keyframes scan {
+  0% {
+    transform: translateY(-40%);
+    opacity: 0;
   }
-}
-
-@keyframes blink {
-  0%,
-  93%,
+  12%,
+  70% {
+    opacity: 1;
+  }
   100% {
-    transform: scaleY(1);
-  }
-  96% {
-    transform: scaleY(0.08);
+    transform: translateY(620%);
+    opacity: 0;
   }
 }
 
-@keyframes twinkle {
+@keyframes pulse-dot {
   50% {
-    opacity: 0.25;
+    opacity: 0.35;
+  }
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-100%);
   }
 }
 
@@ -263,7 +337,6 @@ body {
     scroll-behavior: smooth;
   }
 
-  /* Entrada progresiva del hero: --i define el orden. */
   .enter {
     animation: enter-up 0.8s var(--ease-out-soft) both;
     animation-delay: calc(var(--i, 0) * 90ms + 80ms);
@@ -279,230 +352,40 @@ body {
     animation-delay: var(--float-delay, 0s);
   }
 
-  .lab-ring--outer {
-    animation: spin 28s linear infinite;
+  .stage-orbit {
+    animation: spin 70s linear infinite reverse;
   }
 
-  .lab-ring--inner {
-    animation: spin 60s linear infinite reverse;
+  .stage-orbit--arc {
+    animation: spin 26s linear infinite;
   }
 
-  .lab-stars {
-    animation: twinkle 6s ease-in-out infinite;
+  .stage-scan {
+    animation: scan 7s ease-in-out infinite;
+    animation-delay: 1.2s;
   }
 
-  .nyx-breathe {
-    animation: breathe 5.5s ease-in-out infinite;
-    transform-origin: 50% 100%;
-    transform-box: fill-box;
+  .pulse-dot {
+    animation: pulse-dot 2.4s ease-in-out infinite;
   }
 
-  .nyx-blink {
-    animation: blink 6.5s ease-in-out infinite;
-    transform-origin: center;
-    transform-box: fill-box;
+  .ticker-track {
+    animation: ticker 38s linear infinite;
+  }
+
+  .panel-interactive:hover {
+    transform: translateY(-4px);
   }
 
   /*
    * Revelado al hacer scroll sin JavaScript (scroll-driven animations).
-   * Mejora progresiva: donde no hay soporte, el contenido simplemente
-   * se muestra, por lo que nunca queda oculto ni bloquea la lectura.
+   * Mejora progresiva: donde no hay soporte, el contenido se muestra tal cual.
    */
   @supports (animation-timeline: view()) {
     .reveal {
       animation: reveal-up linear both;
       animation-timeline: view();
-      animation-range: entry 5% cover 24%;
+      animation-range: entry 5% cover 22%;
     }
   }
-}
-
-
-/* Visual refinement: deliberate contrast, atmosphere and responsive polish */
-.nyx-hero::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 9rem;
-  pointer-events: none;
-  background: linear-gradient(to bottom, transparent, var(--color-void));
-}
-
-.nyx-hero .lab-scene {
-  filter: drop-shadow(0 18px 65px rgb(124 58 237 / 0.12));
-}
-
-.nyx-hero .lab-scene::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 10% 2%;
-  border-radius: 50%;
-  background: radial-gradient(ellipse, rgb(124 58 237 / 0.24), transparent 68%);
-  filter: blur(38px);
-  pointer-events: none;
-}
-
-.lab-scene-label {
-  font-family: var(--font-display);
-  font-size: clamp(0.48rem, 0.7vw, 0.65rem);
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  color: var(--color-mist);
-  opacity: 0.75;
-}
-
-.lab-scene-label span {
-  margin-left: 0.65rem;
-  color: var(--color-signal);
-}
-
-.nyx-scroll-cue {
-  position: absolute;
-  bottom: 1.75rem;
-  left: clamp(1.25rem, 5vw, 4rem);
-  align-items: center;
-  gap: 0.8rem;
-  color: var(--color-mist);
-  font-family: var(--font-display);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  transition: color 180ms ease;
-}
-
-.nyx-scroll-cue:hover {
-  color: var(--color-signal);
-}
-
-.nyx-scroll-line {
-  display: block;
-  height: 1px;
-  width: 2.5rem;
-  background: linear-gradient(90deg, var(--color-signal), transparent);
-}
-
-.nyx-feature-card,
-.nyx-ecosystem-card {
-  transition: border-color 220ms ease, background-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
-}
-
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .nyx-feature-card:hover,
-  .nyx-ecosystem-card:hover {
-    transform: translateY(-5px);
-    border-color: rgb(185 162 255 / 0.42);
-    box-shadow: 0 20px 48px -32px rgb(124 58 237 / 0.55);
-  }
-}
-
-.nyx-ecosystem-card:nth-child(2) {
-  background: linear-gradient(155deg, rgb(124 58 237 / 0.13), rgb(21 27 53 / 0.6) 62%);
-  border-color: rgb(185 162 255 / 0.22);
-}
-
-@media (max-width: 639px) {
-  .lab-scene-label {
-    font-size: 0.46rem;
-    letter-spacing: 0.1em;
-  }
-}
-
-
-/* Ambient background asset shared across the complete landing page. */
-body {
-  background-image: radial-gradient(ellipse 70% 25% at 75% 4%, rgb(124 58 237 / .16), transparent), radial-gradient(ellipse 55% 20% at 10% 18%, rgb(34 211 238 / .08), transparent);
-  background-position: center top;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-}
-
-
-/* NYX premium visual system — cinematic sections and studio */
-.nyx-hero {
-  background: radial-gradient(ellipse 75% 70% at 72% 40%, rgb(90 35 185 / .18), transparent 75%);
-}
-.nyx-hero::before {
-  content: "NYX";
-  position: absolute;
-  top: 10%;
-  right: -2%;
-  font-family: var(--font-display);
-  font-size: clamp(12rem, 30vw, 36rem);
-  font-weight: 800;
-  letter-spacing: -.12em;
-  line-height: 1;
-  color: rgb(245 247 255 / .018);
-  pointer-events: none;
-}
-.nyx-feature-card { position: relative; overflow: hidden; min-height: 15rem; }
-.nyx-feature-card::before {
-  content: ""; position: absolute; inset: 0 0 auto; height: 2px;
-  background: linear-gradient(90deg, var(--color-signal), var(--color-violet-soft), transparent);
-  opacity: .65;
-}
-.nyx-feature-card:nth-child(2) { background: linear-gradient(145deg, rgb(124 58 237 / .18), rgb(21 27 53 / .35)); }
-.nyx-ecosystem-card { min-height: 20rem; justify-content: flex-end; }
-.nyx-ecosystem-card::after {
-  content: "✦"; position: absolute; top: 1.5rem; right: 1.5rem;
-  font-size: 4.5rem; line-height: 1; color: rgb(185 162 255 / .12);
-  transition: transform .3s ease, color .3s ease;
-}
-.nyx-ecosystem-card:hover::after { transform: rotate(22deg) scale(1.15); color: rgb(34 211 238 / .2); }
-.nyx-studio-section {
-  background: radial-gradient(ellipse 60% 50% at 55% 45%, rgb(124 58 237 / .17), transparent 85%), #0b1021;
-}
-.nyx-studio-shell {
-  overflow: hidden; border: 1px solid rgb(185 162 255 / .28);
-  border-radius: 1.5rem;
-  background: #101629;
-  box-shadow: 0 60px 120px -55px rgb(124 58 237 / .5), 0 12px 40px rgb(0 0 0 / .35), inset 0 1px rgb(255 255 255 / .09);
-}
-.nyx-studio-topbar {
-  display: flex; justify-content: space-between; align-items: center;
-  gap: 1rem; padding: .95rem 1.3rem; background: #171d33;
-  border-bottom: 1px solid rgb(255 255 255 / .09);
-}
-.nyx-studio-workspace { display: grid; grid-template-columns: 4.5rem minmax(0,1fr) 13rem; min-height: 30rem; }
-.nyx-studio-tools { display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 1.5rem .5rem; border-right: 1px solid rgb(255 255 255 / .09); }
-.nyx-studio-tools span { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: .7rem; font-size: 1.2rem; color: #9ba5c9; }
-.nyx-studio-tools .nyx-tool-active { background: rgb(124 58 237 / .3); color: #22d3ee; border: 1px solid rgb(185 162 255 / .35); }
-.nyx-studio-canvas { min-width: 0; padding: clamp(.75rem, 3vw, 2.5rem); background-color: #0a0e1c; background-image: radial-gradient(rgb(255 255 255 / .1) 1px, transparent 1px); background-size: 22px 22px; }
-.nyx-studio-canvas-inner {
-  position: relative; display: flex; align-items: center; min-height: 25rem; height: 100%;
-  padding: clamp(1.5rem, 5vw, 4rem); overflow: hidden; isolation: isolate;
-  border-radius: 1rem; border: 1px solid rgb(185 162 255 / .2);
-  background: linear-gradient(140deg, #10152b 15%, #1a1740 70%, #0a1c2d);
-}
-.nyx-preview-glow {
-  position: absolute; z-index: -1; inset: -15%;
-  background: radial-gradient(circle at 75% 45%, rgb(124 58 237 / .45), transparent 40%), radial-gradient(circle at 85% 75%, rgb(34 211 238 / .18), transparent 45%);
-}
-.nyx-preview-orbit {
-  position: absolute; right: -5%; top: 5%; display: grid; place-items: center;
-  width: 52%; aspect-ratio: 1; border-radius: 50%;
-  border: 1px solid rgb(34 211 238 / .45);
-  box-shadow: 0 0 0 30px rgb(124 58 237 / .06), 0 0 0 70px rgb(124 58 237 / .04), 0 0 80px rgb(124 58 237 / .18);
-}
-.nyx-preview-orbit span { font-size: clamp(5rem, 13vw, 11rem); color: rgb(185 162 255 / .18); }
-.nyx-canvas-tag { position: absolute; bottom: 1.2rem; right: 1.5rem; font-size: .55rem; letter-spacing: .2em; color: #a9b2d3; }
-.nyx-studio-inspector { padding: 1.5rem 1rem; border-left: 1px solid rgb(255 255 255 / .09); background: #141a2e; }
-.nyx-studio-prompt { display: flex; align-items: center; gap: .8rem; padding: 1rem 1.5rem; color: #b4bbd6; font-size: .85rem; border-top: 1px solid rgb(255 255 255 / .09); }
-@media (max-width: 900px) {
-  .nyx-studio-workspace { grid-template-columns: 3.5rem minmax(0,1fr); min-height: 23rem; }
-  .nyx-studio-inspector { display: none; }
-  .nyx-studio-canvas-inner { min-height: 21rem; }
-}
-@media (max-width: 520px) {
-  .nyx-studio-workspace { grid-template-columns: 2.75rem minmax(0,1fr); min-height: 18rem; }
-  .nyx-studio-tools { gap: .6rem; padding: 1rem .25rem; }
-  .nyx-studio-tools span { width: 2rem; height: 2rem; }
-  .nyx-studio-canvas { padding: .5rem; }
-  .nyx-studio-canvas-inner { min-height: 17rem; padding: 1.2rem; }
-  .nyx-studio-topbar { padding: .75rem; }
-  .nyx-preview-orbit { right: -30%; opacity: .7; }
-  .nyx-canvas-tag { font-size: .45rem; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .nyx-ecosystem-card::after, .nyx-feature-card, .nyx-ecosystem-card { transition: none; }
 }

@@ -29,6 +29,7 @@ function playOnce(action: AnimationAction) {
   action.fadeIn(FADE_IN).play();
 }
 
+/** NYX a tamaño y posición nativos; cada escena lo coloca con un <group>. */
 export function NyxModel({ reducedMotion, request, onReady, onClipEnd, onSelect }: Props) {
   const { scene, animations } = useGLTF(NYX_MODEL_URL, DRACO_DECODER_PATH);
   const character = useMemo(() => {
@@ -89,9 +90,6 @@ export function NyxModel({ reducedMotion, request, onReady, onClipEnd, onSelect 
   return (
     <primitive
       object={character}
-      position={[-1.65, .02, .4]}
-      rotation={[0, .2, 0]}
-      scale={.42}
       onClick={select}
       onPointerOver={hover(true)}
       onPointerOut={hover(false)}

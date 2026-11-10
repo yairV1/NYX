@@ -125,9 +125,35 @@ No verificado:
 - Los 16 clips uno por uno en el navegador; se probaron cuatro.
 - `prefers-reduced-motion` en un navegador real (solo revisado en código).
 - Dispositivo móvil real, Safari y Firefox.
-- Tiempo de carga en producción. En desarrollo NYX tardó entre 10 y 20 s en
-  aparecer aunque el GLB se descarga en menos de 1 s; no se midió si el coste
-  está en la decodificación Draco o en el modo desarrollo.
+- Tiempo de carga en producción ni en una red lenta.
+
+Corrección posterior: la primera versión de este documento decía que NYX tardaba
+entre 10 y 20 s en aparecer. Era un artefacto de la prueba (la página se medía en
+una pestaña oculta, donde el navegador pausa el render). Con la pestaña visible,
+en desarrollo y en local, el modelo aparece en menos de 1 s.
+
+## Corrección del parpadeo en el navegador
+
+El parpadeo se veía bien en Blender pero rompía la cara de NYX en la web: los
+párpados atravesaban la cabeza. Los ocho pasos eran claves relativas encadenadas
+(cada una respecto de la anterior). glTF no tiene claves encadenadas: exporta
+cada paso respecto de la malla base y el navegador las suma. Con el ojo cerrado
+los ocho pesos valían 1 y el párpado recorría 36 pasos en vez de 8.
+
+- `refine_phase2.py`: cada paso es ahora una posición absoluta respecto de
+  `Basis` y los drivers funden entre pasos vecinos, de modo que los pesos nunca
+  suman más de 1.
+- `check_glb_blink.py` (nuevo): reconstruye cada fotograma con la fórmula del
+  navegador (`base + Σ peso·delta`) leyendo los pesos del propio GLB y mide
+  cuánto se aleja el párpado de la esfera del ojo.
+
+| | Antes | Después |
+|---|---|---|
+| Desviación máxima del párpado (radio del ojo 0,168) | 0,5004 | 0,0003 |
+| Suma máxima de pesos | 8,00 | 1,00 |
+
+Resultado en `evidence/glb-blink-check.json`. La validación anterior
+(`validate_refinement.py`) solo comprobaba el `.blend`, por eso no lo detectó.
 
 ## Pendientes
 
@@ -141,6 +167,5 @@ No verificado:
 - Gesto de comisuras hacia abajo en la boca nueva.
 - En pantallas táctiles la escena captura el gesto de desplazamiento, así que
   cuesta pasar de la escena a los botones. Es anterior a esta fase.
-- Medir la carga en un build de producción y, si hace falta, quitar Draco de las
-  mallas pequeñas o precargar el decodificador.
+- Medir la carga en un build de producción y con red limitada.
 - Siguen abiertos los pendientes artísticos de la Fase 2 (decimación, mejillas).
