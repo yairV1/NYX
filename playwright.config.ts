@@ -1,5 +1,7 @@
 import { defineConfig } from "@playwright/test";
 
+// localhost, not 127.0.0.1: the Next dev server blocks its client resources for
+// other origins, so pages opened by IP never hydrate and every test times out.
 export default defineConfig({
   testDir: "./tests",
   timeout: 120_000,
@@ -8,7 +10,7 @@ export default defineConfig({
   workers: 1,
   reporter: "list",
   use: {
-    baseURL: process.env.NYX_TEST_URL || "http://127.0.0.1:3111",
+    baseURL: process.env.NYX_TEST_URL || "http://localhost:3111",
     viewport: { width: 1440, height: 1000 },
     launchOptions: { args: ["--enable-unsafe-swiftshader"] },
     trace: "retain-on-failure",
@@ -18,7 +20,7 @@ export default defineConfig({
     ? undefined
     : {
         command: "npm run dev -- --port 3111",
-        url: "http://127.0.0.1:3111",
+        url: "http://localhost:3111",
         reuseExistingServer: !process.env.CI,
       },
 });

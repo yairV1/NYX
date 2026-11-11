@@ -35,14 +35,14 @@ Gato atigrado gris/marrón de rayas oscuras, ojos verdes, nariz rosada, sudadera
 - Imágenes optimizadas y accesibles; sin imágenes externas de búsqueda usadas sin licencia.
 - Ninguna estadística inventada de usuarios o funcionalidades reales.
 - Ejecutar `npm run lint` y `npm run build`; documentar resultados reales.
-- Conservar `AGENTS.md`, `CLAUDE.md` y la configuración del proyecto.
+- Conservar `AGENTS.md` y la configuración del proyecto.
 - Documentar decisiones, pendientes y límites del prototipo.
 - Trabajar en rama, publicar PR en borrador para revisión; no fusionar a main ni publicar a producción sin aprobación.
 
-## Colaboración ChatGPT + Claude
-- ChatGPT: especificación de UX/UI, criterios, revisión de cambios del PR en GitHub.
-- Claude Code local: inspección técnica, implementación, pruebas, reporte y commits sobre la rama de feature.
-- GitHub: fuente de verdad para tareas, código y revisiones. No existe aún conexión directa y autónoma entre ChatGPT y una sesión de Claude; usar este documento y PRs como canal compartido.
+## Flujo de trabajo
+- Especificación: UX/UI, criterios de aceptación y revisión de cambios en cada PR.
+- Implementación: inspección técnica, desarrollo, pruebas, reporte y commits sobre la rama de feature.
+- GitHub: fuente de verdad para tareas, código y revisiones. Este documento y los PR son el canal compartido.
 
 ## Dirección aprobada — Fase 2
 Casa Nodo es el hogar principal. Se evoluciona Nyx_rig v2 antropomórfico; audífonos solo en concentración. Esta decisión posterior del autor gobierna la evolución 3D. Ver `docs/phase-2/README.md`.
