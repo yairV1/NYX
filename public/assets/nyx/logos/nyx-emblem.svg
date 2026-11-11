@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title"><title id="title">Rostro atigrado de NYX</title><defs>
+ <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b084ff"/><stop offset=".5" stop-color="#7c3aed"/><stop offset="1" stop-color="#5657d9"/></linearGradient>
+ <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#aaa2ad"/><stop offset="1" stop-color="#665d70"/></linearGradient>
+ <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a0edf2"/><stop offset=".45" stop-color="#c7c2ff"/><stop offset="1" stop-color="#a385ed"/></linearGradient>
+ <linearGradient id="eye" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d8d599"/><stop offset="1" stop-color="#7fb76a"/></linearGradient>
+</defs><circle cx="100" cy="100" r="91" fill="url(#violet)"/><g stroke="#171627" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M30 83 27 23Q28 11 37 18L72 46Q100 36 128 46L163 18Q172 11 173 23L170 83 181 101 174 106 183 121 167 124 174 137 156 139Q145 166 100 170 56 166 43 139L26 137 33 124 17 121 26 106 19 101Z" fill="url(#fur)" stroke-width="5"/>
+ <path d="m39 64-2-33 26 25Zm98-8 26-25-2 33Z" fill="#bb8caa" stroke-width="3"/>
+ <path d="m40 58 2-17 14 15m88 0 14-15 2 17" fill="none" stroke="#e0b5ce" stroke-width="3"/>
+ <path d="m35 74 12-10-8 24m122-14-12-10 8 24" fill="#d1c5cf" stroke-width="2"/>
+ <g fill="#292435" stroke="none">
+  <path d="m72 47 12-3 5 30-11-8Zm20-6h16l-3 35h-10Zm24 3 12 3-6 19-11 8Z"/>
+  <path d="m46 68 23 7 8 12-25-7Zm108 0-23 7-8 12 25-7Z"/>
+  <path d="m28 99 23 5 7 9-27-4Zm144 0-23 5-7 9 27-4Z"/>
+  <path d="m32 118 25 6 7 11-23-4Zm136 0-25 6-7 11 23-4Z"/>
+  <path d="m53 140 23 5 8 13-20-7Zm94 0-23 5-8 13 20-7Z"/>
+ </g>
+ <path d="M44 93Q57 78 79 88 88 95 84 111 76 123 60 119 45 115 44 93Z" fill="url(#eye)" stroke-width="4"/>
+ <path d="M156 93Q143 78 121 88 112 95 116 111 124 123 140 119 155 115 156 93Z" fill="url(#eye)" stroke-width="4"/>
+ <ellipse cx="68" cy="102" rx="10" ry="15" fill="#10131c" stroke="none"/><ellipse cx="132" cy="102" rx="10" ry="15" fill="#10131c" stroke="none"/>
+ <g fill="#f6f4ed" stroke="none"><circle cx="64" cy="95" r="5"/><circle cx="128" cy="95" r="5"/><circle cx="73" cy="110" r="2"/><circle cx="137" cy="110" r="2"/></g>
+ <path d="M100 125Q81 116 71 132 64 145 83 151 92 155 100 150 108 155 117 151 136 145 129 132 119 116 100 125Z" fill="#d2c7ce" stroke-width="2"/>
+ <path d="M90 126Q100 121 110 126L100 136Z" fill="#d49aa8" stroke-width="2.5"/>
+ <path d="M100 136v7m0 0q-8 8-15 0m15 0q8 8 15 0" fill="none" stroke-width="2.5"/>
+ <g fill="#5c5262" stroke="none"><circle cx="81" cy="135" r="1.5"/><circle cx="77" cy="140" r="1.5"/><circle cx="119" cy="135" r="1.5"/><circle cx="123" cy="140" r="1.5"/></g>
+ <g fill="none" stroke="#d9cfdf" stroke-width="1.8"><path d="M76 136 27 130m49 11-48 6m96-11 49-6m-49 11 48 6"/></g>
+ <path d="m80 162 8 9 12-4 12 4 8-9" fill="#2b243a" stroke-width="2"/>
+</g></svg>

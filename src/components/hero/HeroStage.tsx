@@ -64,7 +64,9 @@ export function HeroStage() {
         <span className="live-dot" /> CASA NODO <span>NYX / HOME</span>
       </div>
       <div className="host-message">
-        <span className="host-avatar">N</span>
+        <span className="host-avatar">
+          <Image src={nyxAssets.logoSymbol} alt="" width={32} height={32} />
+        </span>
         <div>
           <span>NYX</span>
           <p>

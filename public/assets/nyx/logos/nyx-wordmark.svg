@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255 116" role="img" aria-labelledby="title"><title id="title">Nyx</title><defs>
+ <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b084ff"/><stop offset=".5" stop-color="#7c3aed"/><stop offset="1" stop-color="#5657d9"/></linearGradient>
+ <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#aaa2ad"/><stop offset="1" stop-color="#665d70"/></linearGradient>
+ <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a0edf2"/><stop offset=".45" stop-color="#c7c2ff"/><stop offset="1" stop-color="#a385ed"/></linearGradient>
+ <linearGradient id="eye" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d8d599"/><stop offset="1" stop-color="#7fb76a"/></linearGradient>
+</defs><g fill="url(#ink)">
+ <path d="M5 87 24 10 41 13 65 57 80 4 98 7 74 88 58 84 35 43 24 91Z"/>
+ <path d="M102 34Q116 27 122 35L116 60Q114 69 122 68 132 63 143 30L161 35Q148 79 124 101 113 112 93 111L97 94Q115 95 125 82 99 91 98 68Z"/>
+ <path d="m168 36 18-5 13 18 20-21 15 12-25 23 16 22-20 7-12-19-20 23-18-11 27-29Z"/>
+ <ellipse cx="217" cy="12" rx="5" ry="7" transform="rotate(-20 217 12)"/><ellipse cx="232" cy="6" rx="5" ry="7" transform="rotate(10 232 6)"/><ellipse cx="245" cy="16" rx="5" ry="6" transform="rotate(35 245 16)"/>
+ <path d="M225 24q4-10 10-7 5 3 7 10 1 5-5 5l-6-2q-11 4-6-6Z"/>
+</g></svg>

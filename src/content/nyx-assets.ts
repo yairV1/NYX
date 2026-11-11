@@ -12,7 +12,9 @@ export function withBase(path: string): string {
 }
 
 export const nyxAssets = {
-  logoSymbol: withBase("/assets/nyx/logos/nyx-symbol.svg"),
+  logo: withBase("/assets/nyx/logos/nyx-logo.svg"),
+  logoSymbol: withBase("/assets/nyx/logos/nyx-emblem.svg"),
+  appIcon: withBase("/assets/nyx/logos/nyx-app-icon.svg"),
   labBackdrop: withBase("/assets/nyx/backgrounds/lab-atmosphere.svg"),
   /** Renders del modelo 3D real (Blender), usados como respaldo del hero en vivo. */
   posterIdle: withBase("/assets/nyx/character/nyx-3d-idle.webp"),
