@@ -61,7 +61,7 @@ export function SiteHeader() {
                   <a
                     href={`#${item.id}`}
                     aria-current={current ? "location" : undefined}
-                    className={`label-tech relative rounded-md px-3.5 py-3 transition-colors hover:text-starlight ${
+                    className={`text-xs relative rounded-md px-3.5 py-3 transition-colors hover:text-starlight ${
                       current ? "text-starlight" : "text-mist"
                     }`}
                   >
@@ -118,7 +118,7 @@ export function SiteHeader() {
                 href={`#${item.id}`}
                 aria-current={active === item.id ? "location" : undefined}
                 onClick={() => setOpen(false)}
-                className="flex min-h-12 items-center border-b border-line/60 font-display text-sm font-semibold tracking-[0.14em] text-starlight uppercase last:border-b-0 aria-[current]:text-signal"
+                className="flex min-h-12 items-center border-b border-line/60 text-sm font-medium tracking-wide text-starlight last:border-b-0 aria-[current]:text-signal"
               >
                 {item.label}
               </a>

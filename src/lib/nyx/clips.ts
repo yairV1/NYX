@@ -35,11 +35,21 @@ export const NYX_CLIPS: readonly NyxClip[] = [
   { id: "Wave", source: "Wave", label: "Saludar", group: "action" },
   { id: "Point", source: "Point", label: "Señalar", group: "action" },
   { id: "Talk", source: "Talking", label: "Hablar", group: "action" },
-  { id: "Idle_LookAround", source: "LookAround", label: "Mirar alrededor", group: "action" },
+  {
+    id: "Idle_LookAround",
+    source: "LookAround",
+    label: "Mirar alrededor",
+    group: "action",
+  },
   { id: "Blink", source: "Blink", label: "Parpadear", group: "action" },
   { id: "Wink", source: "Wink", label: "Guiñar", group: "action" },
   { id: "Happy", source: "Happy", label: "Alegría", group: "emotion" },
-  { id: "Celebrate", source: "Celebrating", label: "Celebrar", group: "emotion" },
+  {
+    id: "Celebrate",
+    source: "Celebrating",
+    label: "Celebrar",
+    group: "emotion",
+  },
   { id: "Laugh", source: "Laughing", label: "Reír", group: "emotion" },
   { id: "Curious", source: "Curious", label: "Curiosidad", group: "emotion" },
   { id: "Think", source: "Thinking", label: "Pensar", group: "emotion" },
@@ -61,3 +71,6 @@ export const NYX_TOUCH_CLIP = "Wave";
 export function findClip(id: string): NyxClip | undefined {
   return NYX_CLIPS.find((clip) => clip.id === id);
 }
+
+/** Unique request token; shared by scene controllers without UI-layer imports. */
+export type ClipRequest = { source: string; id: number };

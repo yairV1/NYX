@@ -17,6 +17,7 @@ export const nyxAssets = {
   /** Renders del modelo 3D real (Blender), usados como respaldo del hero en vivo. */
   posterIdle: withBase("/assets/nyx/character/nyx-3d-idle.webp"),
   posterWave: withBase("/assets/nyx/character/nyx-3d-wave.webp"),
+  roomPoster: withBase("/assets/nyx/backgrounds/casa-nodo-after-hours.webp"),
   model: withBase("/assets/nyx/models/nyx-v2-refined.glb"),
   dracoDecoder: withBase("/draco/"),
 } as const;

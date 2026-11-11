@@ -11,6 +11,8 @@ const eslintConfig = defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    "test-results/**", // Generated browser traces, including copied vendor scripts.
+    "playwright-report/**",
     "next-env.d.ts",
     "public/draco/**", // Vendored decoder from Three.js; lint application sources.
   ]),

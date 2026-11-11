@@ -48,3 +48,7 @@ next-env.d.ts
 /docs/phase-2/evidence/renders/after/*.png
 
 __pycache__/
+
+# Browser verification outputs (curated captures live in docs/phase-5/evidence).
+/test-results/
+/playwright-report/

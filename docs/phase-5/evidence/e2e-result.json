@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-11",
+  "command": "NYX_TEST_URL=http://localhost:3110 npm run test:e2e",
+  "tests": 7,
+  "result": {
+    "status": "passed",
+    "failedTests": []
+  },
+  "environment": "Chromium headless, SwiftShader; not a physical mobile benchmark"
+}
