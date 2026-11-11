@@ -37,6 +37,16 @@ Se documentaron correcciones del parpadeo, cuello del hoodie, dirección del bra
 - Adaptación a móvil/tablet; DPR 1 y sombras dinámicas desactivadas hasta 1023 px.
 - Suite de siete pruebas de navegador y workflow de calidad para PRs.
 
+### Corrección de identidad posterior
+
+El autor confirmó la lámina original: logo con el rostro atigrado y el nombre «Nyx», y favicon con la cara simplificada en un cuadrado violeta. Se sustituyó la huella provisional de navegación por una adaptación vectorial de ese conjunto. Los SVG son reconstrucciones para web, no archivos originales extraídos de la lámina.
+
+- Navegación y pie: `public/assets/nyx/logos/nyx-logo.svg` (horizontal).
+- Logo apilado, rostro, palabra e isotipo: archivos hermanos en esa carpeta.
+- Favicon: `src/app/icon.svg` y `favicon.ico` (16/32/48/64/256 px); icono Apple de 180 px.
+- Fuente reproducible: `tools/brand/build-brand.mjs`. Ejecutar con `node tools/brand/build-brand.mjs`.
+- Conservar la referencia original en `docs/references/nyx-identity.png`. No volver a reemplazar la marca por una huella aislada.
+
 ## 3. Estado técnico que no se debe confundir
 
 | Elemento | Estado |
@@ -158,4 +168,4 @@ No versionar `node_modules`, `out`, `.next`, trazas completas de pruebas, creden
 
 ## 7. Mensaje listo para retomar
 
-> Continúa NYX leyendo primero AGENTS.md, CLAUDE.md, README.md, docs/CONTINUIDAD.md y docs/ARCHITECTURE.md. Revisa Git y los archivos existentes antes de cambiar nada. Conserva Casa Nodo, Nyx_rig v2 antropomórfico, hoodie azul marino, mochila morada y audífonos sólo en concentración. Empieza por P1 de la guía: medir el render actual y preparar una variante móvil de 30–60 mil triángulos sin perder identidad, rig, expresiones ni animaciones. Trabaja sobre una copia, conserva el GLB actual, valida el export real y presenta evidencia antes/después. No anuncies IA ni funcionalidades que no existan. Si faltan fuentes Blender, indícalo y avanza con la medición web. Al terminar, actualiza esta guía con resultados, pendientes y la siguiente tarea concreta.
+> Continúa NYX leyendo primero AGENTS.md, README.md, docs/CONTINUIDAD.md y docs/ARCHITECTURE.md. Revisa Git y los archivos existentes antes de cambiar nada. Conserva Casa Nodo, Nyx_rig v2 antropomórfico, hoodie azul marino, mochila morada y audífonos sólo en concentración. Empieza por P1 de la guía: medir el render actual y preparar una variante móvil de 30–60 mil triángulos sin perder identidad, rig, expresiones ni animaciones. Trabaja sobre una copia, conserva el GLB actual, valida el export real y presenta evidencia antes/después. No anuncies IA ni funcionalidades que no existan. Si faltan fuentes Blender, indícalo y avanza con la medición web. Al terminar, actualiza esta guía con resultados, pendientes y la siguiente tarea concreta.

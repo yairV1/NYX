@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title"><title id="title">NYX</title><defs>
+ <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b084ff"/><stop offset=".5" stop-color="#7c3aed"/><stop offset="1" stop-color="#5657d9"/></linearGradient>
+ <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#aaa2ad"/><stop offset="1" stop-color="#665d70"/></linearGradient>
+ <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a0edf2"/><stop offset=".45" stop-color="#c7c2ff"/><stop offset="1" stop-color="#a385ed"/></linearGradient>
+ <linearGradient id="eye" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d8d599"/><stop offset="1" stop-color="#7fb76a"/></linearGradient>
+</defs><rect x="5" y="5" width="190" height="190" rx="44" fill="url(#violet)"/><rect x="7" y="7" width="186" height="186" rx="42" fill="none" stroke="#cfb2ff" stroke-opacity=".6" stroke-width="2"/><g fill="none" stroke="#17142f" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M45 83 47 35 76 60Q100 51 124 60L153 35 155 83Q172 105 159 133 143 159 100 160 57 159 41 133 28 105 45 83Z"/>
+ <path d="m53 67 2-16 13 14m64 0 13-14 2 16M91 62l4 15m14-15-4 15"/>
+ <ellipse cx="72" cy="104" rx="18" ry="21"/><ellipse cx="128" cy="104" rx="18" ry="21"/>
+ <path d="M100 132v8m0 0q-9 8-17 0m17 0q9 8 17 0M57 131l-22-5m22 13-21 5m107-13 22-5m-22 13 21 5"/>
+</g><g fill="#17142f"><ellipse cx="75" cy="106" rx="6" ry="10"/><ellipse cx="125" cy="106" rx="6" ry="10"/><path d="M93 127q7-5 14 0l-7 7Z"/></g><g fill="#ded0ff"><circle cx="72" cy="101" r="3"/><circle cx="122" cy="101" r="3"/></g></svg>

@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useCallback, useState } from "react";
 import Link from "next/link";
+import { NyxLogo } from "@/components/ui/NyxLogo";
 import { NYX_CLIPS } from "@/lib/nyx/clips";
 import { useNyxReactions } from "@/lib/nyx/useNyxReactions";
 import { useReducedMotion, useSceneActivity } from "@/lib/nyx/useSceneActivity";
@@ -70,7 +71,7 @@ export function CasaNodoPreview() {
           aria-label="Volver al inicio de NYX"
           className="nodo-brand"
         >
-          ← <strong>NYX</strong>
+          <span aria-hidden>←</span> <NyxLogo className="[&>img]:h-10" />
           <span>/ CASA NODO</span>
         </Link>
         <span className="nodo-edition">UN ESPACIO PARA LO POSIBLE</span>

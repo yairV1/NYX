@@ -8,7 +8,7 @@
 
 **Lee [CONTINUIDAD.md](docs/CONTINUIDAD.md).** Contiene el estado real, las decisiones aprobadas, los cambios realizados, los pendientes priorizados y un mensaje listo para retomar con otro agente o en otro chat.
 
-Antes de modificar código, lee también [AGENTS.md](AGENTS.md), [CLAUDE.md](CLAUDE.md) y la documentación local de Next en `node_modules/next/dist/docs/`.
+Antes de modificar código, lee también [AGENTS.md](AGENTS.md) y la documentación local de Next en `node_modules/next/dist/docs/`.
 
 ## Qué funciona ahora
 
@@ -27,7 +27,7 @@ Antes de modificar código, lee también [AGENTS.md](AGENTS.md), [CLAUDE.md](CLA
 
 - Dirección visual **Casa Nodo / After Hours**: ciudad nocturna, luz cálida, mobiliario, plantas, libros y un núcleo luminoso animado.
 - Portada integrada con el entorno real, mensajes más humanos y composición específica para móvil/tablet.
-- Marca y favicon con la huella de NYX.
+- Marca con rostro atigrado + «Nyx» y favicon de carita sobre fondo violeta, adaptados de la lámina de identidad del autor.
 - Primer experimento funcional de Studio, con exportación de la misma imagen que se previsualiza.
 - Controlador de reacciones compartido, limpieza de acciones y temporizadores, y separación entre arrastre y clic.
 - Pausa, movimiento reducido, suspensión del render fuera de pantalla/en pestañas ocultas y recuperación visual al perder WebGL.
