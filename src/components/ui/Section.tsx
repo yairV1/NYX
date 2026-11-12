@@ -12,7 +12,11 @@ type Props = {
   className?: string;
 };
 
-/** Sección estándar: landmark etiquetado por su título y cabecera de sistema. */
+/**
+ * Sección estándar. Cabecera única de toda la página: rótulo «NN / tema» y
+ * título. Las secciones con maquetación propia (personaje, Casa Nodo) usan el
+ * mismo rótulo `.eyebrow` y el mismo título para que la página se lea seguida.
+ */
 export function Section({
   id,
   index,
@@ -30,21 +34,13 @@ export function Section({
       className={`container-nyx py-20 sm:py-28 ${className}`}
     >
       <header className="reveal mb-10 sm:mb-12">
-        <div className="mb-6 flex items-center gap-4">
-          <span
-            aria-hidden
-            className="font-display text-sm font-semibold text-signal"
-          >
-            {index}
+        <p className="eyebrow mb-6">
+          <span aria-hidden className="eyebrow-index">
+            {index} /
           </span>
-          <span aria-hidden className="h-px w-10 bg-signal/70" />
-          <p className="label-tech text-mist">{eyebrow}</p>
-          <span aria-hidden className="rule-glow hidden flex-1 sm:block" />
-        </div>
-        <h2
-          id={headingId}
-          className="max-w-4xl text-[clamp(1.8rem,4vw,3.2rem)] leading-[1.15] font-medium tracking-[-0.045em] text-balance"
-        >
+          {eyebrow}
+        </p>
+        <h2 id={headingId} className="max-w-4xl text-heading">
           {title}
         </h2>
         {aside ? <div className="mt-6">{aside}</div> : null}

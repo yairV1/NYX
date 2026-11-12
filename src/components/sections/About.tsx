@@ -12,7 +12,12 @@ export function About() {
     >
       <CharacterPortrait />
       <div className={styles.copy}>
-        <p className="eyebrow">UN PERSONAJE. UNA FORMA DE VER EL MUNDO.</p>
+        <p className="eyebrow">
+          <span aria-hidden className="eyebrow-index">
+            01 /
+          </span>
+          Un personaje. Una forma de ver el mundo.
+        </p>
         <h2 id="identity-title">
           La tecnología tiene
           <br />

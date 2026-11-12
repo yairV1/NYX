@@ -32,7 +32,7 @@ export function Hero() {
         <p className="arrival-note">Tu compañero en el código y en la vida.</p>
       </div>
       <div className="arrival-caption">
-        <span>01 / CASA NODO</span>
+        <span>NYX / CASA NODO</span>
         <span>Donde las ideas se quedan despiertas.</span>
       </div>
       <nav className="arrival-path container-nyx" aria-label="Explora NYX">

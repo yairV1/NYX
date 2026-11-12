@@ -11,7 +11,7 @@
   min-width: 0;
   overflow: hidden;
   border: 1px solid #b9a2ff26;
-  border-radius: 28px;
+  border-radius: var(--radius-panel);
   background:
     radial-gradient(ellipse at 50% 38%, #49316b6b, transparent 65%),
     linear-gradient(145deg, #111a2c, #080e1a);
@@ -21,9 +21,9 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1.5rem;
-  font-size: 0.55rem;
+  font-size: var(--text-label);
   letter-spacing: 0.13em;
-  color: #a5abc3;
+  color: var(--color-mist);
 }
 .orbit {
   position: absolute;
@@ -63,8 +63,8 @@
   padding: 0 1.5rem;
   text-align: center;
   min-height: 3rem;
-  color: #c0c8da;
-  font-size: 0.78rem;
+  color: var(--color-mist);
+  font-size: var(--text-caption);
   line-height: 1.7;
 }
 .selector {
@@ -79,8 +79,8 @@
   border-radius: 99px;
   border: 1px solid #a8a0c429;
   background: #141c2e;
-  color: #b7bfd1;
-  font-size: 0.73rem;
+  color: var(--color-mist);
+  font-size: var(--text-caption);
   cursor: pointer;
   transition:
     background 0.2s,
@@ -95,20 +95,17 @@
   border-color: #d0c0ff;
 }
 .copy h2 {
-  font-size: clamp(2rem, 3.5vw, 3.5rem);
-  font-weight: 500;
-  letter-spacing: -0.055em;
-  line-height: 1.12;
+  font-size: var(--text-heading);
   margin: 1.4rem 0 1.8rem;
 }
 .copy h2 em {
   font-style: normal;
-  color: #c1afff;
+  color: var(--color-violet-soft);
 }
 .copy > p:not(:first-child) {
-  color: #aebbd1;
+  color: var(--color-mist);
   line-height: 1.9;
-  font-size: 0.95rem;
+  font-size: var(--text-body-sm);
   max-width: 32rem;
 }
 .traits {
@@ -122,19 +119,19 @@
   padding: 1.1rem 0;
 }
 .traits dt {
-  font-size: 0.8rem;
+  font-size: var(--text-body-sm);
   color: #e2e6f3;
 }
 .traits dt span {
-  font-size: 0.6rem;
-  color: #aa91dd;
+  font-size: var(--text-label);
+  color: var(--color-violet-soft);
   margin-right: 0.8rem;
 }
 .traits dd {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: var(--text-body-sm);
   line-height: 1.7;
-  color: #a8b4c9;
+  color: var(--color-mist);
 }
 @media (max-width: 767px) {
   .identity {
@@ -149,7 +146,7 @@
     gap: 0.5rem;
   }
   .coordinates {
-    font-size: 0.5rem;
+    font-size: var(--text-label);
   }
 }
 @media (prefers-reduced-motion: reduce) {

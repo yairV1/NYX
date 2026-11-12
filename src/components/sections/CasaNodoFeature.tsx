@@ -23,7 +23,12 @@ export function CasaNodoFeature() {
         </Link>
       </div>
       <div className="room-feature-copy">
-        <p className="eyebrow">01 / TU LUGAR EN EL UNIVERSO</p>
+        <p className="eyebrow">
+          <span aria-hidden className="eyebrow-index">
+            02 /
+          </span>
+          Tu lugar en el universo
+        </p>
         <h2 id="room-feature-title">
           La luz sigue encendida.
           <br />
