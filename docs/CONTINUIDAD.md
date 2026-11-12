@@ -169,3 +169,13 @@ No versionar `node_modules`, `out`, `.next`, trazas completas de pruebas, creden
 ## 7. Mensaje listo para retomar
 
 > Continúa NYX leyendo primero AGENTS.md, README.md, docs/CONTINUIDAD.md y docs/ARCHITECTURE.md. Revisa Git y los archivos existentes antes de cambiar nada. Conserva Casa Nodo, Nyx_rig v2 antropomórfico, hoodie azul marino, mochila morada y audífonos sólo en concentración. Empieza por P1 de la guía: medir el render actual y preparar una variante móvil de 30–60 mil triángulos sin perder identidad, rig, expresiones ni animaciones. Trabaja sobre una copia, conserva el GLB actual, valida el export real y presenta evidencia antes/después. No anuncies IA ni funcionalidades que no existan. Si faltan fuentes Blender, indícalo y avanza con la medición web. Al terminar, actualiza esta guía con resultados, pendientes y la siguiente tarea concreta.
+
+## Revisión de diseño — 12 de noviembre de 2026
+
+Trabajo local posterior a `98fc68b`: acabado de tela y mochila del v2, encuadres
+más cercanos, presentación del personaje con renders seleccionables y composición
+propia para AI/Studio/Labs. Ver `docs/design-refinement/README.md`, scripts y
+comparaciones. La nueva fuente editable es
+`artifacts/design-refinement/nyx-polished-v2.blend`; el GLB público deriva de ella.
+Se conserva la anatomía, 89 huesos y 17 acciones. No confundir esta pasada de
+acabado con el pendiente de retopología/LOD o con una nueva biblioteca de gestos.

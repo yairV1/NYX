@@ -1,28 +1,58 @@
+import Link from "next/link";
 import { site } from "@/content/site";
+import { CharacterPortrait } from "./CharacterPortrait";
+import styles from "./Identity.module.css";
 
 export function About() {
   return (
     <section
       id="que-es-nyx"
-      className="container-nyx identity-note"
+      className={`container-nyx ${styles.identity}`}
       aria-labelledby="identity-title"
     >
-      <p className="eyebrow">MÁS QUE UN PERSONAJE</p>
-      <h2 id="identity-title">
-        Tecnología con curiosidad.
-        <br />
-        <span>Creatividad con compañía.</span>
-      </h2>
-      <div>
+      <CharacterPortrait />
+      <div className={styles.copy}>
+        <p className="eyebrow">UN PERSONAJE. UNA FORMA DE VER EL MUNDO.</p>
+        <h2 id="identity-title">
+          La tecnología tiene
+          <br />
+          <em>un lado cercano.</em>
+        </h2>
         <p>
-          NYX es la identidad digital de <strong>{site.author}</strong>. Un gato
-          curioso es el comienzo de algo más grande: un asistente que acompañe,
-          un estudio que abra posibilidades y un hogar para experimentar.
+          NYX es la identidad digital de <strong>{site.author}</strong>. Curioso
+          por naturaleza, creativo por impulso. Un compañero para quienes ven
+          una idea donde otros solo ven una pantalla.
         </p>
-        <p>
-          Estamos construyéndolo paso a paso. Aquí puedes explorar lo que ya
-          existe y descubrir lo que viene.
-        </p>
+        <dl className={styles.traits}>
+          <div>
+            <dt>
+              <span aria-hidden>01</span> Su esencia
+            </dt>
+            <dd>
+              Un gato atigrado, una mirada curiosa y ganas de descubrir contigo.
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <span aria-hidden>02</span> Su universo
+            </dt>
+            <dd>
+              Casa Nodo: luz cálida, noches de código y espacio para imaginar.
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <span aria-hidden>03</span> Lo que viene
+            </dt>
+            <dd>
+              Un asistente con esta misma personalidad. NYX AI sigue en
+              desarrollo.
+            </dd>
+          </div>
+        </dl>
+        <Link href="/casa-nodo" className="quiet-action">
+          Conócelo en su mundo <span aria-hidden>↗</span>
+        </Link>
       </div>
     </section>
   );

@@ -1,0 +1,159 @@
+.identity {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+  padding-block: clamp(4rem, 9vw, 9rem);
+}
+.portrait {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #b9a2ff26;
+  border-radius: 28px;
+  background:
+    radial-gradient(ellipse at 50% 38%, #49316b6b, transparent 65%),
+    linear-gradient(145deg, #111a2c, #080e1a);
+}
+.coordinates {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem;
+  font-size: 0.55rem;
+  letter-spacing: 0.13em;
+  color: #a5abc3;
+}
+.orbit {
+  position: absolute;
+  z-index: -1;
+  left: 13%;
+  top: 15%;
+  width: 74%;
+  aspect-ratio: 1;
+  border: 1px solid #b9a2ff35;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 30px #b9a2ff04,
+    0 0 0 60px #b9a2ff03;
+}
+.orbit::after {
+  content: "";
+  position: absolute;
+  top: 12%;
+  right: 12%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #9de1e8;
+  box-shadow: 0 0 20px #06b6d4;
+}
+.portrait figure {
+  margin: 0;
+  position: relative;
+}
+.portrait img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+.portrait figcaption {
+  padding: 0 1.5rem;
+  text-align: center;
+  min-height: 3rem;
+  color: #c0c8da;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+.selector {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+  padding: 1rem 1rem 1.5rem;
+}
+.selector button {
+  min-height: 44px;
+  padding: 0.6rem 0.9rem;
+  border-radius: 99px;
+  border: 1px solid #a8a0c429;
+  background: #141c2e;
+  color: #b7bfd1;
+  font-size: 0.73rem;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.selector button[aria-pressed="true"] {
+  background: #d0c0ff;
+  color: #19112b;
+  border-color: #d0c0ff;
+}
+.selector button:hover {
+  border-color: #d0c0ff;
+}
+.copy h2 {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.12;
+  margin: 1.4rem 0 1.8rem;
+}
+.copy h2 em {
+  font-style: normal;
+  color: #c1afff;
+}
+.copy > p:not(:first-child) {
+  color: #aebbd1;
+  line-height: 1.9;
+  font-size: 0.95rem;
+  max-width: 32rem;
+}
+.traits {
+  margin: 2rem 0;
+}
+.traits > div {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1rem;
+  border-top: 1px solid #b3bfd51c;
+  padding: 1.1rem 0;
+}
+.traits dt {
+  font-size: 0.8rem;
+  color: #e2e6f3;
+}
+.traits dt span {
+  font-size: 0.6rem;
+  color: #aa91dd;
+  margin-right: 0.8rem;
+}
+.traits dd {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: #a8b4c9;
+}
+@media (max-width: 767px) {
+  .identity {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .copy {
+    order: -1;
+  }
+  .traits > div {
+    grid-template-columns: 7rem 1fr;
+    gap: 0.5rem;
+  }
+  .coordinates {
+    font-size: 0.5rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .selector button {
+    transition: none;
+  }
+}

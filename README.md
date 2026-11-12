@@ -6,7 +6,7 @@
 
 ## Si vas a continuar el proyecto, empieza aquí
 
-**Lee [CONTINUIDAD.md](docs/CONTINUIDAD.md).** Contiene el estado real, las decisiones aprobadas, los cambios realizados, los pendientes priorizados y un mensaje listo para retomar con otro agente o en otro chat.
+**Empieza por [README-CONTINUAR.md](README-CONTINUAR.md), el punto de entrega más reciente, y después lee [CONTINUIDAD.md](docs/CONTINUIDAD.md).** Contiene el estado real, las decisiones aprobadas, los cambios realizados, los pendientes priorizados y un mensaje listo para retomar con otro agente o en otro chat.
 
 Antes de modificar código, lee también [AGENTS.md](AGENTS.md) y la documentación local de Next en `node_modules/next/dist/docs/`.
 
@@ -91,3 +91,8 @@ Las dos variables deben configurarse juntas. `next/link` gestiona las rutas inte
 - [Pruebas de navegador](tests/experience.spec.ts).
 
 No se deben inventar capacidades, estadísticas ni testimonios. Mantener visible el estado real de cada parte del ecosistema.
+
+## Retomar los últimos avances
+
+Consulta [README-CONTINUAR.md](README-CONTINUAR.md) para el estado de entrega,
+comprobaciones, pendientes y pasos de la siguiente sesión.

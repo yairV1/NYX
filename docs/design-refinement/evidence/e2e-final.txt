@@ -1,0 +1,18 @@
+
+> nyx@0.1.0 test:e2e
+> playwright test
+
+
+Running 7 tests using 1 worker
+
+(node:33113) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/experience.spec.ts:4:3 › landing composes without horizontal clipping at 390px (18.8s)
+  ✓  2 tests/experience.spec.ts:4:3 › landing composes without horizontal clipping at 768px (18.8s)
+  ✓  3 tests/experience.spec.ts:4:3 › landing composes without horizontal clipping at 1440px (24.7s)
+  ✓  4 tests/experience.spec.ts:39:1 › Studio edits, remembers the draft and exports a real PNG (3.6s)
+  ✓  5 tests/experience.spec.ts:75:1 › Casa Nodo has real controls and returns to idle after a reaction (57.0s)
+  ✓  6 tests/experience.spec.ts:108:1 › reduced motion starts with the room poster and lets visitors opt in (8.5s)
+  ✓  7 tests/experience.spec.ts:123:1 › a lost WebGL context restores the poster after the scene was ready (16.7s)
+
+  7 passed (2.5m)

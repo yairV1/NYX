@@ -1,0 +1,35 @@
+{
+  "bytes": 3115380,
+  "armatures": 1,
+  "bones": 89,
+  "meshes": 46,
+  "triangles": 100020,
+  "degenerate_triangles": 0,
+  "animations": [
+    "Idle_Secondary",
+    "Wave",
+    "Point",
+    "Happy",
+    "Curious",
+    "LookAround",
+    "Thinking",
+    "Surprised",
+    "Confused",
+    "Sad",
+    "Angry",
+    "Tired",
+    "Laughing",
+    "Wink",
+    "Celebrating",
+    "Talking",
+    "Blink"
+  ],
+  "skinned_added_meshes": [
+    "GEO_bag_piping",
+    "GEO_bag_zipper",
+    "GEO_bag_zip_pull",
+    "GEO_bag_signal"
+  ],
+  "cloth_normal_textures": true,
+  "original_armature_excluded": true
+}

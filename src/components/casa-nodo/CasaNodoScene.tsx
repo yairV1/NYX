@@ -31,7 +31,7 @@ const views: Record<
   RoomView,
   { eye: [number, number, number]; target: [number, number, number] }
 > = {
-  welcome: { eye: [6.4, 3.15, 8.4], target: [1, 1.7, 0] },
+  welcome: { eye: [4.8, 2.8, 6.8], target: [1.5, 1.5, 0.8] },
   desk: { eye: [3.5, 2.7, 4.5], target: [0.5, 1.5, -0.4] },
   room: { eye: [7.8, 5, 10], target: [0, 1.6, -0.3] },
 };
@@ -59,13 +59,13 @@ function CameraRig({
     target.current.set(...preset.target);
     desired.current.set(...preset.eye);
     if (hero) {
-      desired.current.set(5.6, 2.9, 8.4);
-      target.current.set(0.8, 1.8, 0);
+      desired.current.set(5, 2.9, 7.4);
+      target.current.set(1.3, 1.5, 0.4);
     }
     if (size.width / size.height < 1)
       desired.current
         .sub(target.current)
-        .multiplyScalar(hero ? 1.05 : 1.32)
+        .multiplyScalar(hero ? 1.05 : 1.16)
         .add(target.current);
     moving.current = true;
     if (reducedMotion) {
@@ -195,7 +195,7 @@ export default function CasaNodoScene({
         <group
           position={[2.25, 0.035, 1.25]}
           rotation={[0, 0.25, 0]}
-          scale={0.7}
+          scale={0.8}
         >
           <NyxModel
             reducedMotion={quiet}
