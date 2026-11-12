@@ -8,7 +8,7 @@ export function SiteFooter() {
       <div className="container-nyx grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">
         <div>
           <NyxLogo />
-          <p className="mt-5 font-display text-sm font-semibold tracking-[0.14em] text-starlight uppercase">{site.tagline}</p>
+          <p className="label-tech mt-5 text-starlight">{site.tagline}</p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-mist">
             Ecosistema creativo y tecnológico impulsado por IA. El contenido de
             este sitio cambiará a medida que el proyecto avance.
@@ -24,7 +24,7 @@ export function SiteFooter() {
               </li>
             ))}
             <li>
-              <Link href="/casa-nodo" className="inline-flex min-h-11 items-center text-signal hover:text-starlight">Abrir Casa Nodo →</Link>
+              <Link href="/casa-nodo" className="inline-flex min-h-11 items-center text-violet-soft hover:text-starlight">Abrir Casa Nodo →</Link>
             </li>
           </ul>
         </nav>

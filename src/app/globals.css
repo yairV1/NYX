@@ -17,7 +17,7 @@
 
   /* Derivados con contraste AA para texto sobre void */
   --color-signal: #22d3ee;
-  --color-violet-soft: #b9a2ff;
+  --color-violet-soft: #c1afff;
   --color-mist: #a9b2cf;
   --color-line: rgb(148 163 255 / 0.14);
   --color-line-strong: rgb(148 163 255 / 0.28);
@@ -31,6 +31,28 @@
     sans-serif;
 
   --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Texto terciario: notas y rótulos secundarios. 6:1 sobre void. */
+  --color-dim: #8894ad;
+
+  /*
+   * Escala tipográfica. Ocho pasos y ninguno por debajo de 11 px.
+   * label y caption son rótulos; body-sm, body y lead son lectura;
+   * title, heading y display son títulos (los dos últimos, fluidos).
+   */
+  --text-label: 0.6875rem;
+  --text-caption: 0.75rem;
+  --text-body-sm: 0.875rem;
+  --text-body: 1rem;
+  --text-lead: 1.125rem;
+  --text-title: 1.25rem;
+  --text-heading: clamp(1.625rem, 1.15rem + 1.7vw, 2.5rem);
+  --text-display: clamp(2.125rem, 1.1rem + 2.9vw, 4rem);
+
+  /* Tres radios: controles, tarjetas y paneles. */
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --radius-panel: 20px;
 }
 
 :root {
@@ -55,6 +77,16 @@ body {
   );
 }
 
+/*
+ * Voz tipográfica: Orbitron para títulos y rótulos, Inter para todo lo demás.
+ * Los títulos van en caja normal; solo los rótulos van en mayúsculas.
+ */
+h1,
+h2 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
 ::selection {
   background: rgb(124 58 237 / 0.55);
   color: #fff;
@@ -63,7 +95,7 @@ body {
 :focus-visible {
   outline: 2px solid var(--color-signal);
   outline-offset: 3px;
-  border-radius: 6px;
+  border-radius: var(--radius-control);
 }
 
 /* ------------------------------------------------------------------ */
@@ -91,9 +123,9 @@ body {
 /* Etiqueta técnica: el «microtexto» de interfaz que une toda la página. */
 @utility label-tech {
   font-family: var(--font-display);
-  font-size: 0.68rem;
+  font-size: var(--text-label);
   font-weight: 500;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -101,7 +133,7 @@ body {
 @utility panel {
   position: relative;
   border: 1px solid var(--color-line);
-  border-radius: 1.25rem;
+  border-radius: var(--radius-panel);
   background:
     linear-gradient(
       160deg,
@@ -132,8 +164,8 @@ body {
   width: 1.1rem;
   height: 1.1rem;
   pointer-events: none;
-  border-color: var(--color-signal);
-  opacity: 0.85;
+  border-color: var(--color-violet-soft);
+  opacity: 0.7;
 }
 
 .hud-corners::before {
@@ -174,7 +206,7 @@ body {
     90deg,
     transparent,
     var(--color-line-strong) 15%,
-    rgb(34 211 238 / 0.6) 50%,
+    rgb(193 175 255 / 0.55) 50%,
     var(--color-line-strong) 85%,
     transparent
   );
@@ -214,11 +246,22 @@ body {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  color: #adb8d2;
+  font-family: var(--font-display);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--color-mist);
   text-transform: uppercase;
+}
+/* Número de sección dentro del rótulo: acento lila y nunca se parte en dos líneas. */
+.eyebrow-index {
+  flex-shrink: 0;
+  white-space: nowrap;
+  color: var(--color-violet-soft);
+}
+.arrival-caption span:first-child {
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 .live-dot {
   display: inline-block;
@@ -257,20 +300,17 @@ body {
 .arrival h1 {
   max-width: 650px;
   margin: 1.8rem 0;
-  font-size: clamp(3.1rem, 5.4vw, 5.3rem);
-  font-weight: 500;
-  letter-spacing: -0.065em;
-  line-height: 1.07;
+  font-size: var(--text-display);
 }
 .arrival h1 em,
 .nodo-title h1 em {
   font-style: normal;
-  color: #c1afff;
+  color: var(--color-violet-soft);
 }
 .arrival-lead {
   max-width: 390px;
-  color: #aab5ca;
-  font-size: 1rem;
+  color: var(--color-mist);
+  font-size: var(--text-body);
   line-height: 1.85;
 }
 .arrival-actions {
@@ -286,13 +326,13 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  min-height: 52px;
+  min-height: 48px;
   padding: 0.85rem 1.25rem;
-  border-radius: 9px;
-  background: #c1afff;
+  border-radius: var(--radius-control);
+  background: var(--color-violet-soft);
   color: #171126;
-  font-size: 0.85rem;
-  font-weight: 650;
+  font-size: var(--text-body-sm);
+  font-weight: 600;
   box-shadow: 0 6px 32px #7c3aed26;
   transition:
     background 0.2s,
@@ -303,12 +343,12 @@ body {
   transform: translateY(-2px);
 }
 .primary-action span {
-  font-size: 1.4rem;
+  font-size: var(--text-title);
   font-weight: 400;
 }
 .quiet-action {
-  font-size: 0.8rem;
-  color: #d3d9e8;
+  font-size: var(--text-body-sm);
+  color: var(--color-starlight);
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -316,12 +356,12 @@ body {
   border-bottom: 1px solid #555d7444;
 }
 .quiet-action:hover {
-  color: #c1afff;
+  color: var(--color-violet-soft);
 }
 .arrival-note {
   margin-top: 2rem;
-  color: #7d8aa3;
-  font-size: 0.72rem;
+  color: var(--color-dim);
+  font-size: var(--text-caption);
   letter-spacing: 0.02em;
 }
 .arrival-world {
@@ -388,12 +428,12 @@ body {
   display: flex;
   gap: 0.7rem;
   align-items: center;
-  font-size: 0.55rem;
+  font-size: var(--text-label);
   letter-spacing: 0.22em;
-  color: #b6bdd0;
+  color: var(--color-mist);
 }
 .world-coordinate > span:last-child {
-  color: #6c7c98;
+  color: var(--color-dim);
   margin-left: 1rem;
 }
 .host-message {
@@ -406,7 +446,7 @@ body {
   padding: 0.85rem 1rem;
   background: #101a2acc;
   border: 1px solid #bdc7ed22;
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   backdrop-filter: blur(16px);
   z-index: 2;
   max-width: 320px;
@@ -420,19 +460,19 @@ body {
   border-radius: 50%;
   background: #b5a0e521;
   font-family: var(--font-display);
-  font-size: 0.75rem;
-  color: #c1afff;
+  font-size: var(--text-caption);
+  color: var(--color-violet-soft);
   border: 1px solid #b5a0e533;
 }
 .host-message div > span {
-  font-size: 0.58rem;
+  font-size: var(--text-label);
   letter-spacing: 0.16em;
-  color: #c1afff;
+  color: var(--color-violet-soft);
 }
 .host-message p {
-  font-size: 0.74rem;
+  font-size: var(--text-caption);
   line-height: 1.5;
-  color: #d7dcec;
+  color: var(--color-starlight);
   margin-top: 0.2rem;
 }
 .world-controls {
@@ -448,11 +488,11 @@ body {
   min-height: 40px;
   padding: 0.5rem 0.8rem;
   border: 1px solid #9babc133;
-  border-radius: 7px;
-  font-size: 0.7rem;
+  border-radius: var(--radius-control);
+  font-size: var(--text-caption);
   background: #0a1224bb;
   backdrop-filter: blur(8px);
-  color: #c6d0e4;
+  color: var(--color-mist);
   cursor: pointer;
 }
 .world-controls button:hover {
@@ -460,10 +500,10 @@ body {
   color: #fff;
 }
 .world-controls > span {
-  font-size: 0.56rem;
+  font-size: var(--text-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #93a5bd;
+  color: var(--color-mist);
 }
 .arrival-caption {
   position: absolute;
@@ -471,13 +511,13 @@ body {
   right: 5%;
   display: flex;
   gap: 1rem;
-  font-size: 0.55rem;
+  font-size: var(--text-label);
   letter-spacing: 0.14em;
-  color: #8896af;
+  color: var(--color-dim);
   z-index: 2;
 }
 .arrival-caption span:first-child {
-  color: #b5a3e0;
+  color: var(--color-violet-soft);
 }
 .arrival-path {
   position: relative;
@@ -501,32 +541,32 @@ body {
 }
 .arrival-path a > span:last-child {
   margin-left: auto;
-  color: #abb5cd;
+  color: var(--color-mist);
   transition: transform 0.2s;
 }
 .arrival-path a:hover > span:last-child {
   transform: translate(3px, -3px);
-  color: #c1afff;
+  color: var(--color-violet-soft);
 }
 .path-number {
   font-family: var(--font-display);
-  font-size: 0.65rem;
-  color: #b19bd6;
+  font-size: var(--text-label);
+  color: var(--color-violet-soft);
   align-self: flex-start;
   margin-top: 0.2rem;
 }
 .arrival-path strong {
   display: block;
   font-weight: 500;
-  font-size: 0.86rem;
-  color: #dde2ee;
+  font-size: var(--text-body-sm);
+  color: var(--color-starlight);
 }
 .arrival-path small {
   display: block;
   margin-top: 0.5rem;
-  font-size: 0.68rem;
+  font-size: var(--text-label);
   line-height: 1.5;
-  color: #8694ae;
+  color: var(--color-dim);
 }
 
 /* The room explorer uses an editorial introduction and an instrument panel. */
@@ -551,29 +591,29 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 0.9rem;
-  color: #b6a4e9;
+  font-size: var(--text-body-sm);
+  color: var(--color-violet-soft);
 }
 .nodo-brand strong {
-  font-size: 1.1rem;
-  color: #e6e9f1;
+  font-size: var(--text-lead);
+  color: var(--color-starlight);
   letter-spacing: 0.18em;
 }
 .nodo-brand > span {
-  font-size: 0.6rem;
-  color: #919eb8;
+  font-size: var(--text-label);
+  color: var(--color-mist);
   letter-spacing: 0.16em;
 }
 .nodo-edition {
-  font-size: 0.55rem;
+  font-size: var(--text-label);
   letter-spacing: 0.22em;
-  color: #7f8ca5;
+  color: var(--color-dim);
 }
 .nodo-studio-link {
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
   padding: 0.65rem 0.9rem;
   border: 1px solid #a99bc944;
-  border-radius: 6px;
+  border-radius: var(--radius-control);
   background: #bb9df90a;
 }
 .nodo-title {
@@ -584,15 +624,12 @@ body {
   pointer-events: none;
 }
 .nodo-title h1 {
-  font-size: clamp(2rem, 3.1vw, 3.5rem);
-  line-height: 1.12;
-  letter-spacing: -0.055em;
+  font-size: var(--text-heading);
   margin: 1rem 0;
-  font-weight: 450;
 }
 .nodo-title > p:last-child {
-  font-size: 0.8rem;
-  color: #8795ae;
+  font-size: var(--text-body-sm);
+  color: var(--color-dim);
 }
 .nodo-viewport {
   height: calc(100svh - 135px);
@@ -607,14 +644,14 @@ body {
   position: absolute;
   bottom: 2rem;
   left: 4%;
-  font-size: 0.55rem;
+  font-size: var(--text-label);
   letter-spacing: 0.2em;
   color: #a59bc0;
   pointer-events: none;
 }
 .nodo-scene-label span {
   display: block;
-  color: #62738f;
+  color: var(--color-dim);
   margin-top: 0.7rem;
 }
 .nodo-console {
@@ -624,7 +661,7 @@ body {
   width: 300px;
   background: linear-gradient(155deg, #1a2334ed, #101624e8);
   border: 1px solid #a5b6d32b;
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   padding: 1.2rem;
   backdrop-filter: blur(18px);
   box-shadow: 0 25px 70px #0003;
@@ -636,13 +673,13 @@ body {
   gap: 0.6rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #a5b6d320;
-  font-size: 0.7rem;
+  font-size: var(--text-caption);
   color: #d3dbec;
 }
 .console-mark {
   margin-left: auto;
-  font-size: 1.3rem;
-  color: #b9a2ff;
+  font-size: var(--text-title);
+  color: var(--color-violet-soft);
 }
 .nodo-view-tabs {
   display: grid;
@@ -657,30 +694,30 @@ body {
   min-height: 43px;
   padding: 0.6rem 0.7rem;
   border: 1px solid transparent;
-  border-radius: 7px;
-  font-size: 0.75rem;
-  color: #a7b4ce;
+  border-radius: var(--radius-control);
+  font-size: var(--text-caption);
+  color: var(--color-mist);
   cursor: pointer;
 }
 .nodo-view-tabs button span {
-  font-size: 0.6rem;
+  font-size: var(--text-label);
   color: #8b7eaf;
 }
 .nodo-view-tabs button[aria-pressed="true"] {
   border-color: #b9a2ff3b;
   background: #b9a2ff12;
-  color: #e2d9fa;
+  color: var(--color-violet-soft);
 }
 .nodo-view-description {
-  font-size: 0.72rem;
-  color: #99a6bf;
+  font-size: var(--text-caption);
+  color: var(--color-mist);
   line-height: 1.8;
   margin: 1rem 0.2rem;
   min-height: 3.8rem;
 }
 .nodo-inline-link {
-  font-size: 0.75rem;
-  color: #c1afff;
+  font-size: var(--text-caption);
+  color: var(--color-violet-soft);
   display: block;
   padding: 0 0.2rem 1rem;
 }
@@ -695,12 +732,12 @@ body {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.6rem;
+  font-size: var(--text-label);
   padding: 0.55rem 0.5rem;
   min-height: 36px;
   border: 1px solid transparent;
-  border-radius: 5px;
-  color: #a7b4ce;
+  border-radius: var(--radius-control);
+  color: var(--color-mist);
   cursor: pointer;
 }
 .nodo-moods button[aria-pressed="true"] {
@@ -727,13 +764,13 @@ body {
   padding: 0.8rem 0;
 }
 .nodo-utilities button {
-  font-size: 0.6rem;
+  font-size: var(--text-label);
   min-height: 35px;
-  color: #95a3bd;
+  color: var(--color-mist);
   cursor: pointer;
 }
 .nodo-utilities button:hover {
-  color: #ded5ff;
+  color: var(--color-violet-soft);
 }
 .nodo-reactions {
   display: grid;
@@ -742,11 +779,11 @@ body {
 }
 .nodo-reactions button,
 .nodo-more button {
-  font-size: 0.65rem;
+  font-size: var(--text-label);
   min-height: 40px;
   border: 1px solid #a5b6d32b;
-  border-radius: 6px;
-  color: #c4cee2;
+  border-radius: var(--radius-control);
+  color: var(--color-mist);
   background: #ffffff03;
   cursor: pointer;
 }
@@ -757,8 +794,8 @@ body {
 }
 .nodo-more {
   margin-top: 1rem;
-  font-size: 0.65rem;
-  color: #9aabc7;
+  font-size: var(--text-label);
+  color: var(--color-mist);
 }
 .nodo-more summary {
   cursor: pointer;
@@ -776,8 +813,8 @@ body {
   justify-content: space-between;
   gap: 1rem;
   padding: 1.2rem 4%;
-  font-size: 0.6rem;
-  color: #8594af;
+  font-size: var(--text-label);
+  color: var(--color-dim);
   border-top: 1px solid #b1bad81c;
   position: relative;
   z-index: 2;
@@ -799,17 +836,17 @@ body {
   width: auto;
 }
 .nodo-fallback p {
-  font-size: 0.8rem;
+  font-size: var(--text-body-sm);
   max-width: 300px;
   text-align: center;
-  color: #a9b2cf;
+  color: var(--color-mist);
 }
 .nodo-fallback button {
   pointer-events: auto;
   padding: 0.8rem 1rem;
   background: #b9a2ff;
   color: #181128;
-  border-radius: 6px;
+  border-radius: var(--radius-control);
 }
 button:disabled {
   opacity: 0.45;
@@ -819,8 +856,8 @@ button:disabled {
   position: absolute;
   bottom: 20%;
   inset-inline: 20%;
-  font-size: 0.8rem;
-  color: #c0c9dc;
+  font-size: var(--text-body-sm);
+  color: var(--color-mist);
 }
 
 @media (min-width: 1600px) {
@@ -835,12 +872,12 @@ button:disabled {
     height: 820px;
   }
   .arrival h1 {
-    font-size: 5.4rem;
+    font-size: var(--text-display);
   }
 }
 @media (max-width: 1100px) {
   .arrival h1 {
-    font-size: 3.8rem;
+    font-size: var(--text-display);
     max-width: 520px;
   }
   .arrival-world {
@@ -864,7 +901,7 @@ button:disabled {
     top: 100px;
   }
   .nodo-title h1 {
-    font-size: 2.4rem;
+    font-size: var(--text-heading);
   }
   .nodo-console {
     width: 260px;
@@ -874,7 +911,7 @@ button:disabled {
     min-height: 700px;
   }
   .arrival-path strong {
-    font-size: 0.78rem;
+    font-size: var(--text-caption);
   }
 }
 @media (max-width: 1023px) {
@@ -885,18 +922,17 @@ button:disabled {
     pointer-events: auto;
   }
   .arrival h1 {
-    font-size: clamp(2.9rem, 10.4vw, 4.6rem);
+    font-size: var(--text-display);
     max-width: 100%;
     margin: 1.4rem 0;
-    letter-spacing: -0.06em;
   }
   .arrival-lead {
     max-width: 440px;
-    font-size: 0.9rem;
+    font-size: var(--text-body-sm);
     line-height: 1.8;
   }
   .eyebrow {
-    font-size: 0.53rem;
+    font-size: var(--text-label);
     gap: 0.45rem;
   }
   .arrival-actions {
@@ -905,14 +941,14 @@ button:disabled {
   }
   .primary-action {
     min-height: 48px;
-    font-size: 0.8rem;
+    font-size: var(--text-body-sm);
   }
   .quiet-action {
-    font-size: 0.75rem;
+    font-size: var(--text-caption);
   }
   .arrival-note {
     margin-top: 1.2rem;
-    font-size: 0.65rem;
+    font-size: var(--text-label);
   }
   .arrival-world {
     position: relative;
@@ -944,7 +980,7 @@ button:disabled {
     order: 3;
     justify-content: space-between;
     padding: 0 1.25rem 1.7rem;
-    font-size: 0.48rem;
+    font-size: var(--text-label);
     gap: 0.5rem;
   }
   .arrival-path {
@@ -961,15 +997,15 @@ button:disabled {
     padding-left: 0;
   }
   .arrival-path strong {
-    font-size: 0.84rem;
+    font-size: var(--text-body-sm);
   }
   .arrival-path small {
-    font-size: 0.68rem;
+    font-size: var(--text-label);
   }
   .world-coordinate {
     top: 40px;
     left: 7%;
-    font-size: 0.48rem;
+    font-size: var(--text-label);
   }
   .host-message {
     bottom: 88px;
@@ -978,7 +1014,7 @@ button:disabled {
     padding: 0.6rem 0.8rem;
   }
   .host-message p {
-    font-size: 0.65rem;
+    font-size: var(--text-label);
   }
   .world-controls {
     bottom: 31px;
@@ -986,11 +1022,11 @@ button:disabled {
     gap: 0.45rem;
   }
   .world-controls button {
-    font-size: 0.65rem;
+    font-size: var(--text-label);
     min-height: 44px;
   }
   .world-controls > span {
-    font-size: 0.5rem;
+    font-size: var(--text-label);
   }
   .arrival-poster {
     padding-bottom: 2rem;
@@ -1005,13 +1041,13 @@ button:disabled {
     gap: 0.7rem;
   }
   .nodo-brand > span {
-    font-size: 0.5rem;
+    font-size: var(--text-label);
   }
   .nodo-edition {
     display: none;
   }
   .nodo-studio-link {
-    font-size: 0.6rem;
+    font-size: var(--text-label);
   }
   .nodo-title {
     position: relative;
@@ -1020,10 +1056,10 @@ button:disabled {
     padding: 2.3rem 1.4rem 0.5rem;
   }
   .nodo-title h1 {
-    font-size: 2.4rem;
+    font-size: var(--text-heading);
   }
   .nodo-title > p:last-child {
-    font-size: 0.75rem;
+    font-size: var(--text-caption);
   }
   .nodo-viewport {
     height: 460px;
@@ -1033,7 +1069,7 @@ button:disabled {
   .nodo-scene-label {
     left: 1.4rem;
     bottom: 0.6rem;
-    font-size: 0.45rem;
+    font-size: var(--text-label);
   }
   .nodo-scene-label span {
     display: none;
@@ -1044,7 +1080,7 @@ button:disabled {
     right: auto;
     width: auto;
     margin: 1rem 1.2rem 1.5rem;
-    border-radius: 12px;
+    border-radius: var(--radius-card);
   }
   .nodo-view-tabs {
     grid-template-columns: repeat(3, 1fr);
@@ -1053,37 +1089,37 @@ button:disabled {
   .nodo-view-tabs button {
     flex-direction: column;
     align-items: flex-start;
-    font-size: 0.63rem;
+    font-size: var(--text-label);
     gap: 0.4rem;
     min-height: 64px;
     padding: 0.6rem;
   }
   .nodo-view-description {
     min-height: 0;
-    font-size: 0.78rem;
+    font-size: var(--text-caption);
   }
   .nodo-moods button {
-    font-size: 0.7rem;
+    font-size: var(--text-caption);
     min-height: 44px;
     padding: 0.55rem 0.65rem;
   }
   .nodo-utilities button {
-    font-size: 0.7rem;
+    font-size: var(--text-caption);
     min-height: 44px;
   }
   .nodo-reactions button,
   .nodo-more button {
     min-height: 44px;
-    font-size: 0.75rem;
+    font-size: var(--text-caption);
   }
   .nodo-more summary {
-    font-size: 0.72rem;
+    font-size: var(--text-caption);
     min-height: 44px;
   }
   .nodo-footer {
     flex-direction: column;
     padding: 1.2rem;
-    font-size: 0.6rem;
+    font-size: var(--text-label);
     line-height: 1.7;
   }
   .nodo-fallback img {
@@ -1107,7 +1143,7 @@ button:disabled {
 }
 .studio-workbench {
   border: 1px solid #a7b5d32b;
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   overflow: hidden;
   background: #0d1421;
   box-shadow: 0 35px 100px #0003;
@@ -1118,14 +1154,14 @@ button:disabled {
   gap: 1.1rem;
   padding: 1rem 1.2rem;
   border-bottom: 1px solid #a7b5d31f;
-  font-size: 0.65rem;
+  font-size: var(--text-label);
   letter-spacing: 0.09em;
-  color: #c9d2e6;
+  color: var(--color-starlight);
   background: #151c2b;
 }
 .studio-toolbar small {
-  font-size: 0.56rem;
-  color: #72839f;
+  font-size: var(--text-label);
+  color: var(--color-dim);
   margin-left: 0.5rem;
 }
 .studio-traffic {
@@ -1146,7 +1182,7 @@ button:disabled {
   align-items: center;
   gap: 0.5rem;
   margin-left: auto;
-  font-size: 0.6rem;
+  font-size: var(--text-label);
   color: #a1b9bb;
   letter-spacing: 0;
 }
@@ -1179,9 +1215,9 @@ button:disabled {
   height: auto;
 }
 .studio-artboard > p {
-  font-size: 0.62rem;
+  font-size: var(--text-label);
   letter-spacing: 0.06em;
-  color: #73829c;
+  color: var(--color-dim);
   margin-top: 1.5rem;
 }
 .studio-inspector {
@@ -1195,8 +1231,8 @@ button:disabled {
 .studio-inspector label,
 .studio-inspector legend {
   display: block;
-  font-size: 0.7rem;
-  color: #b2c0d5;
+  font-size: var(--text-caption);
+  color: var(--color-mist);
   margin-bottom: 0.5rem;
 }
 .studio-inspector label input,
@@ -1205,11 +1241,11 @@ button:disabled {
   width: 100%;
   border: 1px solid #8e9fb733;
   background: #080f1b;
-  color: #dce2ee;
-  border-radius: 6px;
+  color: var(--color-starlight);
+  border-radius: var(--radius-control);
   padding: 0.7rem;
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   line-height: 1.7;
   margin-top: 0.55rem;
   resize: vertical;
@@ -1225,12 +1261,12 @@ button:disabled {
   align-items: center;
   flex-direction: column;
   gap: 0.5rem;
-  font-size: 0.55rem;
+  font-size: var(--text-label);
   padding: 0.65rem 0.25rem;
   min-height: 58px;
   border: 1px solid transparent;
-  border-radius: 6px;
-  color: #9eacc5;
+  border-radius: var(--radius-control);
+  color: var(--color-mist);
   cursor: pointer;
 }
 .studio-swatches i {
@@ -1241,7 +1277,7 @@ button:disabled {
 .studio-swatches button[aria-pressed="true"] {
   border-color: #9b8cbf66;
   background: #b9a2ff0d;
-  color: #e1d9f4;
+  color: var(--color-violet-soft);
 }
 .studio-formats {
   display: flex;
@@ -1250,16 +1286,16 @@ button:disabled {
 .studio-formats button {
   flex: 1;
   min-height: 40px;
-  font-size: 0.65rem;
+  font-size: var(--text-label);
   border: 1px solid #8e9fb72b;
-  border-radius: 6px;
-  color: #a4b1c9;
+  border-radius: var(--radius-control);
+  color: var(--color-mist);
   cursor: pointer;
 }
 .studio-formats button[aria-pressed="true"] {
   background: #9b8cbf1f;
   border-color: #b9a2ff66;
-  color: #d8cdef;
+  color: var(--color-violet-soft);
 }
 .studio-export {
   display: flex;
@@ -1267,9 +1303,9 @@ button:disabled {
   align-items: center;
   background: #b9a2ff;
   color: #1d1430;
-  border-radius: 6px;
+  border-radius: var(--radius-control);
   padding: 0.8rem 1rem;
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   font-weight: 600;
   min-height: 44px;
   cursor: pointer;
@@ -1278,21 +1314,21 @@ button:disabled {
   background: #cab7ff;
 }
 .studio-reset {
-  font-size: 0.65rem;
-  color: #9baac2;
+  font-size: var(--text-label);
+  color: var(--color-mist);
   min-height: 30px;
   cursor: pointer;
 }
 .studio-notice {
-  font-size: 0.6rem;
+  font-size: var(--text-label);
   line-height: 1.7;
-  color: #8d9db7;
+  color: var(--color-mist);
 }
 .studio-disclaimer {
   padding: 1rem 1.2rem;
   border-top: 1px solid #a7b5d31f;
-  font-size: 0.65rem;
-  color: #8a9bb6;
+  font-size: var(--text-label);
+  color: var(--color-mist);
   line-height: 1.7;
 }
 @media (max-width: 767px) {
@@ -1315,7 +1351,7 @@ button:disabled {
     display: none;
   }
   .studio-local {
-    font-size: 0.55rem;
+    font-size: var(--text-label);
   }
   .studio-canvas-wrap.square {
     max-width: 320px;
@@ -1326,17 +1362,17 @@ button:disabled {
   }
   .studio-inspector label,
   .studio-inspector legend {
-    font-size: 0.8rem;
+    font-size: var(--text-body-sm);
   }
   .studio-inspector label input,
   .studio-inspector textarea {
-    font-size: 0.85rem;
+    font-size: var(--text-body-sm);
   }
   .studio-inspector textarea {
     max-height: 180px;
   }
   .studio-notice {
-    font-size: 0.7rem;
+    font-size: var(--text-caption);
   }
 }
 .identity-note {
@@ -1349,25 +1385,22 @@ button:disabled {
 }
 .identity-note > .eyebrow {
   grid-column: 1/-1;
-  color: #ae9ad5;
+  color: var(--color-violet-soft);
 }
 .identity-note h2 {
-  font-size: clamp(1.9rem, 3vw, 3rem);
-  line-height: 1.2;
-  letter-spacing: -0.045em;
-  font-weight: 450;
+  font-size: var(--text-heading);
 }
 .identity-note h2 span {
-  color: #7f8ca6;
+  color: var(--color-dim);
 }
 .identity-note > div {
-  font-size: 0.9rem;
+  font-size: var(--text-body-sm);
   line-height: 1.9;
-  color: #9dabc4;
+  color: var(--color-mist);
   max-width: 480px;
 }
 .identity-note strong {
-  color: #dad9e9;
+  color: var(--color-starlight);
   font-weight: 500;
 }
 .identity-note > div p + p {
@@ -1387,7 +1420,7 @@ button:disabled {
   height: 100%;
   overflow: hidden;
   border: 1px solid #a7b5d321;
-  border-radius: 14px;
+  border-radius: var(--radius-card);
   background: #0b1220;
 }
 .room-feature-image img {
@@ -1401,9 +1434,9 @@ button:disabled {
   position: absolute;
   top: 1.5rem;
   left: 1.5rem;
-  font-size: 0.52rem;
+  font-size: var(--text-label);
   letter-spacing: 0.14em;
-  color: #bcc6dc;
+  color: var(--color-mist);
 }
 .room-feature-image > a {
   position: absolute;
@@ -1417,24 +1450,21 @@ button:disabled {
   height: 48px;
   display: grid;
   place-items: center;
-  font-size: 1.4rem;
-  color: #c1afff;
+  font-size: var(--text-title);
+  color: var(--color-violet-soft);
 }
 .room-feature-copy h2 {
-  font-size: clamp(1.8rem, 2.8vw, 2.9rem);
-  line-height: 1.2;
-  letter-spacing: -0.04em;
+  font-size: var(--text-heading);
   margin: 1.4rem 0;
-  font-weight: 450;
 }
 .room-feature-copy h2 em {
   font-style: normal;
-  color: #af9bd5;
+  color: var(--color-violet-soft);
 }
 .room-feature-copy > p:not(.eyebrow) {
-  font-size: 0.9rem;
+  font-size: var(--text-body-sm);
   line-height: 1.9;
-  color: #9cabc4;
+  color: var(--color-mist);
 }
 .room-feature-copy ul {
   margin: 1.5rem 0;
@@ -1444,13 +1474,13 @@ button:disabled {
   gap: 1rem;
   padding: 0.8rem 0;
   border-bottom: 1px solid #a7b5d31a;
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   line-height: 1.6;
-  color: #b2bed4;
+  color: var(--color-mist);
 }
 .room-feature-copy li span {
-  font-size: 0.6rem;
-  color: #a68ed0;
+  font-size: var(--text-label);
+  color: var(--color-violet-soft);
   padding-top: 0.1rem;
 }
 @media (max-width: 767px) {
@@ -1460,10 +1490,10 @@ button:disabled {
     padding-block: 3.5rem;
   }
   .identity-note h2 {
-    font-size: 2rem;
+    font-size: var(--text-heading);
   }
   .identity-note > div {
-    font-size: 0.85rem;
+    font-size: var(--text-body-sm);
   }
   .room-feature {
     grid-template-columns: 1fr;
@@ -1476,10 +1506,10 @@ button:disabled {
     height: 290px;
   }
   .room-feature-copy h2 {
-    font-size: 2rem;
+    font-size: var(--text-heading);
   }
   .room-feature-copy .eyebrow {
-    font-size: 0.55rem;
+    font-size: var(--text-label);
   }
 }
 .arrival-poster {
@@ -1529,7 +1559,7 @@ button:disabled {
   background: #101827df;
   padding: 1rem;
   border: 1px solid #b9a2ff33;
-  border-radius: 8px;
+  border-radius: var(--radius-control);
 }
 .nodo-fallback button {
   background: #b9a2ff;

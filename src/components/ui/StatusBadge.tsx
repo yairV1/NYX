@@ -12,7 +12,7 @@ const tone: Record<Status, string> = {
 /** Estado real de una pieza del ecosistema. Texto visible, no sólo color. */
 export function StatusBadge({ status }: { status: Status }) {
   return (
-    <span className={`label-tech inline-flex w-fit items-center gap-2 rounded-md border bg-void/50 px-2.5 py-1.5 ${tone[status]}`}>
+    <span className={`label-tech inline-flex w-fit items-center gap-2 rounded-control border bg-void/50 px-2.5 py-1.5 ${tone[status]}`}>
       <span aria-hidden className="size-1.5 rounded-full bg-current" />
       <span className="sr-only">Estado: </span>
       {STATUS_LABEL[status]}

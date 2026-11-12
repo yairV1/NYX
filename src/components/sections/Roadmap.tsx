@@ -23,7 +23,7 @@ export function Roadmap() {
               <p aria-hidden className="label-tech mt-5 text-mist">
                 Paso 0{i + 1}
               </p>
-              <h3 className="mt-2 text-base font-semibold tracking-tight">
+              <h3 className="mt-2 text-body font-semibold tracking-tight">
                 {step.title}
               </h3>
               <p className="mt-2.5 mb-5 leading-relaxed text-mist">

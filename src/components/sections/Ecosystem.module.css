@@ -7,7 +7,7 @@
   min-width: 0;
   overflow: hidden;
   border: 1px solid #a3abd127;
-  border-radius: 20px;
+  border-radius: var(--radius-panel);
   background: linear-gradient(150deg, #141c31, #0b101e);
   display: flex;
   flex-direction: column;
@@ -24,9 +24,9 @@
 .coordinate,
 .artLabel {
   position: absolute;
-  font-size: 0.55rem;
+  font-size: var(--text-label);
   letter-spacing: 0.16em;
-  color: #9aabc5;
+  color: var(--color-mist);
 }
 .coordinate {
   top: 1.2rem;
@@ -50,9 +50,9 @@
   font-weight: 500;
 }
 .body p {
-  font-size: 0.86rem;
+  font-size: var(--text-body-sm);
   line-height: 1.85;
-  color: #a9b6cd;
+  color: var(--color-mist);
   margin-bottom: 1.8rem;
 }
 .body a {
@@ -64,11 +64,11 @@
   padding-top: 1rem;
   margin-top: auto;
   min-height: 44px;
-  font-size: 0.78rem;
-  color: #d1c1ff;
+  font-size: var(--text-caption);
+  color: var(--color-violet-soft);
 }
 .body a span {
-  font-size: 1.3rem;
+  font-size: var(--text-title);
 }
 .core {
   width: 150px;
@@ -99,7 +99,7 @@
 .core b {
   font-size: 5rem;
   font-weight: 400;
-  color: #e7dcff;
+  color: var(--color-violet-soft);
   text-shadow: 0 0 35px #c0a5ff;
 }
 .studio .art {
@@ -116,7 +116,7 @@
   inset: 0;
   border: 1px solid #84deec7a;
   background: linear-gradient(140deg, #163d50ee, #152d4790);
-  border-radius: 10px;
+  border-radius: var(--radius-card);
   box-shadow: 0 12px 20px #0003;
 }
 .planes > span:nth-child(1) {
@@ -157,7 +157,7 @@
   position: absolute;
   inset: 10px;
   border: 1px solid #8d9aff;
-  border-radius: 20px;
+  border-radius: var(--radius-panel);
   background: linear-gradient(140deg, #7180ec27, #10172d66);
 }
 .experiment span:nth-child(2) {

@@ -61,7 +61,7 @@ export function SiteHeader() {
                   <a
                     href={`#${item.id}`}
                     aria-current={current ? "location" : undefined}
-                    className={`text-xs relative rounded-md px-3.5 py-3 transition-colors hover:text-starlight ${
+                    className={`text-xs relative rounded-control px-3.5 py-3 transition-colors hover:text-starlight ${
                       current ? "text-starlight" : "text-mist"
                     }`}
                   >
@@ -81,7 +81,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex size-11 items-center justify-center rounded-lg border border-line-strong text-starlight lg:hidden"
+          className="inline-flex size-11 items-center justify-center rounded-control border border-line-strong text-starlight lg:hidden"
           aria-expanded={open}
           aria-controls={menuId}
           onClick={() => setOpen((value) => !value)}
