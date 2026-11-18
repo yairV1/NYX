@@ -1,0 +1,18 @@
+[WebServer] (node:20567) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20598) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20697) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:20788) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [browser] Image with src "/assets/nyx/backgrounds/casa-nodo-after-hours.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[WebServer] Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[WebServer] [browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[WebServer] [browser] THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.
+  ✓  1 tests/experience.spec.ts:75:1 › Casa Nodo has real controls and returns to idle after a reaction (1.0m)
+
+  1 passed (1.1m)

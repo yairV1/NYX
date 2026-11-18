@@ -179,3 +179,10 @@ comparaciones. La nueva fuente editable es
 `artifacts/design-refinement/nyx-polished-v2.blend`; el GLB público deriva de ella.
 Se conserva la anatomía, 89 huesos y 17 acciones. No confundir esta pasada de
 acabado con el pendiente de retopología/LOD o con una nueva biblioteca de gestos.
+
+## 18 de noviembre — cierre de Pensar
+
+Fuente actual: `artifacts/thinking-refinement/nyx-thinking-v2.blend`.
+Pensar acerca la pata al mentón y regresa a la pose inicial; las otras 16
+animaciones mantienen los mismos datos. Ver `docs/thinking-refinement/README.md`.
+Se integró origin/main con PR #8 antes de publicar; se conserva su diseño.

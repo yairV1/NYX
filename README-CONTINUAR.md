@@ -1,6 +1,6 @@
 # Continuar NYX sin perder avances
 
-**Fecha:** 12 de noviembre de 2026 · **Rama de entrega:** `main`.
+**Fecha:** 18 de noviembre de 2026 · **Rama de entrega:** `main`.
 
 Este archivo es el punto de entrada para la próxima sesión. La publicación debe
 hacerse solo con el candidato final validado, no con los intentos intermedios.
@@ -18,8 +18,8 @@ hacerse solo con el candidato final validado, no con los intentos intermedios.
 
 ## Estado del modelo
 
-- Fuente final local: `artifacts/design-refinement/nyx-polished-v2.blend`.
-- Exportación final local: `artifacts/design-refinement/nyx-polished-v2.glb`.
+- Fuente final local: `artifacts/thinking-refinement/nyx-thinking-v2.blend`.
+- Exportación final local: `artifacts/thinking-refinement/nyx-thinking-v2.glb`.
 - Modelo servido: `public/assets/nyx/models/nyx-v2-refined.glb`.
 - Conserva Nyx_rig v2 antropomórfico, sin audífonos fijos, 89 huesos y 17 acciones.
 - No usar `nyx-polished.blend` sin el sufijo `-v2`: fue un candidato descartado.
@@ -31,8 +31,9 @@ hacerse solo con el candidato final validado, no con los intentos intermedios.
 
 1. **Modelo:** retopología/LOD móvil de 30–60 mil triángulos conservando rayas, UVs,
    párpados y silueta. El actual todavía ronda los 100 mil; no reducir a ciegas.
-2. **Expresividad:** mejorar `Thinking` (mano en barbilla), apertura de dedos al
-   saludar y mirada dirigida. Revalidar ropa, mochila, párpados y transiciones.
+2. **Expresividad:** apertura de dedos al saludar y mirada dirigida; `Thinking`
+   ya acerca la pata a la barbilla y vuelve a reposo dentro del clip.
+   Revalidar ropa, mochila, párpados y transiciones.
 3. **Acabado artístico:** revisar las proporciones del rostro y la silueta dentro
    de la identidad antropomórfica aprobada. No sustituir el personaje por un robot.
 4. **Casa Nodo:** puntos interactivos con propósito y equivalentes de teclado;
@@ -61,10 +62,24 @@ siguiente paso; hacer commit y push; comprobar GitHub Pages. No esperar a agotar
 el contexto. No publicar un candidato conocido como defectuoso para ahorrar tiempo.
 No se puede deducir el saldo de tokens de la cuenta desde este repositorio.
 
-## Comprobaciones de este punto de entrega
+## Comprobaciones del punto anterior — 12 de noviembre
 
 Lint, TypeScript, build normal y build de GitHub Pages: correctos. Suite de
 navegador: **7/7 pruebas**, incluyendo las tres anchuras, Studio/PNG, controles de
 Casa Nodo, movimiento reducido y recuperación WebGL. GLB reimportado: una armadura,
 89 huesos, 17 acciones, cero triángulos degenerados. Ver los reportes en
 `docs/design-refinement/evidence`; no extrapolar estas pruebas a móviles físicos.
+
+## Último avance — gesto Pensar (18 de noviembre)
+
+Se terminó la tanda iniciada el día 12: nueva pose, entrada/pausa/regreso suaves
+y comprobación de que las otras 16 animaciones no cambian. Se conservó la
+unificación visual publicada en PR #8. Evidencia, límites y reproducción en
+`docs/thinking-refinement/README.md`. La mejora no elimina el detalle irregular
+de los dedos en primer plano; queda para el trabajo de malla.
+
+Verificación de esta tanda: lint, TypeScript y build estático pasan; prueba
+**dirigida** de Casa Nodo (incluyendo Pensar y regreso a idle) correcta. Los
+reportes de GLB, parpadeo y comparación de clips están en
+`docs/thinking-refinement/evidence`. No confundirla con repetir las 7 pruebas
+completas del punto anterior.

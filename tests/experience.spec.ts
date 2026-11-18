@@ -83,6 +83,12 @@ test("Casa Nodo has real controls and returns to idle after a reaction", async (
   await expect(wave).toHaveAttribute("aria-pressed", "false", {
     timeout: 30_000,
   });
+  const thinking = page.getByRole("button", { name: "Pensar", exact: true });
+  await thinking.click();
+  await expect(thinking).toHaveAttribute("aria-pressed", "true");
+  await expect(thinking).toHaveAttribute("aria-pressed", "false", {
+    timeout: 30_000,
+  });
   await page.getByRole("button", { name: "Lámpara encendida" }).click();
   await expect(
     page.getByRole("button", { name: "Lámpara apagada" }),
