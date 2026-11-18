@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#04060B">
+<title>Orbis // Lunar Frontier</title>
+<script>(function(){try{
+  if(!matchMedia||!matchMedia('(prefers-reduced-motion: reduce)').matches)
+    document.documentElement.classList.add('anim');
+}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='4.5' fill='%23FF8A3D'/%3E%3Cellipse cx='16' cy='16' rx='15' ry='6' fill='none' stroke='%23FF8A3D' stroke-width='1.4' opacity='.85'/%3E%3Cellipse cx='16' cy='16' rx='6' ry='15' fill='none' stroke='%23FF8A3D' stroke-width='1.4' opacity='.4' transform='rotate(35 16 16)'/%3E%3C/svg%3E">
+<style>
+html,body{background:#04060B!important;color:#E7ECF5}
+html,body{margin:0;overflow:hidden;overflow-x:hidden;height:100%}
+*{box-sizing:border-box}
+:root{
+  --bg:#04060B; --ink:#E7ECF5; --muted:#c7d0dc; --orange:#FF8A3D;
+  --orange-55:rgba(255,138,61,.55); --orange-12:rgba(255,138,61,.12);
+  --orange-70:rgba(255,138,61,.70); --cyan:#5EEBFF;
+  --panel:#fff; --panel-ink:#1a2130; --panel-rule:#eef1f6;
+  --ease-expo:cubic-bezier(.16,1,.3,1); --ease-quint:cubic-bezier(.22,1,.36,1);
+}
+/* videos — NO opacity transition anywhere: the swap is z-index only, so there is never a
+   frame where both clips are partly transparent and the black ground flashes through */
+.plate{position:absolute;inset:0;opacity:0;transition:opacity 900ms var(--ease-expo)} .plate.is-in{opacity:1}
+.bgv{position:absolute;inset:0;height:100%;width:100%;object-fit:cover;opacity:1;z-index:1}
+.bgv.is-active{z-index:2}
+/* nav — .brand is the clickable logo link; it must look exactly like the old div */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px 20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;cursor:pointer}
+.wordmark{font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+.nav-link{background:transparent;border:0;border-bottom:2px solid transparent;font-family:var(--font-ui);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding:4px 0;cursor:pointer;transition:color 160ms ease}
+.nav-link:hover{color:#fff} .nav-link.is-active{color:var(--orange);border-bottom-color:var(--orange)}
+/* CTA with bracket corners — the -1px offset makes the ticks overlap and thicken the 1px
+   frame at its four corners; that bracket detail is the button's signature, keep it */
+.cta{position:relative;background:transparent;color:var(--orange);font-family:var(--font-ui);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:10px 26px;border:1px solid var(--orange-55);cursor:pointer;transition:background 160ms ease,color 160ms ease}
+.cta:hover{background:var(--orange-12)} .corner{position:absolute;width:8px;height:8px}
+.c-tl{top:-1px;left:-1px;border-top:2px solid var(--orange);border-left:2px solid var(--orange)} .c-tr{top:-1px;right:-1px;border-top:2px solid var(--orange);border-right:2px solid var(--orange)}
+.c-bl{bottom:-1px;left:-1px;border-bottom:2px solid var(--orange);border-left:2px solid var(--orange)} .c-br{bottom:-1px;right:-1px;border-bottom:2px solid var(--orange);border-right:2px solid var(--orange)}
+/* headline — split-corner composition, TIGHT LEADING. The two lines of HUMANITY'S NEXT read
+   as one block; LEAP and BEGINS HERE sit right under GIANT. Do not add margins between them.
+   GIANT is the loudest thing on the page. Do not center anything. */
+.line-a{position:absolute;top:14vh;left:clamp(32px,5vw,64px);font-family:var(--font-display);font-weight:800;font-size:clamp(40px,5.8vw,70px);line-height:1.0;text-transform:uppercase;letter-spacing:.02em;color:var(--ink)}
+.line-b{position:absolute;top:clamp(240px,36vh,370px);right:clamp(20px,4vw,56px);text-align:right}
+.giant{font-family:var(--font-display);font-weight:900;font-size:clamp(56px,9vw,130px);line-height:.88;text-transform:uppercase;letter-spacing:.01em;color:var(--ink)}
+.leap{margin-top:.02em;font-family:var(--font-display);font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.05;text-transform:uppercase;letter-spacing:.02em;color:var(--ink)}
+.accent{color:var(--orange)}
+/* hint */
+.hint{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);z-index:20;font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange-70);pointer-events:none;transition:opacity 400ms ease}
+.hint.is-gone{opacity:0}
+/* mobile sheet + burger — the burger is DARK (#0a0e18) on purpose: it reads against the
+   white sheet and the bright lunar surface. Do not switch it to white. */
+.sheet{background:var(--panel);padding:64px 20px 24px;display:flex;flex-direction:column;gap:4px;box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}
+.sheet-link{width:100%;background:transparent;border:0;border-bottom:1px solid var(--panel-rule);font-family:var(--font-ui);font-size:16px;font-weight:600;color:var(--panel-ink);padding:12px 0;text-align:left;cursor:pointer;transition:color 160ms ease}
+.sheet-link:hover{color:#6b7280} .cta--sheet{margin-top:16px;padding:12px 20px}
+.burger{position:relative;z-index:60;display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:transparent;border:0;color:#0a0e18;cursor:pointer}
+.burger .bar{position:absolute;left:5px;height:2px;width:22px;background:currentColor;border-radius:2px;transition:transform 200ms var(--ease-quint),opacity 160ms ease}
+.burger .bar:nth-child(1){top:9px} .burger .bar:nth-child(2){top:15px} .burger .bar:nth-child(3){top:21px}
+.burger[aria-expanded="true"] .bar:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] .bar:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] .bar:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+@keyframes rise  {from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:none}}
+@keyframes settle{from{opacity:0;transform:translateY(-10px) scale(.965)} to{opacity:1;transform:none}}
+@keyframes fade  {from{opacity:0} to{opacity:1}}
+
+:root{--font-display:'Orbitron','Eurostile',sans-serif;--font-ui:'Rajdhani','Titillium Web',system-ui,sans-serif;--font-mono:ui-monospace,SFMono-Regular,Menlo,monospace}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--ink)}
+.hero{position:relative;height:100vh;width:100%;overflow:hidden;background:#04060B}
+.plate{z-index:1}
+.copy{position:relative;z-index:10;height:100%;pointer-events:none}
+.nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:22px}
+.sheet{position:fixed;top:0;left:0;right:0;z-index:40}
+.sheet[hidden]{display:none}
+.sheet-link{text-transform:uppercase;letter-spacing:.16em}
+.burger{display:none}
+.anim .brand,.anim .nav-link,.anim .nav>.cta,.anim .burger,.anim .line-a,.anim .giant,.anim .leap,.anim .hint{opacity:0}
+.anim.play .brand{animation:settle 620ms var(--ease-quint) both}
+.anim.play .nav-link{animation:settle 520ms var(--ease-quint) both;animation-delay:calc(90ms + var(--i)*70ms)}
+.anim.play .nav>.cta,.anim.play .burger{animation:settle 620ms var(--ease-quint) 470ms both}
+.anim.play .line-a{animation:rise 900ms var(--ease-expo) 260ms both}
+.anim.play .giant{animation:rise 1000ms var(--ease-expo) 400ms both}
+.anim.play .leap{animation:rise 900ms var(--ease-expo) 520ms both}
+.anim.play .hint{animation:fade 700ms ease 1200ms both}
+.anim .hint.is-gone{animation:none;opacity:0}
+@media(max-width:767px){
+.nav-links,.nav .cta{display:none}.burger{display:flex}
+.copy{display:flex;flex-direction:column;justify-content:center;gap:6vh;padding:0 20px}
+.line-a,.line-b{position:static}.line-b{text-align:right}
+body.menu-open{overflow:hidden}
+}
+@media(max-width:380px){
+.giant{font-size:clamp(48px,15vw,56px)}
+.line-a{font-size:clamp(32px,9vw,40px)}
+}
+@media(min-width:1800px){.nav{padding:20px 40px}}
+@media(pointer:coarse){.hint{display:none}}
+@media(prefers-reduced-motion:reduce){
+.plate{opacity:1;transition:none}.hint{display:none}
+.nav-link,.cta,.sheet-link,.burger .bar{transition:none}
+}
+</style>
+</head>
+<body style="background:#04060B;color:#E7ECF5">
+<section class="hero" id="top" aria-label="Orbis Lunar Frontier">
+<div class="plate">
+<video id="vid-left" class="bgv is-active" muted playsinline preload="auto" aria-hidden="true" src="https://media.kolpusites.com/astronaut_moon/left_compressed.mp4"></video>
+<video id="vid-right" class="bgv" muted playsinline preload="auto" aria-hidden="true" src="https://media.kolpusites.com/astronaut_moon/right_compressed.mp4"></video>
+</div>
+<nav class="nav" aria-label="Main navigation">
+<a class="brand" href="#top" aria-label="Orbis — back to the top of the page">
+<svg width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Orbis Lunar Frontier">
+<circle cx="16" cy="16" r="4.5" fill="#FF8A3D"/>
+<ellipse cx="16" cy="16" rx="15" ry="6" fill="none" stroke="#FF8A3D" stroke-width="1.4" opacity=".85"/>
+<ellipse cx="16" cy="16" rx="6" ry="15" fill="none" stroke="#FF8A3D" stroke-width="1.4" opacity=".4" transform="rotate(35 16 16)"/>
+</svg><span class="wordmark">Orbis</span></a>
+<div class="nav-links"></div>
+<button type="button" class="cta">Join The Mission<span class="corner c-tl"></span><span class="corner c-tr"></span><span class="corner c-bl"></span><span class="corner c-br"></span></button>
+<button type="button" class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="sheet"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+</nav>
+<div class="sheet" id="sheet" hidden></div>
+<div class="copy">
+<div class="line-a">Humanity's<br>next</div>
+<div class="line-b"><div class="giant">giant</div><div class="leap">leap<br>begins <span class="accent">here</span></div></div>
+</div>
+<div class="hint" id="hint">navigate the mission — move cursor</div>
+</section>
+<script>
+'use strict';
+const labels = ['Mission', 'Crew', 'Technology', 'Timeline', 'Contact'];
+const navLinks = document.querySelector('.nav-links');
+const sheet = document.getElementById('sheet');
+const burger = document.querySelector('.burger');
+const mobile = matchMedia('(max-width:767px)');
+const motion = matchMedia('(prefers-reduced-motion: reduce)');
+const coarse = matchMedia('(pointer:coarse)');
+const hint = document.getElementById('hint');
+labels.forEach((label, i) => {
+  [navLinks, sheet].forEach(container => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = label;
+    button.className = container === navLinks ? 'nav-link' : 'sheet-link';
+    button.style.setProperty('--i', i);
+    if (i === 0) { button.classList.add('is-active'); button.setAttribute('aria-current','page'); }
+    if (container === sheet) button.addEventListener('click', () => toggle(false, true));
+    container.append(button);
+  });
+});
+const sheetCta = document.querySelector('.nav>.cta').cloneNode(true);
+sheetCta.classList.add('cta--sheet');
+sheetCta.addEventListener('click', () => toggle(false, true));
+sheet.append(sheetCta);
+function toggle(open = sheet.hidden, restoreFocus = false) {
+  open = open && mobile.matches;
+  sheet.hidden = !open;
+  burger.setAttribute('aria-expanded', String(open));
+  burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  document.body.classList.toggle('menu-open', open);
+  if (restoreFocus) burger.focus();
+}
+burger.addEventListener('click', () => toggle());
+document.addEventListener('click', e => {
+  if (!sheet.hidden && !sheet.contains(e.target) && !burger.contains(e.target)) toggle(false);
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !sheet.hidden) toggle(false, true);
+});
+function resizeMenu() {
+  if (!mobile.matches) toggle(false);
+  hint.textContent = mobile.matches ? 'move cursor' : 'navigate the mission — move cursor';
+}
+mobile.addEventListener('change', resizeMenu);
+resizeMenu();
+
+const vidLeft = document.getElementById('vid-left');
+const vidRight = document.getElementById('vid-right');
+const plate = document.querySelector('.plate');
+const SENSITIVITY = 1.1;
+const clips = {left:{el:vidLeft,target:0,seeking:false}, right:{el:vidRight,target:0,seeking:false}};
+let activeKey = 'left', lastClientX, rafPending = false, hintGone = false;
+let scrubFrame = 0;
+function onMove(e) {
+  if (!hintGone) { hint.classList.add('is-gone'); hintGone = true; }
+  lastClientX = e.clientX;
+  if (rafPending) return;
+  rafPending = true;
+  scrubFrame = requestAnimationFrame(apply);
+}
+function apply() {
+  rafPending = false;
+  if (lastClientX === undefined || motion.matches || coarse.matches) return;
+  const norm = (lastClientX / window.innerWidth - 0.5) * 2;
+  const key = norm >= 0 ? 'right' : 'left';
+  const other = key === 'right' ? 'left' : 'right';
+  const progress = Math.min(1, Math.max(0, Math.abs(norm) * SENSITIVITY));
+  const c = clips[key], v = c.el;
+  if (!v.duration || !Number.isFinite(v.duration) || v.readyState < 2) return;
+  c.target = progress * v.duration;
+  clips[other].target = 0;
+  if (key !== activeKey) {
+    activeKey = key;
+    vidLeft.classList.toggle('is-active', key === 'left');
+    vidRight.classList.toggle('is-active', key === 'right');
+  }
+  if (!c.seeking) seek(key);
+}
+function seek(key) {
+  const c = clips[key], v = c.el;
+  if (c.seeking || Math.abs(c.target-v.currentTime) <= 0.01) return;
+  c.seeking = true;
+  try { v.currentTime = c.target; } catch(e) { c.seeking = false; }
+}
+function onSeeked(e) {
+  const v = e.target, key = v === vidRight ? 'right' : 'left', c = clips[key];
+  c.seeking = false;
+  if (Math.abs(c.target-v.currentTime) > 0.01) seek(key);
+}
+Object.values(clips).forEach(c => {
+  const v = c.el;
+  v.addEventListener('seeked', onSeeked);
+  v.addEventListener('loadedmetadata', () => {
+    v.pause();
+    try { v.currentTime = 0; } catch(e) { c.seeking = false; }
+  });
+  v.addEventListener('loadeddata', () => { if (lastClientX !== undefined && !motion.matches) apply(); });
+  v.pause();
+  try { v.currentTime = 0; } catch(e) { c.seeking = false; }
+});
+function syncMotion() {
+  window.removeEventListener('mousemove', onMove);
+  if (!motion.matches && !coarse.matches) { window.addEventListener('mousemove', onMove, {passive:true}); return; }
+  cancelAnimationFrame(scrubFrame); rafPending = false; lastClientX = undefined;
+  activeKey = 'left'; vidLeft.classList.add('is-active'); vidRight.classList.remove('is-active');
+  Object.keys(clips).forEach(key => { clips[key].target = 0; if (!clips[key].seeking) seek(key); });
+  if (motion.matches) document.documentElement.classList.remove('anim','play');
+}
+syncMotion();
+motion.addEventListener('change', syncMotion);
+coarse.addEventListener('change', syncMotion);
+let plateTimer;
+function revealPlate() { clearTimeout(plateTimer); plate.classList.add('is-in'); }
+vidLeft.addEventListener('loadeddata', revealPlate, {once:true});
+plateTimer = setTimeout(revealPlate, 600);
+if (vidLeft.readyState >= 2) revealPlate();
+
+(async function entrance() {
+  const root = document.documentElement;
+  if (!root.classList.contains('anim')) return;
+  let fontTimer;
+  await Promise.race([document.fonts.ready, new Promise(resolve => {fontTimer = setTimeout(resolve, 500);})]);
+  clearTimeout(fontTimer);
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    if (!root.classList.contains('anim')) return;
+    root.classList.add('play');
+    setTimeout(() => root.classList.remove('anim','play'), 2000);
+  }));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+{
+  "layouts": [
+    {
+      "width": 320,
+      "h": 844,
+      "scrollWidth": 320,
+      "scrollHeight": 844,
+      "headline": [
+        {
+          "x": 20,
+          "right": 300,
+          "y": 316.015625,
+          "bottom": 380.015625
+        },
+        {
+          "x": 20,
+          "right": 300,
+          "y": 430.640625,
+          "bottom": 527.984375
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "h": 844,
+      "scrollWidth": 375,
+      "scrollHeight": 844,
+      "headline": [
+        {
+          "x": 20,
+          "right": 355,
+          "y": 310.75,
+          "bottom": 378.25
+        },
+        {
+          "x": 20,
+          "right": 355,
+          "y": 428.875,
+          "bottom": 533.25
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "h": 844,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "headline": [
+        {
+          "x": 20,
+          "right": 370,
+          "y": 304.5,
+          "bottom": 384.5
+        },
+        {
+          "x": 20,
+          "right": 370,
+          "y": 435.125,
+          "bottom": 539.5
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "h": 900,
+      "scrollWidth": 768,
+      "scrollHeight": 900,
+      "headline": [
+        {
+          "x": 38.390625,
+          "right": 366.3125,
+          "y": 126,
+          "bottom": 215.09375
+        },
+        {
+          "x": 493.8125,
+          "right": 737.28125,
+          "y": 324,
+          "bottom": 443.40625
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "h": 900,
+      "scrollWidth": 1440,
+      "scrollHeight": 900,
+      "headline": [
+        {
+          "x": 64,
+          "right": 579,
+          "y": 126,
+          "bottom": 266
+        },
+        {
+          "x": 927.515625,
+          "right": 1384,
+          "y": 324,
+          "bottom": 527.046875
+        }
+      ]
+    },
+    {
+      "width": 2560,
+      "h": 900,
+      "scrollWidth": 2560,
+      "scrollHeight": 900,
+      "headline": [
+        {
+          "x": 64,
+          "right": 579,
+          "y": 126,
+          "bottom": 266
+        },
+        {
+          "x": 2045.5,
+          "right": 2504,
+          "y": 324,
+          "bottom": 527.40625
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "requests": [
+    {
+      "url": "https://media.kolpusites.com/astronaut_moon/right_compressed.mp4",
+      "status": 206
+    },
+    {
+      "url": "https://media.kolpusites.com/astronaut_moon/left_compressed.mp4",
+      "status": 206
+    }
+  ],
+  "initial": [
+    {
+      "id": "vid-left",
+      "time": 0,
+      "duration": 4.041667,
+      "paused": true,
+      "opacity": "1",
+      "active": true
+    },
+    {
+      "id": "vid-right",
+      "time": 0,
+      "duration": 4.041667,
+      "paused": true,
+      "opacity": "1",
+      "active": false
+    }
+  ],
+  "x1250": [
+    {
+      "id": "vid-left",
+      "time": 0,
+      "duration": 4.041667,
+      "paused": true,
+      "opacity": "1",
+      "active": false
+    },
+    {
+      "id": "vid-right",
+      "time": 3.272627,
+      "duration": 4.041667,
+      "paused": true,
+      "opacity": "1",
+      "active": true
+    }
+  ],
+  "x720": [
+    {
+      "id": "vid-left",
+      "time": 3.334375,
+      "duration": 4.041667,
+      "paused": true,
+      "opacity": "1",
+      "active": false
+    },
+    {
+      "id": "vid-right",
+      "time": 0,
+      "duration": 4.041667,
+      "paused": true,
+      "opacity": "1",
+      "active": true
+    }
+  ],
+  "x180": [
+    {
+      "id": "vid-left",
+      "time": 3.334375,
+      "duration": 4.041667,
+      "paused": true,
+      "opacity": "1",
+      "active": true
+    },
+    {
+      "id": "vid-right",
+      "time": 0,
+      "duration": 4.041667,
+      "paused": true,
+      "opacity": "1",
+      "active": false
+    }
+  ],
+  "afterSweep": [
+    {
+      "id": "vid-left",
+      "time": 3.951852,
+      "duration": 4.041667,
+      "paused": true,
+      "opacity": "1",
+      "active": false
+    },
+    {
+      "id": "vid-right",
+      "time": 0,
+      "duration": 4.041667,
+      "paused": true,
+      "opacity": "1",
+      "active": true
+    }
+  ],
+  "hintGone": true,
+  "menu": "escape / focus / link / outside pass",
+  "reducedMotion": {
+    "className": "",
+    "still": true,
+    "hint": "none"
+  },
+  "touch": true
+}

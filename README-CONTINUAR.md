@@ -83,3 +83,11 @@ Verificación de esta tanda: lint, TypeScript y build estático pasan; prueba
 reportes de GLB, parpadeo y comparación de clips están en
 `docs/thinking-refinement/evidence`. No confundirla con repetir las 7 pruebas
 completas del punto anterior.
+
+## Orbis — página independiente (18 de noviembre)
+
+Se añadió `public/orbis/index.html` conforme al build spec Orbis // Lunar Frontier.
+Es un HTML autónomo bajo `/NYX/orbis/`, no reemplaza NYX ni modifica su personaje.
+Usa los dos vídeos indicados por el usuario y control de tiempo con el cursor,
+sin reproducción automática. Ver `docs/orbis/README.md` para pruebas y los
+conflictos internos de la especificación (tiempo del clip inactivo en el centro).
